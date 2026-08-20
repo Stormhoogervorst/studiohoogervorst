@@ -256,7 +256,7 @@ input. Maximaal 8 nieuwe commerciële pagina's per week.
 |---|---|
 | Website Abonnement | €120/mnd + €395 setup, 12 mnd minimum |
 | Eenmalig kopen | €3.150 |
-| Afkoop bij opzeggen | €950 |
+| Afkoop bij opzeggen | €1.750 (na 12 maanden) |
 | Extra landingspagina's | €15,50/mnd |
 | Lokale vindbaarheid | €10/mnd |
 | AI-zichtbaarheid | €10,50/mnd |

@@ -195,8 +195,8 @@ bij Storm Sites.
 9.4 Gedurende de looptijd van het abonnement heeft Opdrachtgever een
 niet-overdraagbaar, niet-exclusief gebruiksrecht op de Website.
 
-9.5 Opdrachtgever kan de Website afkopen tegen de op dat moment geldende
-afkoopsom. Na volledige betaling van de afkoopsom en alle openstaande
+9.5 Opdrachtgever kan de Website na de minimale looptijd van twaalf maanden
+afkopen voor €1.750. Na volledige betaling van de afkoopsom en alle openstaande
 facturen draagt Storm Sites de rechten op het specifieke ontwerp en de
 specifieke implementatie over aan Opdrachtgever, en verleent zij redelijke
 medewerking aan de overdracht naar een andere hostingomgeving.
