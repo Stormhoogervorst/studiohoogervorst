@@ -6,7 +6,7 @@ import FaqList from "../../components/FaqList.astro";
 import TrustRating from "../../components/TrustRating.astro";
 import { CONTACT_LIMITS, HULP_OPTIES } from "../../lib/contact";
 
-const title = "Contact — plan een gesprek | Storm";
+const title = "Contact — plan een gesprek | Neqst";
 const description =
   "Twintig minuten bellen over je website. Geen verkooppraatje. Reactie binnen één werkdag.";
 
@@ -62,7 +62,7 @@ const contactSchema = {
   inLanguage: "nl-NL",
   isPartOf: {
     "@type": "WebSite",
-    name: "Storm",
+    name: "Neqst",
     url: site.href,
   },
 };
@@ -89,7 +89,7 @@ const breadcrumbSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Storm",
+  name: "Neqst",
   url: site.href,
   email,
   telephone: telefoon.replace(/\s+/g, ""),
@@ -145,7 +145,7 @@ const localBusinessSchema = {
             action="https://api.web3forms.com/submit"
           >
             <input type="hidden" name="access_key" value={accessKey} />
-            <input type="hidden" name="from_name" value="Storm" />
+            <input type="hidden" name="from_name" value="Neqst" />
             <input type="hidden" name="subject" value="Nieuw gesprekverzoek via studiohoogervorst.nl" />
             <input type="hidden" name="redirect" value={thanksUrl} />
 
@@ -483,7 +483,7 @@ const localBusinessSchema = {
           },
           body: JSON.stringify({
             access_key: accessKey,
-            from_name: "Storm",
+            from_name: "Neqst",
             subject: `Gesprekverzoek van ${input.naam.trim()} (${input.bedrijf.trim()})`,
             name: input.naam.trim(),
             email: input.email.trim(),

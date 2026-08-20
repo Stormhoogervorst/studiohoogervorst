@@ -42,13 +42,13 @@ const { kop = "Een lokaal bureau", rijen = defaultRijen } = Astro.props;
 <section class="vergelijking">
   <div class="wrap">
     <p class="badge">Vergelijking</p>
-    <h2>{kop} versus Storm.</h2>
+    <h2>{kop} versus Neqst.</h2>
     <table>
       <thead>
         <tr>
           <th scope="col">Wat</th>
           <th scope="col">{kop}</th>
-          <th scope="col" class="wij">Storm</th>
+          <th scope="col" class="wij">Neqst</th>
         </tr>
       </thead>
       <tbody>
@@ -59,7 +59,7 @@ const { kop = "Een lokaal bureau", rijen = defaultRijen } = Astro.props;
                 {rij.wat}
               </th>
               <td data-label={kop}>{rij.zij}</td>
-              <td class="wij" data-label="Storm">
+              <td class="wij" data-label="Neqst">
                 {rij.wij}
               </td>
             </tr>
@@ -72,7 +72,9 @@ const { kop = "Een lokaal bureau", rijen = defaultRijen } = Astro.props;
 
 <style>
   .vergelijking {
+    position: relative;
     padding: var(--section) 0;
+    overflow-x: clip;
     background: var(--deep);
     color: #fff;
   }
@@ -90,10 +92,13 @@ const { kop = "Een lokaal bureau", rijen = defaultRijen } = Astro.props;
 
   .vergelijking h2 {
     margin-bottom: 44px;
+    overflow-wrap: break-word;
   }
 
   table {
     width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0;
   }
@@ -105,6 +110,7 @@ const { kop = "Een lokaal bureau", rijen = defaultRijen } = Astro.props;
     vertical-align: top;
     font-weight: 400;
     line-height: 1.5;
+    overflow-wrap: break-word;
   }
 
   thead th {
@@ -164,6 +170,26 @@ const { kop = "Een lokaal bureau", rijen = defaultRijen } = Astro.props;
     border-radius: 0 0 20px 20px;
   }
 
+  @media (max-width: 899px) {
+    th,
+    td {
+      padding: 14px 12px;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 0;
+    }
+
+    tbody td.wij {
+      padding-left: 36px;
+    }
+
+    tbody td.wij::before {
+      left: 12px;
+    }
+  }
+
   @media (max-width: 699px) {
     table,
     thead,
@@ -187,11 +213,16 @@ const { kop = "Een lokaal bureau", rijen = defaultRijen } = Astro.props;
       border: 0;
     }
 
+    table {
+      table-layout: auto;
+    }
+
     tbody tr {
       margin-bottom: 14px;
       padding: 22px;
       border-radius: 16px;
       background: var(--deep-card);
+      overflow-wrap: break-word;
     }
 
     tbody th,

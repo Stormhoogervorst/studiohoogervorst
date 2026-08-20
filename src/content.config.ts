@@ -76,10 +76,12 @@ const landing = defineCollection({
     beschrijving: z.string(), // meta description, max 155
     intro: z.string(),
     zoekterm: z.string(),
+    stad: z.string().optional(),
+    vindbaarheid_keyword: z.string().optional(),
     probleem: z.array(z.object({
       kop: z.string(),
       tekst: z.string(),
-    })).min(3),
+    })).min(3).max(4),
     vergelijking: z.array(z.object({
       wat: z.string(),
       zij: z.string(),
@@ -94,7 +96,9 @@ const landing = defineCollection({
     })).min(3).max(4),
     case_intro: z.string(),
     case_slugs: z.array(z.string()).min(1).max(2),
-    lokale_context: z.string().optional(),
+    extra_kop: z.string().optional(),
+    extra_tekst: z.string().optional(),
+    overnemen: z.array(z.string()).min(4).optional(),
     faqs: z.array(faqSchema).min(5),
     gerelateerd: z.array(z.string()).max(2), // slugs van andere landingspagina's
     gepubliceerd: z.boolean().default(false),

@@ -1,0 +1,107 @@
+{
+  "h1": "Squarespace-alternatief",
+  "titel": "Squarespace-alternatief — vanaf €120 p/m",
+  "beschrijving": "Klaar met zelf bouwen in Squarespace? Wij nemen ontwerp, techniek en vindbaarheid over. Binnen twee weken live, vanaf €120 per maand.",
+  "intro": "Squarespace is prima als je het leuk vindt om zelf te bouwen. Wil je een site die gevonden wordt en geen avonden in de editor, dan nemen wij het over. Binnen twee tot drie weken live, vanaf €120 per maand, inclusief hosting en onderhoud.",
+  "zoekterm": "squarespace alternatief",
+
+  "probleem": [
+    {
+      "kop": "Hij ziet er goed uit. Meer ook niet.",
+      "tekst": "De template is strak, de foto's kloppen, en in Google sta je nergens. Een site die alleen mooi is, is een visitekaartje. Daar komen geen aanvragen vandaan."
+    },
+    {
+      "kop": "Je zit avonden in de editor",
+      "tekst": "Elke wijziging is een avondwerk. Een extra pagina, een redirect, een formulier dat spam doorlaat. Wat ooit 'even zelf doen' was, is een tweede baan geworden."
+    },
+    {
+      "kop": "SEO is een extra instelling",
+      "tekst": "Title tags, structured data, snelheid, crawlers: je moet het zelf uitzetten of bij elkaar zoeken. Squarespace maakt een site. Vindbaarheid is een andere klus, en die blijft liggen."
+    },
+    {
+      "kop": "Je weet niet of het werkt",
+      "tekst": "Er is geen rapport, geen iemand die zegt wat er gebeurt. Je ziet het verkeer niet groeien en je weet niet of dat aan de site ligt of aan iets anders. Dus je laat het staan."
+    }
+  ],
+
+  "vergelijking_kop": "Squarespace",
+  "vergelijking": [
+    { "wat": "Investering vooraf", "zij": "Zelf bouwen, of een freelancer extra", "wij": "€395 setup" },
+    { "wat": "Prijs per maand", "zij": "€16 tot €23", "wij": "€120" },
+    { "wat": "Wie doet het werk", "zij": "Jij, in avonden en weekenden", "wij": "Wij" },
+    { "wat": "Doorlooptijd", "zij": "Zo lang je er zelf over doet", "wij": "2 tot 3 weken" },
+    { "wat": "Ontwerp", "zij": "Template", "wij": "Op maat, geen template" },
+    { "wat": "Vindbaarheid", "zij": "Zelf uitzoeken", "wij": "Standaard in de bouw" },
+    { "wat": "Snelheid", "zij": "Afhankelijk van template en plugins", "wij": "Onder één seconde" },
+    { "wat": "Wijzigingen", "zij": "Zelf in de editor", "wij": "30 minuten per maand inbegrepen" },
+    { "wat": "Hosting en onderhoud", "zij": "Inbegrepen", "wij": "Inbegrepen" },
+    { "wat": "Rapportage", "zij": "Zelf in Analytics kijken", "wij": "Elke maand een rapport" },
+    { "wat": "Als je stopt", "zij": "Je site blijft in Squarespace", "wij": "Afkoop €1.750 na 12 maanden" }
+  ],
+
+  "proces": [
+    {
+      "kop": "Kennismaking",
+      "tekst": "Twintig minuten bellen. We kijken naar je Squarespace-site en zeggen eerlijk wat er te winnen valt. Past het niet, dan zeggen we dat ook."
+    },
+    {
+      "kop": "Overzetten",
+      "tekst": "Jij levert teksten, beeld en logo. Wij zetten de structuur op vanuit keyword onderzoek, niet vanuit het oude template. Wat werkt, nemen we mee. Wat niet werkt, laten we achter."
+    },
+    {
+      "kop": "Bouwen",
+      "tekst": "Twee tot drie weken. Halverwege krijg je een preview om op te reageren. Redirects vanaf je oude URLs regelen we, zodat je niks weggooit in Google."
+    },
+    {
+      "kop": "Live en verder",
+      "tekst": "De site gaat online op je eigen domein. Je krijgt elke maand een rapport: wat er gebeurt, waar je staat, en wat de volgende stap zou zijn."
+    }
+  ],
+
+  "case_intro": "Sites die we bouwden in plaats van een template",
+  "case_slugs": ["legal-talents", "paul-breuker-fotografie"],
+
+  "extra_kop": "Waarom een template je niet verder helpt",
+  "extra_tekst": "Een Squarespace-template is gemaakt om er in de editor goed uit te zien. Niet om te winnen op de zoekterm waar jouw klant op zoekt. Vindbaarheid zit in de structuur: welke pagina's er zijn, hoe ze heten, of Google en ChatGPT de feiten kunnen lezen. Dat bouw je niet achteraf in een theme. Wie dat vanaf de start meeneemt, heeft na een half jaar een andere positie dan wie blijft schuiven in hetzelfde template.",
+
+  "overnemen": [
+    "Ontwerp en opbouw van de hele site",
+    "Hosting, domein en SSL",
+    "Keyword onderzoek en paginastructuur",
+    "Structured data voor Google en AI",
+    "Technische snelheid onder één seconde",
+    "Contactformulier, cookies en redirects",
+    "Dertig minuten wijzigingen per maand",
+    "Maandelijkse rapportage"
+  ],
+
+  "faqs": [
+    {
+      "vraag": "Is Squarespace niet gewoon goedkoper?",
+      "antwoord": "Per maand wel. Squarespace kost €16 tot €23, wij €120. Het verschil is wie het werk doet. Bij Squarespace bouw, onderhoud en optimaliseer je zelf. Bij ons zit ontwerp, techniek, hosting, vindbaarheid en 30 minuten wijzigingen per maand in de prijs. Reken je je eigen uren mee, dan is het verschil kleiner dan het lijkt. Alle prijzen staan op de [abonnementspagina](/abonnement/)."
+    },
+    {
+      "vraag": "Wat gebeurt er met mijn huidige Squarespace-site?",
+      "antwoord": "Die blijft staan tot de nieuwe site live is. We zetten redirects van je oude URLs, zodat Google de overstap volgt. Teksten, beeld en je domein gaan mee. Wat in het template zat — opmaak, plugins, de editor — niet. Je zegt Squarespace op zodra de nieuwe site draait."
+    },
+    {
+      "vraag": "Wat kost het en zit ik ergens aan vast?",
+      "antwoord": "€120 per maand plus €395 setup. Daarin zitten hosting, domein, onderhoud en 30 minuten wijzigingen per maand. De eerste twaalf maanden liggen vast omdat het bouwwerk vooraf gebeurt, daarna is het maandelijks opzegbaar. Wil je de site liever in één keer kopen, dan is dat €3.150."
+    },
+    {
+      "vraag": "Is de website van mij?",
+      "antwoord": "Je domein, je teksten en je inhoud zijn altijd van jou. De code en het onderhoud blijven van ons zolang je abonnee bent. Stop je na twaalf maanden, dan koop je de site af voor €1.750 en verhuizen we hem samen naar je eigen hosting."
+    },
+    {
+      "vraag": "Hoe lang duurt het overzetten?",
+      "antwoord": "Twee tot drie weken na aanlevering van je teksten en beeld. De bottleneck is vrijwel altijd het aanleveren, niet het bouwen. Redirects en domeinverhuizing plannen we in dezelfde ronde, zodat je niet een week offline staat."
+    },
+    {
+      "vraag": "Werken jullie alleen in Nijmegen?",
+      "antwoord": "Nee. We zitten in Nijmegen en hebben daar klanten, maar we werken door heel Nederland. Voor het bouwen maakt locatie weinig uit. Wie lokaal gevonden wil worden in [Nijmegen](/website-laten-maken-nijmegen/) of [Arnhem](/website-laten-maken-arnhem/), heeft daar wel extra winst: die zoektermen zijn kleiner en sneller te winnen."
+    }
+  ],
+
+  "gerelateerd": ["wix-alternatief", "website-laten-maken-nijmegen"],
+  "gepubliceerd": true
+}

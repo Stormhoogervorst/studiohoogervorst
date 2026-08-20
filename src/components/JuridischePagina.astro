@@ -14,7 +14,7 @@ const { Content, headings } = await render(entry);
 const toc = headings.filter((h) => h.depth === 2);
 
 const { titel, beschrijving, bijgewerkt } = entry.data;
-const title = `${titel} | Storm`;
+const title = `${titel} | Neqst`;
 const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
 const pageUrl = new URL(Astro.url.pathname, site).href;
 
@@ -34,7 +34,7 @@ const webPageSchema = {
   inLanguage: "nl-NL",
   isPartOf: {
     "@type": "WebSite",
-    name: "Storm",
+    name: "Neqst",
     url: site.href,
   },
 };

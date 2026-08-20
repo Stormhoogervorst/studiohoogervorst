@@ -24,7 +24,7 @@ Layout: `src/pages/[slug].astro`. Data: `src/content/landing/*.json`.
 4. Vier vlakken — KernwaardenSectie (gedeeld)
 5. Zo pakken we het aan — `proces` uit data
 6. En zo pakt het uit — max. 2 cases via `case_slugs` + `case_intro`
-7. Vergelijking — tabel `vergelijking_kop` vs Storm
+7. Vergelijking — tabel `vergelijking_kop` vs Neqst
 8. Optioneel: wanneer niet (`wanneer_niet_kop` / `wanneer_niet`)
 9. Prijzen — PrijzenSectie
 10. FAQ — navy opmaak, `faqs` (min. 5)

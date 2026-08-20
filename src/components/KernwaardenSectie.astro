@@ -1,13 +1,19 @@
 ---
 import KernwaardeKaart from "./KernwaardeKaart.astro";
 
+interface Props {
+  vindbaarheidPunt?: string;
+}
+
+const { vindbaarheidPunt = "Keyword onderzoek" } = Astro.props;
+
 const kernwaarden = [
   {
     graphic: "zoek",
     label: "Vindbaarheid",
     titel: "Gevonden worden in Google",
     punten: [
-      "Keyword onderzoek",
+      vindbaarheidPunt,
       "Aparte landingspagina per dienst",
       "Beland bovenaan in Google",
     ],
@@ -48,7 +54,7 @@ const kernwaarden = [
 <section class="kernwaarden">
   <div class="wrap">
     <h2 class="kernwaarden-kop">
-      Een website van Storm<br />
+      Een website van Neqst<br />
       <span>onderscheidt zich op vier vlakken.</span>
     </h2>
     <div class="kernwaarden-grid">
@@ -70,7 +76,7 @@ const kernwaarden = [
   }
 
   .kernwaarden-kop span {
-    color: var(--dim);
+    color: var(--body);
   }
 
   .kernwaarden-grid {

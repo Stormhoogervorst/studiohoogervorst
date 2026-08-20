@@ -1,0 +1,111 @@
+{
+  "h1": "Website as a Service: je site als abonnement in plaats van als project",
+  "titel": "Website as a Service (WaaS) — uitgelegd | Storm Sites",
+  "beschrijving": "Wat is Website as a Service, hoe werkt het, en wanneer is het slimmer dan een site eenmalig laten bouwen? Een eerlijke uitleg, inclusief de nadelen.",
+  "intro": "Website as a Service betekent dat je niet duizenden euro's vooraf betaalt voor een project dat daarna stilstaat, maar een vast bedrag per maand voor een site die gebouwd, gehost en onderhouden wordt. Hieronder leggen we uit hoe dat werkt en wat het oplevert.",
+  "zoekterm": "website as a service",
+
+  "probleem": [
+    {
+      "kop": "De investering vooraf is moeilijk te verantwoorden",
+      "tekst": "Vier- of vijfduizend euro neerleggen voor iets waarvan je niet weet of het gaat werken, is voor de meeste MKB'ers een lastige beslissing. Vaak wordt het daarom uitgesteld — soms jarenlang."
+    },
+    {
+      "kop": "Na oplevering staat alles stil",
+      "tekst": "De site gaat live, de factuur is betaald, en daarna gebeurt er niets meer. Geen updates, geen nieuwe pagina's, geen optimalisatie. Binnen twee jaar loopt hij achter."
+    },
+    {
+      "kop": "Elke aanpassing wordt een offerte",
+      "tekst": "Een tekst wijzigen of een pagina toevoegen betekent mailen, wachten op een prijs, akkoord geven en weer wachten. Daardoor gebeurt het uiteindelijk niet."
+    },
+    {
+      "kop": "Onderhoud is nooit goed geregeld",
+      "tekst": "Hosting bij de ene partij, domein bij de andere, en niemand die verantwoordelijk is als er iets stukgaat. Meestal kom je daar pas achter op het moment dat de site offline is."
+    }
+  ],
+
+  "vergelijking_kop": "Eenmalig laten bouwen",
+  "vergelijking": [
+    { "wat": "Investering vooraf", "zij": "€3.000 tot €8.000", "wij": "€395 setup" },
+    { "wat": "Per maand", "zij": "Hosting en onderhoud apart", "wij": "€120, alles inbegrepen" },
+    { "wat": "Hosting en SSL", "zij": "Eigen abonnement", "wij": "Inbegrepen" },
+    { "wat": "Updates en beveiliging", "zij": "Jouw verantwoordelijkheid", "wij": "Inbegrepen" },
+    { "wat": "Kleine wijzigingen", "zij": "Per uur, na offerte", "wij": "30 minuten per maand inbegrepen" },
+    { "wat": "Na een jaar", "zij": "Zoals hij werd opgeleverd", "wij": "Maandelijks bijgewerkt" },
+    { "wat": "Rapportage", "zij": "Zelden", "wij": "Elke maand" },
+    { "wat": "Eigendom", "zij": "Direct van jou", "wij": "Afkoop voor €1.750" },
+    { "wat": "Doorlooptijd", "zij": "6 tot 12 weken", "wij": "2 tot 3 weken" },
+    { "wat": "Risico als het niet werkt", "zij": "Betaald en klaar", "wij": "Je kunt na 12 maanden stoppen" }
+  ],
+
+  "proces": [
+    {
+      "kop": "Kennismaking",
+      "tekst": "Twintig minuten bellen. We kijken naar je huidige situatie en rekenen voor of een abonnement of eenmalig kopen in jouw geval voordeliger uitpakt."
+    },
+    {
+      "kop": "Keyword onderzoek",
+      "tekst": "Waar zoeken jouw klanten op, en welke pagina's heb je daarvoor nodig? Dat bepaalt de structuur van de site, nog voor er iets ontworpen wordt."
+    },
+    {
+      "kop": "Bouwen",
+      "tekst": "Twee tot drie weken. Halverwege krijg je een preview om op te reageren. Jij levert teksten en beeld, wij regelen de rest inclusief domein en hosting."
+    },
+    {
+      "kop": "Doorlopend",
+      "tekst": "De site blijft van ons én blijft onderhouden. Elke maand een rapport met waar je staat, wat er beweegt, en wat de volgende stap zou zijn."
+    }
+  ],
+
+  "overnemen": [
+    "De bouw zelf — jij levert teksten, beeld en je logo aan",
+    "Hosting, domein en SSL-certificaat",
+    "Updates en beveiliging, doorlopend",
+    "Keyword onderzoek en de paginastructuur die daaruit volgt",
+    "De techniek: schema, sitemap, crawlerinstellingen, snelheid",
+    "30 minuten wijzigingen per maand, zonder offerte vooraf",
+    "Elke maand een rapport over posities en verkeer",
+    "Het bijhouden of je pagina's nog kloppen en waar je kansen laat liggen",
+    "Bereikbaarheid als er iets stukgaat — bellen mag gewoon"
+  ],
+
+  "case_intro": "Twee klanten waarbij de site binnen twee weken stond en er daarna daadwerkelijk werk uit kwam.",
+  "case_slugs": ["legal-talents", "paul-breuker-fotografie"],
+
+  "extra_kop": "Waarom dit model werkt",
+  "extra_tekst": "Bij een eenmalig project verdient de bouwer geld op het moment dat het project eindigt. Zijn belang is opleveren en doorgaan naar de volgende klant. Bij een abonnement verdient hij pas echt als je blijft, en dat kun je alleen als de site iets voor je doet. Die belangen liggen dan in elkaars verlengde, en dat is het beste argument voor dit model — beter dan het argument over de investering vooraf.",
+
+  "faqs": [
+    {
+      "vraag": "Wat is Website as a Service precies?",
+      "antwoord": "Een model waarbij je een website afneemt als dienst in plaats van als product. Je betaalt een vast bedrag per maand, en daarvoor wordt de site gebouwd, gehost, onderhouden en bijgewerkt. Vergelijk het met leasen in plaats van kopen: je hoeft niet vooraf te investeren en het onderhoud is niet jouw probleem."
+    },
+    {
+      "vraag": "Is het uiteindelijk niet duurder dan eenmalig kopen?",
+      "antwoord": "Op lange termijn wel, in absolute euro's. €395 plus 36 × €120 is €4.715 over drie jaar, tegenover €4.950 eenmalig — maar bij eenmalig komen hosting en onderhoud er nog bij. De echte vraag is of je die investering nu kunt en wilt doen, en of je iemand hebt die het daarna bijhoudt."
+    },
+    {
+      "vraag": "Van wie is de website?",
+      "antwoord": "Je domein, je teksten en je inhoud zijn altijd van jou. De code en het onderhoud blijven van ons zolang je abonnee bent. Stop je, dan koop je de site af voor €1.750 en verhuizen we hem naar je eigen hosting. Dat staat in de algemene voorwaarden, niet in een gesprek."
+    },
+    {
+      "vraag": "Wat gebeurt er als jullie ermee stoppen?",
+      "antwoord": "Terechte vraag, en te weinig gesteld. In onze voorwaarden staat dat de site na beëindiging dertig dagen beschikbaar blijft in een back-up en dat je de inhoud in een gangbaar formaat kunt opvragen. Praat je met een andere WaaS-aanbieder, stel deze vraag dan ook — en vraag om het antwoord op papier."
+    },
+    {
+      "vraag": "Waarom een minimumtermijn van twaalf maanden?",
+      "antwoord": "Omdat het bouwwerk vooraf gebeurt. Zonder minimumtermijn betaalt de klant die na drie maanden stopt niet wat de bouw heeft gekost, en draagt de klant die blijft dat verschil. De setup fee van €395 dekt een deel, de twaalf maanden de rest. Daarna is het maandelijks opzegbaar."
+    },
+    {
+      "vraag": "Wat als ik na een jaar meer nodig heb?",
+      "antwoord": "Dan breid je uit met een add-on: extra landingspagina's, lokale vindbaarheid, AI-zichtbaarheid, content of linkbuilding. Die kun je maandelijks starten en stoppen, zonder minimumtermijn. De basis blijft €120."
+    },
+    {
+      "vraag": "Kan ik overstappen vanaf mijn huidige bouwer?",
+      "antwoord": "Meestal wel. We kijken gratis naar je huidige site en zeggen eerlijk of overzetten zin heeft of dat opnieuw bouwen verstandiger is. Je domein en e-mail verhuizen we mee, zonder dat er post verdwijnt."
+    }
+  ],
+
+  "gerelateerd": ["squarespace-alternatief", "wix-alternatief"],
+  "gepubliceerd": true
+}

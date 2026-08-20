@@ -1,0 +1,112 @@
+{
+  "h1": "Wix alternatief: een site die niet elk jaar duurder wordt",
+  "titel": "Wix alternatief — vaste prijs, wij bouwen hem | Storm Sites",
+  "beschrijving": "Wix begint goedkoop en wordt bij verlenging duurder. Wij hebben één vaste prijs van €120 per maand, bouwen hem voor je en houden hem bij. Eerlijke vergelijking.",
+  "intro": "Bij Wix begin je goedkoop en kom je er na een jaar achter wat het echt kost: verlengprijzen die oplopen, apps die apart gerekend worden, en een site die je nergens mee naartoe kunt nemen. Bij ons is het €120 per maand, we bouwen hem voor je, en die prijs blijft staan.",
+  "zoekterm": "wix alternatief",
+
+  "probleem": [
+    {
+      "kop": "De verlengfactuur viel tegen",
+      "tekst": "Je rekende op het bedrag dat op de site stond. Die prijs gold alleen het eerste jaar. Bij verlenging kwam er een hoger bedrag binnen, plus de domeinverlenging die er ook niet bij zat."
+    },
+    {
+      "kop": "Je site is traag geworden",
+      "tekst": "Er zijn in de loop van de tijd apps bijgekomen: een formulier, een chatvenster, een boekingstool. Elk daarvan laadt zijn eigen code, en je bezoeker wacht."
+    },
+    {
+      "kop": "Je kunt er niet mee weg",
+      "tekst": "Wil je naar een ander platform, dan moet je opnieuw beginnen. Wix laat je de site niet exporteren. Alles wat je erin hebt gestopt blijft achter bij Wix."
+    },
+    {
+      "kop": "Je staat niet waar je zou moeten staan",
+      "tekst": "De site is klaar en ziet er prima uit, maar hij komt in Google niet omhoog. Er is nooit uitgezocht waar jouw klanten op zoeken en welke pagina's daarvoor nodig zijn."
+    }
+  ],
+
+  "vergelijking_kop": "Wix",
+  "vergelijking": [
+    { "wat": "Prijs per maand", "zij": "€14 tot €149, afhankelijk van het pakket", "wij": "€120, alle pakketten in één" },
+    { "wat": "Prijs na een jaar", "zij": "Verlengtarief kan hoger uitvallen", "wij": "Blijft €120" },
+    { "wat": "Wie bouwt hem", "zij": "Jij, in je eigen avonduren", "wij": "Wij, van begin tot eind" },
+    { "wat": "Wat het jou aan tijd kost", "zij": "20 tot 40 uur zelf bouwen", "wij": "Circa 2 uur aanleveren" },
+    { "wat": "Extra functies", "zij": "Apps, apart per maand gerekend", "wij": "Inbegrepen of op maat gebouwd" },
+    { "wat": "Domein na jaar één", "zij": "Verlenging apart gefactureerd", "wij": "Inbegrepen" },
+    { "wat": "Keyword onderzoek", "zij": "Doe je zelf, of niet", "wij": "Inbegrepen, vóór de eerste pagina" },
+    { "wat": "Snelheid", "zij": "Zakt met elke app die je toevoegt", "wij": "Statische HTML, geen appstapel" },
+    { "wat": "Over een jaar", "zij": "Zoals jij hem achterliet", "wij": "Maandelijks bijgewerkt en geoptimaliseerd" },
+    { "wat": "Verhuizen naar elders", "zij": "Niet mogelijk, opnieuw beginnen", "wij": "Afkoop €1.750, wij dragen over" },
+    { "wat": "Als er iets misgaat", "zij": "Supportchat", "wij": "Bellen, we nemen op" }
+  ],
+
+  "proces": [
+    {
+      "kop": "We kijken naar je Wix-site",
+      "tekst": "Twintig minuten. We meten laadtijd, kijken welke apps er meeladen en waar je staat in Google. Soms is de conclusie dat opknappen genoeg is; dan zeggen we dat."
+    },
+    {
+      "kop": "Keyword onderzoek",
+      "tekst": "Waar zoeken jouw klanten echt op, en wie staat daar nu? Daaruit volgt welke pagina's er moeten komen — dit is bij zelf bouwen bijna altijd de overgeslagen stap."
+    },
+    {
+      "kop": "Bouwen en verhuizen",
+      "tekst": "Twee tot drie weken. Je Wix-site is niet te exporteren, dus we bouwen opnieuw met jouw teksten en beeld als vertrekpunt. Domein en e-mail verhuizen we mee."
+    },
+    {
+      "kop": "Live en verder",
+      "tekst": "De site staat online, je zegt je Wix-abonnement op, en je krijgt elke maand een rapport met waar je staat en wat de volgende stap is."
+    }
+  ],
+
+  "overnemen": [
+    "Het bouwen zelf — jij levert alleen teksten, beeld en je logo aan",
+    "Keyword onderzoek: waar zoeken jouw klanten écht op",
+    "De structuur: welke pagina's er moeten komen en waarom",
+    "Het ontwerp, op maat — geen template en geen AI-generator",
+    "De teksten, geschreven op de zoekvraag van je klant",
+    "De techniek: schema, sitemap, crawlerinstellingen, snelheid",
+    "Domein en e-mail verhuizen zonder dat er post verdwijnt",
+    "Hosting, SSL en updates, doorlopend en zonder verlengverrassing",
+    "Elke maand een rapport, zodat je niet zelf in een dashboard hoeft te kijken"
+  ],
+
+  "case_intro": "Legal Talents had een site die er stond, maar waar niets uit kwam. Na de herbouw kwamen er in de eerste maand drie opdrachtgevers binnen.",
+  "case_slugs": ["legal-talents"],
+
+  "extra_kop": "Reken het even door over drie jaar",
+  "extra_tekst": "Wix Core kost €25 per maand, dus €900 over drie jaar. Daar komt bij: de domeinverlenging vanaf jaar twee, apps die je onderweg toevoegt en die per stuk een paar euro per maand kosten, en het verlengtarief dat hoger kan uitvallen dan de introprijs. Reken realistisch op €1.200 tot €1.500. Bij ons betaal je €395 setup plus 36 × €120, dus €4.715. Dat is meer, en dat blijven we zeggen. Zet er alleen twee dingen naast. Ten eerste je eigen tijd: veertig uur bouwen plus een paar uur per maand onderhoud is over drie jaar zo'n honderdvijftig uur. Ten tweede de opbrengst: als de site vijf aanvragen per maand oplevert in plaats van nul, is dat verschil in de meeste branches binnen een kwartaal terugverdiend. De vraag is niet wat het kost, maar wat het doet.",
+
+  "faqs": [
+    {
+      "vraag": "Kunnen jullie mijn Wix-site overnemen?",
+      "antwoord": "Overnemen niet, vervangen wel. Wix laat je de site niet exporteren — dat is een gesloten systeem. We bouwen hem opnieuw, met jouw bestaande teksten en beeld als vertrekpunt. Je hoeft niets opnieuw aan te leveren wat er al staat."
+    },
+    {
+      "vraag": "Wordt jullie prijs ook duurder bij verlenging?",
+      "antwoord": "Nee. €120 per maand blijft €120. We indexeren jaarlijks op basis van de CPI en dat staat in de voorwaarden, maar er is geen introtarief dat na een jaar omhoog schiet. Wat je bij de start betaalt, betaal je in jaar drie ook nog ongeveer."
+    },
+    {
+      "vraag": "Wat gebeurt er met mijn domein en e-mail?",
+      "antwoord": "Je domein blijft van jou en verhuist mee. Loopt je e-mail via Wix of via Google Workspace, dan zetten we die koppeling over voordat de nieuwe site live gaat. Er verdwijnt geen mail."
+    },
+    {
+      "vraag": "Is Wix slecht voor SEO?",
+      "antwoord": "Niet inherent — de technische basis is de laatste jaren behoorlijk verbeterd. Waar het misgaat is dat je zelf moet bedenken welke pagina's er moeten komen en waar je klanten op zoeken, en dat elke app die je toevoegt je site trager maakt. Dat is geen platformfout, maar het effect is wel dat de meeste Wix-sites blijven steken."
+    },
+    {
+      "vraag": "Ik heb net verlengd voor een jaar. Moet ik wachten?",
+      "antwoord": "Nee. Dat geld is uitgegeven, ongeacht wat je nu doet. De vraag is of het lopende jaar iets gaat opleveren. Doet je site nu niets, dan is nog twaalf maanden wachten duurder dan overstappen."
+    },
+    {
+      "vraag": "Wat als ik later toch zelf verder wil?",
+      "antwoord": "Dan koop je de site af voor €1.750 en is hij van jou, inclusief overdracht naar je eigen hosting. Dat is precies wat bij Wix niet kan. Na de eerste twaalf maanden zit je nergens aan vast."
+    },
+    {
+      "vraag": "Wix heeft nu een AI die sites bouwt. Waarom jullie dan nog?",
+      "antwoord": "Een AI-generator maakt snel iets dat er acceptabel uitziet. Wat hij niet doet is uitzoeken waar jouw klanten op zoeken, welke pagina's je daarvoor nodig hebt en hoe je die schrijft. Dat is het deel dat bepaalt of er iemand op je site komt, en dat is precies waar wij zitten."
+    }
+  ],
+
+  "gerelateerd": ["squarespace-alternatief", "wat-kost-een-website"],
+  "gepubliceerd": true
+}

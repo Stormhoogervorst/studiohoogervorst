@@ -11,6 +11,21 @@ interface Props {
 
 const { faqs, tint = "licht" } = Astro.props;
 
+function faqLinks(tekst: string, vervanging: string) {
+  return tekst.replace(
+    /\[([^\]]+)\]\((\/[^)]+|https?:\/\/[^)]+)\)/g,
+    vervanging,
+  );
+}
+
+function alsPlatteTekst(tekst: string) {
+  return faqLinks(tekst, "$1");
+}
+
+function alsHtml(tekst: string) {
+  return faqLinks(tekst, '<a href="$2">$1</a>');
+}
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -19,7 +34,7 @@ const schema = {
     name: faq.vraag,
     acceptedAnswer: {
       "@type": "Answer",
-      text: faq.antwoord,
+      text: alsPlatteTekst(faq.antwoord),
     },
   })),
 };
@@ -32,7 +47,7 @@ const schema = {
     faqs.map((faq, i) => (
       <details class="item" name="faq" {...(i === 0 ? { open: true } : {})}>
         <summary>{faq.vraag}</summary>
-        <p>{faq.antwoord}</p>
+        <p set:html={alsHtml(faq.antwoord)} />
       </details>
     ))
   }
@@ -108,5 +123,16 @@ const schema = {
     padding: 0 40px 22px 0;
     color: var(--faq-antwoord);
     line-height: 1.6;
+  }
+
+  .item p :global(a) {
+    color: inherit;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .list--navy .item p :global(a) {
+    color: var(--lime);
   }
 </style>

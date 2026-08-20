@@ -1,10 +1,10 @@
 ---
 titel: "Algemene voorwaarden"
-beschrijving: "De algemene voorwaarden van Storm, handelsnaam van Hoogervorst Works, voor het websiteabonnement en aanvullende diensten."
+beschrijving: "De algemene voorwaarden van Neqst, handelsnaam van Hoogervorst Works, voor het websiteabonnement en aanvullende diensten."
 bijgewerkt: 2026-08-20
 ---
 
-**Storm**, handelsnaam van Hoogervorst Works
+**Neqst**, handelsnaam van Hoogervorst Works
 Hugo de Grootstraat 30, 6522 DE Nijmegen
 KvK 98269429 · Btw NL004668710B46 · hoogervorstworks@gmail.com
 
@@ -14,12 +14,12 @@ Versie van 20 augustus 2026.
 
 ## 1. Definities
 
-**Storm** — Hoogervorst Works, handelend onder de naam Storm,
+**Neqst** — Hoogervorst Works, handelend onder de naam Neqst,
 gevestigd te Nijmegen.
 
-**Opdrachtgever** — de partij die met Storm een overeenkomst sluit.
+**Opdrachtgever** — de partij die met Neqst een overeenkomst sluit.
 
-**Abonnement** — de doorlopende dienst waarbij Storm een website
+**Abonnement** — de doorlopende dienst waarbij Neqst een website
 ontwikkelt, host en onderhoudt tegen een maandelijkse vergoeding.
 
 **Add-on** — een aanvullende dienst die naast het abonnement wordt afgenomen,
@@ -27,7 +27,7 @@ zoals extra landingspagina's, lokale vindbaarheid, AI-zichtbaarheid, content
 of linkbuilding.
 
 **Website** — het geheel van vormgeving, opmaak, code en configuratie dat
-Storm voor Opdrachtgever ontwikkelt en beheert.
+Neqst voor Opdrachtgever ontwikkelt en beheert.
 
 **Content** — teksten, afbeeldingen, video, logo's en overige materialen die
 Opdrachtgever aanlevert of die in opdracht van Opdrachtgever zijn gemaakt.
@@ -37,10 +37,10 @@ Opdrachtgever aanlevert of die in opdracht van Opdrachtgever zijn gemaakt.
 ## 2. Toepasselijkheid
 
 2.1 Deze voorwaarden gelden voor elk aanbod, elke offerte en elke overeenkomst
-tussen Storm en Opdrachtgever.
+tussen Neqst en Opdrachtgever.
 
 2.2 Algemene voorwaarden van Opdrachtgever zijn niet van toepassing, tenzij
-Storm die vooraf schriftelijk heeft aanvaard.
+Neqst die vooraf schriftelijk heeft aanvaard.
 
 2.3 Wijkt een bepaling in de overeenkomst af van deze voorwaarden, dan geldt
 wat in de overeenkomst staat.
@@ -57,10 +57,10 @@ bepaling die het doel zoveel mogelijk benadert.
 dagen, tenzij anders vermeld.
 
 3.2 De overeenkomst komt tot stand op het moment dat Opdrachtgever het aanbod
-schriftelijk of per e-mail aanvaardt, of op het moment dat Storm op
+schriftelijk of per e-mail aanvaardt, of op het moment dat Neqst op
 verzoek van Opdrachtgever met de uitvoering begint.
 
-3.3 Kennelijke vergissingen en verschrijvingen in een aanbod binden Storm
+3.3 Kennelijke vergissingen en verschrijvingen in een aanbod binden Neqst
 Sites niet.
 
 ---
@@ -100,26 +100,26 @@ gerestitueerd.
 plaats binnen veertien dagen na factuurdatum, of via automatische incasso
 indien overeengekomen.
 
-5.4 Storm mag de tarieven jaarlijks per 1 januari indexeren op basis van
+5.4 Neqst mag de tarieven jaarlijks per 1 januari indexeren op basis van
 de consumentenprijsindex van het CBS. Overige tariefwijzigingen worden
-minimaal twee maanden vooraf aangekondigd. Verhoogt Storm de tarieven
+minimaal twee maanden vooraf aangekondigd. Verhoogt Neqst de tarieven
 met meer dan de indexatie, dan mag Opdrachtgever de overeenkomst tegen de
 ingangsdatum van de verhoging opzeggen.
 
-5.5 Bij niet-tijdige betaling is Opdrachtgever van rechtswege in verzuim. Storm
+5.5 Bij niet-tijdige betaling is Opdrachtgever van rechtswege in verzuim. Neqst
 Sites mag dan de wettelijke handelsrente en buitengerechtelijke incassokosten
 in rekening brengen conform de Wet normering buitengerechtelijke
 incassokosten.
 
 5.6 Blijft betaling na een schriftelijke aanmaning en een termijn van veertien
-dagen uit, dan mag Storm de dienstverlening opschorten. Opschorting
+dagen uit, dan mag Neqst de dienstverlening opschorten. Opschorting
 ontslaat Opdrachtgever niet van de betalingsverplichting.
 
 ---
 
 ## 6. Uitvoering en oplevering
 
-6.1 Storm voert de opdracht naar beste inzicht en vermogen uit. De
+6.1 Neqst voert de opdracht naar beste inzicht en vermogen uit. De
 verplichting betreft een inspanningsverplichting, geen resultaatsverplichting.
 
 6.2 Genoemde termijnen zijn indicatief en gelden niet als fatale termijnen.
@@ -139,17 +139,17 @@ te melden. Daarna geldt de Website als geaccepteerd, onverminderd artikel 8.
 ## 7. Verplichtingen van Opdrachtgever
 
 7.1 Opdrachtgever levert tijdig alle Content, gegevens en toegangen aan die
-Storm redelijkerwijs nodig heeft.
+Neqst redelijkerwijs nodig heeft.
 
 7.2 Opdrachtgever staat ervoor in dat de aangeleverde Content geen inbreuk
 maakt op rechten van derden en niet in strijd is met de wet. Opdrachtgever
-vrijwaart Storm voor aanspraken van derden op dit punt.
+vrijwaart Neqst voor aanspraken van derden op dit punt.
 
 7.3 Opdrachtgever gebruikt de Website niet voor onrechtmatige doeleinden,
 spam, of activiteiten die de infrastructuur onevenredig belasten.
 
 7.4 Vertraging door het niet, niet tijdig of onvolledig aanleveren van Content
-komt voor rekening van Opdrachtgever. Storm mag de daaruit voortvloeiende
+komt voor rekening van Opdrachtgever. Neqst mag de daaruit voortvloeiende
 extra uren in rekening brengen.
 
 ---
@@ -170,18 +170,18 @@ en tegen het dan geldende uurtarief gefactureerd, of via een add-on afgenomen.
 afbeeldingen en vergelijkbare aanpassingen. Nieuwe pagina's, nieuwe functies,
 herontwerp en koppelingen met externe systemen vallen hier niet onder.
 
-8.5 Storm streeft naar een beschikbaarheid van 99% op jaarbasis, maar
+8.5 Neqst streeft naar een beschikbaarheid van 99% op jaarbasis, maar
 garandeert geen ononderbroken beschikbaarheid. Gepland onderhoud wordt waar
 mogelijk vooraf aangekondigd en buiten kantooruren uitgevoerd.
 
-8.6 Storm is niet verantwoordelijk voor storingen bij hostingpartijen,
+8.6 Neqst is niet verantwoordelijk voor storingen bij hostingpartijen,
 domeinregistrars of andere toeleveranciers.
 
 ---
 
 ## 9. Eigendom en intellectuele eigendomsrechten
 
-9.1 De Content blijft eigendom van Opdrachtgever. Opdrachtgever verleent Storm
+9.1 De Content blijft eigendom van Opdrachtgever. Opdrachtgever verleent Neqst
 Sites een gebruiksrecht op de Content voor zover nodig om de dienst uit te
 voeren.
 
@@ -189,49 +189,49 @@ voeren.
 overeengekomen.
 
 9.3 De intellectuele eigendomsrechten op de Website — waaronder het ontwerp,
-de code, de opbouw en de door Storm ontwikkelde componenten — berusten
-bij Storm.
+de code, de opbouw en de door Neqst ontwikkelde componenten — berusten
+bij Neqst.
 
 9.4 Gedurende de looptijd van het abonnement heeft Opdrachtgever een
 niet-overdraagbaar, niet-exclusief gebruiksrecht op de Website.
 
 9.5 Opdrachtgever kan de Website na de minimale looptijd van twaalf maanden
 afkopen voor €1.750. Na volledige betaling van de afkoopsom en alle openstaande
-facturen draagt Storm de rechten op het specifieke ontwerp en de
+facturen draagt Neqst de rechten op het specifieke ontwerp en de
 specifieke implementatie over aan Opdrachtgever, en verleent zij redelijke
 medewerking aan de overdracht naar een andere hostingomgeving.
 
 9.6 De afkoop ziet niet op generieke componenten, bibliotheken en het
-onderliggende raamwerk die Storm bij meerdere opdrachtgevers gebruikt.
+onderliggende raamwerk die Neqst bij meerdere opdrachtgevers gebruikt.
 Daarop verkrijgt Opdrachtgever een eeuwigdurend gebruiksrecht voor de eigen
 Website.
 
-9.7 Storm mag de Website gebruiken als referentie op de eigen website en
+9.7 Neqst mag de Website gebruiken als referentie op de eigen website en
 in uitingen, en mag daarbij de naam van Opdrachtgever noemen. Opdrachtgever
 kan hiertegen schriftelijk bezwaar maken. Voor het publiceren van
-resultaatcijfers vraagt Storm altijd vooraf expliciete toestemming.
+resultaatcijfers vraagt Neqst altijd vooraf expliciete toestemming.
 
 ---
 
 ## 10. Aansprakelijkheid
 
-10.1 Storm is uitsluitend aansprakelijk voor directe schade die het
+10.1 Neqst is uitsluitend aansprakelijk voor directe schade die het
 gevolg is van een toerekenbare tekortkoming.
 
 10.2 De aansprakelijkheid is beperkt tot het bedrag dat Opdrachtgever in de
-twaalf maanden voorafgaand aan de schadeveroorzakende gebeurtenis aan Storm
+twaalf maanden voorafgaand aan de schadeveroorzakende gebeurtenis aan Neqst
 Sites heeft betaald, met een maximum van € 5.000 per gebeurtenis en per jaar.
 
-10.3 Storm is niet aansprakelijk voor indirecte schade, waaronder
+10.3 Neqst is niet aansprakelijk voor indirecte schade, waaronder
 gederfde winst, gemiste omzet, verlies van gegevens, reputatieschade en
 gevolgschade.
 
-10.4 Storm geeft geen garanties over posities in zoekmachines, over
+10.4 Neqst geeft geen garanties over posities in zoekmachines, over
 vermelding door AI-modellen, over bezoekersaantallen of over commerciële
 resultaten. Deze zijn afhankelijk van factoren buiten haar invloed.
 
 10.5 De beperkingen in dit artikel gelden niet bij opzet of bewuste
-roekeloosheid van Storm.
+roekeloosheid van Neqst.
 
 10.6 Aanspraken vervallen twaalf maanden nadat Opdrachtgever bekend werd of
 redelijkerwijs bekend kon zijn met de schade.
@@ -240,7 +240,7 @@ redelijkerwijs bekend kon zijn met de schade.
 
 ## 11. Overmacht
 
-11.1 Storm is niet gehouden tot nakoming als zij daartoe verhinderd is
+11.1 Neqst is niet gehouden tot nakoming als zij daartoe verhinderd is
 door overmacht. Daaronder valt in elk geval: storingen bij toeleveranciers,
 uitval van internetverbindingen, stroomuitval, cyberaanvallen, overheids-
 maatregelen en langdurige ziekte.
@@ -252,12 +252,12 @@ overeenkomst schriftelijk ontbinden zonder schadeplichtig te zijn.
 
 ## 12. Beëindiging en gevolgen
 
-12.1 Storm mag de overeenkomst met onmiddellijke ingang beëindigen als
+12.1 Neqst mag de overeenkomst met onmiddellijke ingang beëindigen als
 Opdrachtgever in staat van faillissement verkeert, surseance is verleend, of
 ondanks aanmaning zijn verplichtingen niet nakomt.
 
 12.2 Bij beëindiging blijft de Website nog dertig dagen beschikbaar in een
-offline back-up. Op verzoek levert Storm binnen die termijn de Content
+offline back-up. Op verzoek levert Neqst binnen die termijn de Content
 in een gangbaar formaat aan. Daarna mogen de bestanden worden verwijderd.
 
 12.3 Maakt Opdrachtgever geen gebruik van de afkoopregeling, dan wordt de
@@ -270,10 +270,10 @@ Website na beëindiging offline gehaald.
 13.1 Partijen behandelen vertrouwelijke informatie die zij van elkaar
 ontvangen als zodanig.
 
-13.2 Verwerkt Storm in opdracht van Opdrachtgever persoonsgegevens, dan
+13.2 Verwerkt Neqst in opdracht van Opdrachtgever persoonsgegevens, dan
 sluiten partijen een verwerkersovereenkomst conform de AVG.
 
-13.3 Op de verwerking van persoonsgegevens door Storm zelf is het
+13.3 Op de verwerking van persoonsgegevens door Neqst zelf is het
 privacybeleid van toepassing, te vinden op stormsites.nl/privacy/.
 
 ---
@@ -281,7 +281,7 @@ privacybeleid van toepassing, te vinden op stormsites.nl/privacy/.
 ## 14. Klachten en geschillen
 
 14.1 Klachten meldt Opdrachtgever binnen veertien dagen na ontdekking
-schriftelijk, met een duidelijke omschrijving. Storm reageert binnen
+schriftelijk, met een duidelijke omschrijving. Neqst reageert binnen
 veertien dagen.
 
 14.2 Op alle overeenkomsten is Nederlands recht van toepassing.
@@ -293,7 +293,7 @@ arrondissement Gelderland, tenzij dwingend recht anders bepaalt.
 
 ## 15. Wijziging van de voorwaarden
 
-15.1 Storm mag deze voorwaarden wijzigen. Wijzigingen worden minimaal
+15.1 Neqst mag deze voorwaarden wijzigen. Wijzigingen worden minimaal
 dertig dagen voor inwerkingtreding aangekondigd.
 
 15.2 Zijn de wijzigingen in het nadeel van Opdrachtgever, dan mag deze de

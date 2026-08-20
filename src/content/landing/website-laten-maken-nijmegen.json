@@ -4,6 +4,7 @@
   "beschrijving": "Een professionele website voor je Nijmeegse bedrijf. Binnen twee weken live, vanaf €120 per maand. Gebouwd om gevonden te worden in Google.",
   "intro": "Wij zitten in Nijmegen en bouwen websites voor bedrijven die hier klanten zoeken. Binnen twee weken live, vanaf €120 per maand, inclusief hosting en onderhoud. Twee van onze klanten zitten om de hoek.",
   "zoekterm": "website laten maken nijmegen",
+  "stad": "Nijmegen",
 
   "probleem": [
     {
@@ -53,12 +54,13 @@
   "case_intro": "Recente projecten in Nijmegen",
   "case_slugs": ["legal-talents", "paul-breuker-fotografie"],
 
-  "lokale_context": "Nijmegen is klein genoeg dat lokale zoektermen nog te winnen zijn. Voor de meeste branches staan er hier drie tot acht bedrijven op de eerste pagina, en een flink deel daarvan draait op een site die al jaren niet is aangeraakt. Dat is precies waarom lokaal sneller resultaat oplevert dan landelijk: je concurreert met een handvol partijen in plaats van met honderden. Wie hier zijn zaken op orde heeft, staat binnen een half jaar bovenaan.",
+  "extra_kop": "Waarom lokaal hier sneller werkt",
+  "extra_tekst": "Nijmegen is klein genoeg dat lokale zoektermen nog te winnen zijn. Voor de meeste branches staan er hier drie tot acht bedrijven op de eerste pagina, en een flink deel daarvan draait op een site die al jaren niet is aangeraakt. Dat is precies waarom lokaal sneller resultaat oplevert dan landelijk: je concurreert met een handvol partijen in plaats van met honderden. Wie hier zijn zaken op orde heeft, staat binnen een half jaar bovenaan.",
 
   "faqs": [
     {
       "vraag": "Werken jullie alleen voor Nijmeegse bedrijven?",
-      "antwoord": "Nee. We zitten in Nijmegen en hebben hier klanten, maar we werken ook in Arnhem en Utrecht. Het meeste gaat op afstand. Voor het bouwen maakt locatie weinig uit, voor lokale vindbaarheid des te meer."
+      "antwoord": "Nee. We zitten in Nijmegen en hebben hier klanten, maar we werken ook in [Arnhem](/website-laten-maken-arnhem/) en Utrecht. Het meeste gaat op afstand. Voor het bouwen maakt locatie weinig uit, voor lokale vindbaarheid des te meer."
     },
     {
       "vraag": "Wat kost het en zit ik ergens aan vast?",
@@ -78,6 +80,6 @@
     }
   ],
 
-  "gerelateerd": ["website-laten-maken-arnhem", "wat-kost-een-website"],
+  "gerelateerd": ["website-laten-maken-arnhem", "squarespace-alternatief"],
   "gepubliceerd": true
 }

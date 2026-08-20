@@ -1,4 +1,4 @@
-# Storm — projectspec
+# Neqst — projectspec
 
 Bron van waarheid voor deze site. Lees dit voordat je code schrijft.
 Wijk hier niet van af zonder overleg.
@@ -7,7 +7,7 @@ Wijk hier niet van af zonder overleg.
 
 ## Het bedrijf
 
-Storm bouwt websites op abonnementsbasis (vanaf €120/mnd) die
+Neqst bouwt websites op abonnementsbasis (vanaf €120/mnd) die
 technisch gebouwd zijn om gevonden te worden — door Google én door AI-modellen.
 Add-ons breiden dat fundament uit naar actieve groei.
 
@@ -232,7 +232,7 @@ Stadspagina's (`/website-laten-maken-nijmegen/`, …). Layout:
 4  vier vlakken         KernwaardenSectie
 5  aanpak               wit, proces uit data
 6  cases                max 2, knop Meer projecten → /#cases
-7  vergelijking         navy, Storm-kolom uitgelicht
+7  vergelijking         navy, Neqst-kolom uitgelicht
 8  wanneer niet         optioneel
 9  prijzen              PrijzenSectie
 10 faq                  navy, homepage-opmaak

@@ -43,6 +43,8 @@ const {
   beschrijving,
   intro,
   zoekterm,
+  stad,
+  vindbaarheid_keyword,
   probleem,
   vergelijking,
   vergelijking_kop,
@@ -51,11 +53,47 @@ const {
   proces,
   case_intro,
   case_slugs,
+  extra_kop,
+  extra_tekst,
+  overnemen,
   faqs,
 } = entry.data;
 
+const isWaas = entry.id === "website-as-a-service";
+const primaireCta = isWaas
+  ? { href: "/abonnement/", label: "Bekijk de prijzen" }
+  : { href: "/contact/", label: "Stuur je site, krijg een eerlijke inschatting" };
+const secundaireCta = isWaas
+  ? { href: "/contact/", label: "Plan een gesprek" }
+  : { href: "/abonnement/", label: "Bekijk de prijzen" };
+
 const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
 const pageUrl = new URL(Astro.url.pathname, site).href;
+
+const address = {
+  "@type": "PostalAddress",
+  streetAddress: "Hugo de Grootstraat 30",
+  postalCode: "6522 DE",
+  addressLocality: "Nijmegen",
+  addressRegion: "Gelderland",
+  addressCountry: "NL",
+};
+
+const areaServed = stad
+  ? { "@type": "City", name: stad }
+  : "NL";
+
+const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Neqst",
+  url: site.origin,
+  description: beschrijving,
+  email: "hoogervorstworks@gmail.com",
+  telephone: "+31685680998",
+  address,
+  areaServed,
+};
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -66,10 +104,11 @@ const serviceSchema = {
   url: pageUrl,
   provider: {
     "@type": "ProfessionalService",
-    name: "Storm",
-    url: "https://studiohoogervorst.nl",
+    name: "Neqst",
+    url: site.origin,
+    address,
   },
-  areaServed: "NL",
+  areaServed,
   offers: {
     "@type": "Offer",
     price: 120,
@@ -100,6 +139,7 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout title={titel} description={beschrijving}>
+  <script type="application/ld+json" set:html={JSON.stringify(professionalServiceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <SiteHeader />
@@ -110,8 +150,8 @@ const breadcrumbSchema = {
         <h1>{h1}</h1>
         <p class="sub">{intro}</p>
         <div class="actions">
-          <a class="btn" href="/contact/">Stuur je site, krijg een eerlijke inschatting</a>
-          <a class="btn btn-outline" href="/abonnement/">Bekijk de prijzen</a>
+          <a class="btn" href={primaireCta.href}>{primaireCta.label}</a>
+          <a class="btn btn-outline" href={secundaireCta.href}>{secundaireCta.label}</a>
         </div>
         <div class="hero-rating">
           <TrustRating />
@@ -123,9 +163,13 @@ const breadcrumbSchema = {
       <div class="wrap">
         <h2>Herken je dit?</h2>
         <p class="probleem-lede">
-          Drie dingen die we bijna elke week horen van bedrijven die contact opnemen.
+          {
+            probleem.length === 4
+              ? "Vier dingen die we bijna elke week horen van bedrijven die contact opnemen."
+              : "Drie dingen die we bijna elke week horen van bedrijven die contact opnemen."
+          }
         </p>
-        <ol class="probleem-grid">
+        <ol class:list={["probleem-grid", probleem.length === 4 && "probleem-grid--4"]}>
           {
             probleem.map((item, i) => (
               <li>
@@ -144,7 +188,7 @@ const breadcrumbSchema = {
 
     <BewijsSectie />
 
-    <KernwaardenSectie />
+    <KernwaardenSectie vindbaarheidPunt={vindbaarheid_keyword} />
 
     <section class="aanpak">
       <div class="wrap">
@@ -165,6 +209,25 @@ const breadcrumbSchema = {
       </div>
     </section>
 
+    {
+      overnemen && !isWaas && (
+        <section class="overnemen">
+          <div class="overnemen-inner">
+            <h2>Wat wij van je overnemen.</h2>
+            <p class="overnemen-lede">
+              Je levert je teksten, je beeld en je logo aan. De rest is niet meer jouw
+              probleem.
+            </p>
+            <ul class="overnemen-lijst">
+              {overnemen.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
     <UitgelichteProjecten
       limiet={2}
       ids={case_slugs}
@@ -172,6 +235,53 @@ const breadcrumbSchema = {
       lede={case_intro}
       compactTop
     />
+
+    {
+      overnemen && isWaas && (
+        <section class="overnemen">
+          <div class="overnemen-inner">
+            <h2>Wat wij van je overnemen.</h2>
+            <p class="overnemen-lede">
+              Je levert je teksten, je beeld en je logo aan. De rest is niet meer jouw
+              probleem.
+            </p>
+            <ul class="overnemen-lijst">
+              {overnemen.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      extra_kop && extra_tekst && isWaas ? (
+        <section class="waas-uitleg">
+          <div class="waas-uitleg-inner">
+            <p class="waas-uitleg-label">Het eerlijke verhaal</p>
+            <div class="waas-uitleg-grid">
+              <h2>{extra_kop}</h2>
+              <div class="waas-uitleg-copy">
+                <p>{extra_tekst}</p>
+                <p class="waas-uitleg-kern">
+                  <span>De kern</span>
+                  Wij verdienen pas als jij blijft, en dat doe je alleen als de site
+                  iets oplevert.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : extra_kop && extra_tekst ? (
+        <section class="extra">
+          <div class="extra-inner">
+            <h2>{extra_kop}</h2>
+            <p>{extra_tekst}</p>
+          </div>
+        </section>
+      ) : null
+    }
 
     <VergelijkingSectie kop={vergelijking_kop} rijen={vergelijking} />
 
@@ -186,7 +296,7 @@ const breadcrumbSchema = {
       )
     }
 
-    <PrijzenSectie flushTop />
+    {isWaas ? null : <PrijzenSectie flushTop />}
 
     <section class="faq" id="faq">
       <div class="wrap">
@@ -210,6 +320,13 @@ const breadcrumbSchema = {
       <div class="wrap close-inner">
         <h2>Twintig minuten. Daarna weet je het.</h2>
         <a class="btn" href="/contact/">Plan een gesprek</a>
+        {
+          isWaas && (
+            <p class="close-prijzen">
+              <a href="/abonnement/">Alle prijzen en add-ons staan op de abonnementspagina →</a>
+            </p>
+          )
+        }
         {
           gerelateerd.length > 0 && (
             <nav class="related" aria-label="Gerelateerd">
@@ -237,6 +354,10 @@ const breadcrumbSchema = {
     max-width: 780px;
     margin-inline: auto;
     text-align: center;
+  }
+
+  .hero-inner h1 {
+    overflow-wrap: break-word;
   }
 
   .sub {
@@ -280,6 +401,10 @@ const breadcrumbSchema = {
     list-style: none;
   }
 
+  .probleem-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .probleem-grid li {
     min-width: 0;
     padding-top: 24px;
@@ -291,8 +416,7 @@ const breadcrumbSchema = {
   }
 
   .probleem-grid .nr {
-    color: var(--ink);
-    opacity: 0.45;
+    color: var(--body);
     font-size: 0.78rem;
     letter-spacing: 0.08em;
   }
@@ -301,6 +425,7 @@ const breadcrumbSchema = {
     margin: 10px 0 12px;
     color: var(--ink);
     font-size: 1.1rem;
+    overflow-wrap: break-word;
   }
 
   .probleem-grid p {
@@ -332,6 +457,147 @@ const breadcrumbSchema = {
     color: var(--body);
     font-size: 1.05rem;
     line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+
+  .extra {
+    padding: 90px 24px;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .extra-inner {
+    max-width: var(--max);
+    margin-inline: auto;
+  }
+
+  .extra p {
+    max-width: 68ch;
+    margin-top: 18px;
+    color: var(--body);
+    font-size: 1.02rem;
+    line-height: 1.65;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+
+  .waas-uitleg {
+    padding: var(--section) 24px;
+    background: var(--deep);
+    color: #fff;
+  }
+
+  .waas-uitleg-inner {
+    max-width: var(--max);
+    margin-inline: auto;
+  }
+
+  .waas-uitleg-label {
+    display: inline-flex;
+    margin: 0 0 24px;
+    padding: 5px 12px;
+    border: 1px solid var(--deep-line);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .waas-uitleg-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 48px 72px;
+    align-items: start;
+  }
+
+  .waas-uitleg h2 {
+    max-width: 10em;
+    color: #fff;
+  }
+
+  .waas-uitleg-copy {
+    padding: 32px 36px;
+    border: 1px solid var(--deep-line);
+    border-radius: 20px;
+    background: var(--deep-card);
+  }
+
+  .waas-uitleg-copy > p:first-child {
+    max-width: none;
+    margin-top: 0;
+    color: #b6c8d2;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .waas-uitleg-kern {
+    max-width: none;
+    margin-top: 28px;
+    padding: 20px 0 0 22px;
+    border-top: 1px solid var(--deep-line);
+    border-left: 3px solid var(--lime);
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  .waas-uitleg-kern span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--lime);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .overnemen {
+    padding: 96px 24px;
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .overnemen-inner {
+    max-width: var(--max);
+    margin-inline: auto;
+  }
+
+  .overnemen-lede {
+    max-width: 56ch;
+    margin-top: 16px;
+    margin-bottom: 40px;
+    color: var(--ink);
+    opacity: 0.7;
+  }
+
+  .overnemen-lijst {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    list-style: none;
+  }
+
+  .overnemen-lijst li {
+    position: relative;
+    min-width: 0;
+    padding-left: 26px;
+    margin-bottom: 14px;
+    color: var(--ink);
+    opacity: 0.85;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+
+  .overnemen-lijst li::before {
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+    content: "✓";
   }
 
   .aanpak {
@@ -364,8 +630,7 @@ const breadcrumbSchema = {
   }
 
   .proces-grid .nr {
-    color: var(--ink);
-    opacity: 0.45;
+    color: var(--body);
     font-size: 0.8rem;
     letter-spacing: 0.04em;
   }
@@ -435,6 +700,25 @@ const breadcrumbSchema = {
     margin-top: 28px;
   }
 
+  .close-prijzen {
+    margin-top: 16px;
+  }
+
+  .close-prijzen a {
+    display: inline-block;
+    max-width: 100%;
+    color: var(--lime);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    overflow-wrap: break-word;
+  }
+
+  .close-prijzen a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   .related {
     display: flex;
     flex-wrap: wrap;
@@ -444,10 +728,12 @@ const breadcrumbSchema = {
   }
 
   .related a {
+    max-width: 100%;
     color: var(--lime);
     font-size: 0.95rem;
     font-weight: 500;
     text-decoration: none;
+    overflow-wrap: break-word;
   }
 
   .related a:hover {
@@ -460,7 +746,8 @@ const breadcrumbSchema = {
       padding: 70px 0;
     }
 
-    .probleem-grid {
+    .probleem-grid,
+    .probleem-grid--4 {
       grid-template-columns: 1fr;
     }
   }
@@ -477,11 +764,31 @@ const breadcrumbSchema = {
     .proces-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .waas-uitleg-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .waas-uitleg h2 {
+      max-width: 14em;
+    }
   }
 
   @media (max-width: 699px) {
     .proces-grid {
       grid-template-columns: 1fr;
+    }
+
+    .overnemen-lijst {
+      grid-template-columns: 1fr;
+    }
+
+    .waas-uitleg {
+      padding-inline: 24px;
+    }
+
+    .waas-uitleg-copy {
+      padding: 26px 24px;
     }
   }
 </style>

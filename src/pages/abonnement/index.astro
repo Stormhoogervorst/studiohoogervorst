@@ -89,7 +89,7 @@ const serviceSchema = {
   url: pageUrl,
   provider: {
     "@type": "ProfessionalService",
-    name: "Storm",
+    name: "Neqst",
     url: "https://studiohoogervorst.nl",
   },
   areaServed: "NL",
@@ -123,7 +123,7 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Website abonnement vanaf €120 per maand | Storm"
+  title="Website abonnement vanaf €120 per maand | Neqst"
   description="Een professionele website zonder investering vooraf. €120 per maand inclusief hosting, onderhoud en updates. Binnen twee weken live. Alle prijzen en voorwaarden staan hieronder."
 >
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -148,6 +148,10 @@ const breadcrumbSchema = {
         </p>
       </div>
     </section>
+
+    <p class="waas-bridge">
+      <a href="/website-as-a-service/">Nog niet bekend met het WaaS-model? Lees eerst hoe het werkt →</a>
+    </p>
 
     <section class="included">
       <div class="wrap">
@@ -318,6 +322,30 @@ const breadcrumbSchema = {
     margin-top: 36px;
     color: var(--dim);
     font-size: 0.875rem;
+  }
+
+  .waas-bridge {
+    margin: 0;
+    padding: 16px 24px;
+    background: var(--navy);
+    color: var(--dim);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .waas-bridge a {
+    display: inline-block;
+    max-width: 100%;
+    color: var(--lime);
+    text-decoration: none;
+    overflow-wrap: break-word;
+  }
+
+  .waas-bridge a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   .prices {

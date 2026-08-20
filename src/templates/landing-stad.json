@@ -4,6 +4,8 @@
   "beschrijving": "Een professionele website voor je bedrijf in {{STAD}}. Binnen twee weken live, vanaf €120 per maand. Gebouwd om gevonden te worden in Google.",
   "intro": "Wij bouwen websites voor bedrijven die in {{STAD}} klanten zoeken. Binnen twee weken live, vanaf €120 per maand, inclusief hosting en onderhoud.",
   "zoekterm": "website laten maken {{stad}}",
+  "stad": "{{STAD}}",
+  "vindbaarheid_keyword": "Keyword onderzoek op zoektermen in {{STAD}}",
 
   "probleem": [
     {
@@ -53,7 +55,8 @@
   "case_intro": "Recente projecten in {{STAD}}",
   "case_slugs": ["legal-talents", "paul-breuker-fotografie"],
 
-  "lokale_context": "Optioneel. Achtergrond over de lokale markt — wordt in de huidige template niet getoond, wel bewaard voor later.",
+  "extra_kop": "Waarom lokaal hier sneller werkt",
+  "extra_tekst": "Optioneel. Achtergrond over de lokale markt. Wordt alleen getoond als extra_kop én extra_tekst beide zijn ingevuld.",
 
   "faqs": [
     {

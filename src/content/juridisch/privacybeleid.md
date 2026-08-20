@@ -1,10 +1,10 @@
 ---
 titel: "Privacybeleid"
-beschrijving: "Hoe Storm omgaat met je persoonsgegevens: wat we bewaren, waarom, hoe lang, en welke rechten je hebt."
+beschrijving: "Hoe Neqst omgaat met je persoonsgegevens: wat we bewaren, waarom, hoe lang, en welke rechten je hebt."
 bijgewerkt: 2026-08-20
 ---
 
-**Storm**, handelsnaam van Hoogervorst Works
+**Neqst**, handelsnaam van Hoogervorst Works
 Hugo de Grootstraat 30, 6522 DE Nijmegen
 KvK 98269429 · hoogervorstworks@gmail.com
 
@@ -19,7 +19,7 @@ dat vinkje staat niet vooraf aan.
 
 ## 1. Wie verwerkt je gegevens
 
-Hoogervorst Works, handelend onder de naam Storm, is
+Hoogervorst Works, handelend onder de naam Neqst, is
 verwerkingsverantwoordelijke voor de gegevens die via stormsites.nl worden
 verzameld.
 
@@ -117,7 +117,7 @@ Daarnaast kunnen we gegevens delen als we daartoe wettelijk verplicht zijn.
 
 ## 6. Cookies
 
-Stormsites.nl plaatst geen tracking- of advertentiecookies.
+Neqst plaatst geen tracking- of advertentiecookies.
 
 Er worden uitsluitend functionele en strikt noodzakelijke cookies gebruikt,
 die nodig zijn om de site te laten werken en om formuliermisbruik tegen te
@@ -164,7 +164,7 @@ binnen twee werkdagen.
 
 Bouwen en beheren we een website voor jouw organisatie, dan ben jij
 verwerkingsverantwoordelijke voor de gegevens die via die website worden
-verzameld. Storm treedt dan op als verwerker. Daarvoor sluiten we een
+verzameld. Neqst treedt dan op als verwerker. Daarvoor sluiten we een
 aparte verwerkersovereenkomst.
 
 ---
