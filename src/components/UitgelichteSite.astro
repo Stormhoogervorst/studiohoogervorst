@@ -71,7 +71,7 @@ const beeldClass = ["beeld", href && "beeld--link"];
           </span>
           {
             resultaat && (
-              <span class="resultaat">
+              <span class:list={["resultaat", id === "nso-eques" && "resultaat--een-regel"]}>
                 <strong>{resultaat.kop}</strong>
                 <span>{resultaat.tekst}</span>
               </span>
@@ -192,6 +192,14 @@ const beeldClass = ["beeld", href && "beeld--link"];
     line-height: 1.35;
   }
 
+  .resultaat--een-regel {
+    max-width: none;
+  }
+
+  .resultaat--een-regel span {
+    white-space: nowrap;
+  }
+
   .beeld--link:hover .overlay,
   .beeld--link:focus-visible .overlay {
     opacity: 1;
@@ -272,6 +280,10 @@ const beeldClass = ["beeld", href && "beeld--link"];
 
     .resultaat span {
       font-size: 0.95rem;
+    }
+
+    .resultaat--een-regel span {
+      white-space: normal;
     }
   }
 </style>

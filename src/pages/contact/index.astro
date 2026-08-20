@@ -16,10 +16,9 @@ const hasError = Astro.url.searchParams.get("error") === "1";
 const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
 const thanksUrl = new URL("/contact/bedankt/", site).href;
 
-/** TODO: telefoonnummer aanleveren */
-const telefoon = "";
-/** TODO: LinkedIn-URL aanleveren */
-const linkedinUrl = "";
+const telefoon = "+31 6 85 68 09 98";
+const email = "hoogervorstworks@gmail.com";
+const linkedinUrl = "https://www.linkedin.com/company/stormsites";
 
 const faqs = [
   {
@@ -92,7 +91,8 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   name: "Storm Sites",
   url: site.href,
-  email: "storm@studiohoogervorst.nl",
+  email,
+  telephone: telefoon.replace(/\s+/g, ""),
   description:
     "Websites op abonnementsbasis, gebouwd om gevonden te worden door Google én AI-modellen.",
   address: {
@@ -305,7 +305,7 @@ const localBusinessSchema = {
           <article class="way">
             <h3>Direct mailen</h3>
             <p>Voor vragen, samenwerkingen of iets anders</p>
-            <a href="mailto:storm@studiohoogervorst.nl">storm@studiohoogervorst.nl</a>
+            <a href={`mailto:${email}`}>{email}</a>
           </article>
           <article class="way">
             <h3>Even bellen</h3>
@@ -356,7 +356,7 @@ const localBusinessSchema = {
           Stuur gewoon een mail met je website erin. Je krijgt binnen een
           werkdag een eerlijke inschatting terug, gratis.
         </p>
-        <a class="btn" href="mailto:storm@studiohoogervorst.nl">Mail ons direct</a>
+        <a class="btn" href={`mailto:${email}`}>Mail ons direct</a>
       </div>
     </section>
   </main>
