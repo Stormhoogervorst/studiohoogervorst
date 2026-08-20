@@ -42,13 +42,13 @@ const { kop = "Een lokaal bureau", rijen = defaultRijen } = Astro.props;
 <section class="vergelijking">
   <div class="wrap">
     <p class="badge">Vergelijking</p>
-    <h2>{kop} versus Storm Sites.</h2>
+    <h2>{kop} versus Storm.</h2>
     <table>
       <thead>
         <tr>
           <th scope="col">Wat</th>
           <th scope="col">{kop}</th>
-          <th scope="col" class="wij">Storm Sites</th>
+          <th scope="col" class="wij">Storm</th>
         </tr>
       </thead>
       <tbody>
@@ -59,7 +59,7 @@ const { kop = "Een lokaal bureau", rijen = defaultRijen } = Astro.props;
                 {rij.wat}
               </th>
               <td data-label={kop}>{rij.zij}</td>
-              <td class="wij" data-label="Storm Sites">
+              <td class="wij" data-label="Storm">
                 {rij.wij}
               </td>
             </tr>

@@ -1,4 +1,4 @@
-# Storm Sites — projectspec
+# Storm — projectspec
 
 Bron van waarheid voor deze site. Lees dit voordat je code schrijft.
 Wijk hier niet van af zonder overleg.
@@ -7,7 +7,7 @@ Wijk hier niet van af zonder overleg.
 
 ## Het bedrijf
 
-Storm Sites bouwt websites op abonnementsbasis (vanaf €120/mnd) die
+Storm bouwt websites op abonnementsbasis (vanaf €120/mnd) die
 technisch gebouwd zijn om gevonden te worden — door Google én door AI-modellen.
 Add-ons breiden dat fundament uit naar actieve groei.
 
