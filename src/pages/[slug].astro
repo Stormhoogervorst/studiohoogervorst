@@ -10,6 +10,7 @@ import UitgelichteProjecten from "../components/UitgelichteProjecten.astro";
 import KernwaardenSectie from "../components/KernwaardenSectie.astro";
 import BewijsSectie from "../components/BewijsSectie.astro";
 import TrustRating from "../components/TrustRating.astro";
+import VergelijkingSectie from "../components/VergelijkingSectie.astro";
 
 interface Props {
   entry: CollectionEntry<"landing">;
@@ -172,32 +173,7 @@ const breadcrumbSchema = {
       compactTop
     />
 
-    <section class="vergelijking">
-      <div class="wrap">
-        <p class="badge">Vergelijking</p>
-        <h2>{vergelijking_kop} versus Storm Sites.</h2>
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Wat</th>
-              <th scope="col">{vergelijking_kop}</th>
-              <th scope="col" class="wij">Storm Sites</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              vergelijking.map((rij) => (
-                <tr>
-                  <th scope="row" data-label="Wat">{rij.wat}</th>
-                  <td data-label={vergelijking_kop}>{rij.zij}</td>
-                  <td class="wij" data-label="Storm Sites">{rij.wij}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <VergelijkingSectie kop={vergelijking_kop} rijen={vergelijking} />
 
     {
       wanneer_niet_kop && wanneer_niet && (
@@ -340,99 +316,6 @@ const breadcrumbSchema = {
     margin-top: 48px;
   }
 
-  .vergelijking {
-    padding: var(--section) 0;
-    background: var(--deep);
-    color: #fff;
-  }
-
-  .badge {
-    display: inline-flex;
-    margin-bottom: 16px;
-    padding: 5px 12px;
-    border: 1px solid var(--deep-line);
-    border-radius: 999px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-
-  .vergelijking h2 {
-    margin-bottom: 44px;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-  }
-
-  th,
-  td {
-    padding: 18px 24px;
-    text-align: left;
-    vertical-align: top;
-    font-weight: 400;
-    line-height: 1.5;
-  }
-
-  thead th {
-    padding-bottom: 14px;
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  thead th.wij {
-    padding-top: 18px;
-    border-radius: 20px 20px 0 0;
-    color: var(--lime);
-  }
-
-  tbody th,
-  tbody td {
-    border-top: 1px solid var(--deep-line);
-  }
-
-  tbody th {
-    font-weight: 600;
-  }
-
-  tbody td {
-    color: rgba(255, 255, 255, 0.68);
-  }
-
-  th:first-child,
-  td:first-child {
-    padding-left: 0;
-  }
-
-  .wij {
-    background: var(--deep-card);
-  }
-
-  tbody td.wij {
-    position: relative;
-    padding-left: 50px;
-    border-top-color: rgba(255, 255, 255, 0.07);
-    color: #fff;
-    font-weight: 500;
-  }
-
-  tbody td.wij::before {
-    position: absolute;
-    left: 24px;
-    color: var(--lime);
-    font-weight: 600;
-    content: "✓";
-  }
-
-  tbody tr:last-child td.wij {
-    border-radius: 0 0 20px 20px;
-  }
-
   .wanneer {
     padding: var(--section) 0;
     background: var(--sky);
@@ -503,6 +386,17 @@ const breadcrumbSchema = {
     padding: var(--section) 0;
     background: var(--navy);
     color: #fff;
+  }
+
+  .faq .badge {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 5px 12px;
+    border: 1px solid var(--navy-line);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
   .split {
@@ -588,76 +482,6 @@ const breadcrumbSchema = {
   @media (max-width: 699px) {
     .proces-grid {
       grid-template-columns: 1fr;
-    }
-
-    table,
-    thead,
-    tbody,
-    tr,
-    th,
-    td {
-      display: block;
-      width: 100%;
-    }
-
-    thead {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    tbody tr {
-      margin-bottom: 14px;
-      padding: 22px;
-      border-radius: 16px;
-      background: var(--deep-card);
-    }
-
-    tbody th,
-    tbody td {
-      padding: 0;
-      border: 0;
-    }
-
-    tbody th {
-      margin-bottom: 14px;
-      font-size: 1.05rem;
-    }
-
-    tbody td,
-    tbody td.wij {
-      padding-top: 12px;
-      margin-top: 12px;
-      border-top: 1px solid var(--deep-line);
-      background: none;
-    }
-
-    tbody td.wij {
-      padding-left: 0;
-      border-radius: 0;
-    }
-
-    tbody td::before,
-    tbody td.wij::before {
-      position: static;
-      display: block;
-      margin-bottom: 4px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      content: attr(data-label);
-    }
-
-    tbody td.wij::before {
-      color: var(--lime);
     }
   }
 </style>
