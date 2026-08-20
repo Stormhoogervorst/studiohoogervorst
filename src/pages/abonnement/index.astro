@@ -76,7 +76,7 @@ const inbegrepen = [
   },
 ];
 
-const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
+const site = Astro.site ?? new URL("https://neqst.nl");
 const pageUrl = new URL(Astro.url.pathname, site).href;
 
 const serviceSchema = {
@@ -90,7 +90,7 @@ const serviceSchema = {
   provider: {
     "@type": "ProfessionalService",
     name: "Neqst",
-    url: "https://studiohoogervorst.nl",
+    url: site.origin,
   },
   areaServed: "NL",
   offers: {
@@ -123,8 +123,8 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Website abonnement vanaf €120 per maand | Neqst"
-  description="Een professionele website zonder investering vooraf. €120 per maand inclusief hosting, onderhoud en updates. Binnen twee weken live. Alle prijzen en voorwaarden staan hieronder."
+  title="Website abonnement: €120 per maand + hosting | Neqst"
+  description="Een professionele website zonder investering vooraf. €120 per maand inclusief hosting en onderhoud. Binnen twee weken live, zonder offertetraject."
 >
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

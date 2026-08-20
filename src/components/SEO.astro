@@ -13,7 +13,7 @@ const {
   noindex = false,
 } = Astro.props;
 
-const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
+const site = Astro.site ?? new URL("https://neqst.nl");
 const canonical = new URL(Astro.url.pathname, site).href;
 const ogImage = new URL(image, site).href;
 ---

@@ -1,6 +1,7 @@
 ---
 titel: "Privacybeleid"
-beschrijving: "Hoe Neqst omgaat met je persoonsgegevens: wat we bewaren, waarom, hoe lang, en welke rechten je hebt."
+seoTitel: "Privacybeleid van Neqst | wat we bewaren en waarom"
+beschrijving: "Hoe Neqst omgaat met je persoonsgegevens: wat we bewaren, waarom we dat doen, hoe lang we het bewaren, en welke rechten je als bezoeker hebt."
 bijgewerkt: 2026-08-20
 ---
 
@@ -20,7 +21,7 @@ dat vinkje staat niet vooraf aan.
 ## 1. Wie verwerkt je gegevens
 
 Hoogervorst Works, handelend onder de naam Neqst, is
-verwerkingsverantwoordelijke voor de gegevens die via stormsites.nl worden
+verwerkingsverantwoordelijke voor de gegevens die via neqst.nl worden
 verzameld.
 
 Vragen over dit beleid? Mail naar hoogervorstworks@gmail.com.
@@ -172,5 +173,5 @@ aparte verwerkersovereenkomst.
 ## 10. Wijzigingen
 
 We kunnen dit beleid aanpassen. De actuele versie staat altijd op
-stormsites.nl/privacy/, met de datum van laatste wijziging bovenaan.
+neqst.nl/privacy/, met de datum van laatste wijziging bovenaan.
 Bij ingrijpende wijzigingen informeren we je actief.

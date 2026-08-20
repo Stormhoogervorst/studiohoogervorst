@@ -1,6 +1,7 @@
 ---
 titel: "Algemene voorwaarden"
-beschrijving: "De algemene voorwaarden van Neqst, handelsnaam van Hoogervorst Works, voor het websiteabonnement en aanvullende diensten."
+seoTitel: "Algemene voorwaarden van Neqst | website-abonnement"
+beschrijving: "De algemene voorwaarden van Neqst, handelsnaam van Hoogervorst Works, voor het websiteabonnement, setup fee, opzeggen, eigendom en aansprakelijkheid."
 bijgewerkt: 2026-08-20
 ---
 
@@ -274,7 +275,7 @@ ontvangen als zodanig.
 sluiten partijen een verwerkersovereenkomst conform de AVG.
 
 13.3 Op de verwerking van persoonsgegevens door Neqst zelf is het
-privacybeleid van toepassing, te vinden op stormsites.nl/privacy/.
+privacybeleid van toepassing, te vinden op neqst.nl/privacy/.
 
 ---
 

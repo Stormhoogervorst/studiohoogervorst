@@ -1,6 +1,6 @@
 {
   "h1": "Website as a Service: je site als abonnement in plaats van als project",
-  "titel": "Website as a Service (WaaS) — uitgelegd | Storm Sites",
+  "titel": "Website as a Service (WaaS) — hoe het werkt | Neqst",
   "beschrijving": "Wat is Website as a Service, hoe werkt het, en wanneer is het slimmer dan een site eenmalig laten bouwen? Een eerlijke uitleg, inclusief de nadelen.",
   "intro": "Website as a Service betekent dat je niet duizenden euro's vooraf betaalt voor een project dat daarna stilstaat, maar een vast bedrag per maand voor een site die gebouwd, gehost en onderhouden wordt. Hieronder leggen we uit hoe dat werkt en wat het oplevert.",
   "zoekterm": "website as a service",
@@ -82,7 +82,7 @@
     },
     {
       "vraag": "Is het uiteindelijk niet duurder dan eenmalig kopen?",
-      "antwoord": "Op lange termijn wel, in absolute euro's. €395 plus 36 × €120 is €4.715 over drie jaar, tegenover €4.950 eenmalig — maar bij eenmalig komen hosting en onderhoud er nog bij. De echte vraag is of je die investering nu kunt en wilt doen, en of je iemand hebt die het daarna bijhoudt."
+      "antwoord": "Op lange termijn wel, in absolute euro's. €395 plus 36 × €120 is €4.715 over drie jaar, tegenover €3.150 eenmalig — maar bij eenmalig komen hosting en onderhoud er nog bij. De echte vraag is of je die investering nu kunt en wilt doen, en of je iemand hebt die het daarna bijhoudt."
     },
     {
       "vraag": "Van wie is de website?",
@@ -106,6 +106,6 @@
     }
   ],
 
-  "gerelateerd": ["squarespace-alternatief", "wix-alternatief"],
+  "gerelateerd": [],
   "gepubliceerd": true
 }

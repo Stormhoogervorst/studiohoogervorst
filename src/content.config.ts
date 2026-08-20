@@ -63,6 +63,7 @@ const juridisch = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/juridisch" }),
   schema: z.object({
     titel: z.string(),
+    seoTitel: z.string().optional(),
     beschrijving: z.string(),
     bijgewerkt: z.coerce.date(),
   }),

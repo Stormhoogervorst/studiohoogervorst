@@ -13,9 +13,9 @@ const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
 const toc = headings.filter((h) => h.depth === 2);
 
-const { titel, beschrijving, bijgewerkt } = entry.data;
-const title = `${titel} | Neqst`;
-const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
+const { titel, seoTitel, beschrijving, bijgewerkt } = entry.data;
+const title = seoTitel ?? `${titel} | Neqst`;
+const site = Astro.site ?? new URL("https://neqst.nl");
 const pageUrl = new URL(Astro.url.pathname, site).href;
 
 const bijgewerktLabel = bijgewerkt.toLocaleDateString("nl-NL", {

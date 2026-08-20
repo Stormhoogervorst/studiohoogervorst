@@ -11,11 +11,13 @@ interface Props {
 
 const { title, description, image, noindex } = Astro.props;
 
+const site = Astro.site ?? new URL("https://neqst.nl");
+
 const org = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Neqst",
-  url: "https://studiohoogervorst.nl",
+  url: site.origin,
   description: "Websites op abonnementsbasis, gebouwd om gevonden te worden.",
   email: "hoogervorstworks@gmail.com",
   telephone: "+31685680998",

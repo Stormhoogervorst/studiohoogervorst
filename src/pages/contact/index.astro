@@ -6,11 +6,11 @@ import FaqList from "../../components/FaqList.astro";
 import TrustRating from "../../components/TrustRating.astro";
 import { CONTACT_LIMITS, HULP_OPTIES } from "../../lib/contact";
 
-const title = "Contact — plan een gesprek | Neqst";
+const title = "Contact: plan een gesprek over jouw website | Neqst";
 const description =
-  "Twintig minuten bellen over je website. Geen verkooppraatje. Reactie binnen één werkdag.";
+  "Twintig minuten bellen over je huidige website en wat er te winnen valt. Geen verkooppraatje: als het niet past, zeggen we dat. Reactie binnen één werkdag.";
 
-const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
+const site = Astro.site ?? new URL("https://neqst.nl");
 const pageUrl = new URL(Astro.url.pathname, site).href;
 const hasError = Astro.url.searchParams.get("error") === "1";
 const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
@@ -146,7 +146,7 @@ const localBusinessSchema = {
           >
             <input type="hidden" name="access_key" value={accessKey} />
             <input type="hidden" name="from_name" value="Neqst" />
-            <input type="hidden" name="subject" value="Nieuw gesprekverzoek via studiohoogervorst.nl" />
+            <input type="hidden" name="subject" value="Nieuw gesprekverzoek via neqst.nl" />
             <input type="hidden" name="redirect" value={thanksUrl} />
 
             <p

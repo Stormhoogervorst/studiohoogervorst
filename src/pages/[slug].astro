@@ -67,7 +67,7 @@ const secundaireCta = isWaas
   ? { href: "/contact/", label: "Plan een gesprek" }
   : { href: "/abonnement/", label: "Bekijk de prijzen" };
 
-const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
+const site = Astro.site ?? new URL("https://neqst.nl");
 const pageUrl = new URL(Astro.url.pathname, site).href;
 
 const address = {
@@ -321,14 +321,7 @@ const breadcrumbSchema = {
         <h2>Twintig minuten. Daarna weet je het.</h2>
         <a class="btn" href="/contact/">Plan een gesprek</a>
         {
-          isWaas && (
-            <p class="close-prijzen">
-              <a href="/abonnement/">Alle prijzen en add-ons staan op de abonnementspagina →</a>
-            </p>
-          )
-        }
-        {
-          gerelateerd.length > 0 && (
+          !isWaas && gerelateerd.length > 0 && (
             <nav class="related" aria-label="Gerelateerd">
               {gerelateerd.map((pagina) => (
                 <a href={`/${pagina.id}/`}>{pagina.data.h1}</a>
@@ -698,25 +691,6 @@ const breadcrumbSchema = {
 
   .close .btn {
     margin-top: 28px;
-  }
-
-  .close-prijzen {
-    margin-top: 16px;
-  }
-
-  .close-prijzen a {
-    display: inline-block;
-    max-width: 100%;
-    color: var(--lime);
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-decoration: none;
-    overflow-wrap: break-word;
-  }
-
-  .close-prijzen a:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 
   .related {

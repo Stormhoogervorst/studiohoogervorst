@@ -13,4 +13,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://studiohoogervorst.nl/sitemap-index.xml
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://neqst.nl/sitemap-index.xml
