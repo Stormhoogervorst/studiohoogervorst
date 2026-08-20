@@ -1,0 +1,83 @@
+{
+  "h1": "Website laten maken in {{STAD}}",
+  "titel": "Website laten maken in {{STAD}} — vanaf €120 p/m",
+  "beschrijving": "Een professionele website voor je bedrijf in {{STAD}}. Binnen twee weken live, vanaf €120 per maand. Gebouwd om gevonden te worden in Google.",
+  "intro": "Wij bouwen websites voor bedrijven die in {{STAD}} klanten zoeken. Binnen twee weken live, vanaf €120 per maand, inclusief hosting en onderhoud.",
+  "zoekterm": "website laten maken {{stad}}",
+
+  "probleem": [
+    {
+      "kop": "Je komt niet goed naar boven in Google",
+      "tekst": "Zoekt iemand in {{STAD}} naar wat jij doet, dan staan er concurrenten boven je. Dat kost je precies de klanten die het dichtst bij zitten en het makkelijkst binnen te halen zijn."
+    },
+    {
+      "kop": "Je site is jaren niet aangeraakt",
+      "tekst": "Hij werkt nog. Maar hij laadt traag, ziet er gedateerd uit op een telefoon, en niemand weet meer wie het wachtwoord heeft. Elke maand dat hij zo blijft staan kost je aanvragen die je niet ziet binnenkomen."
+    },
+    {
+      "kop": "Je schrok van de offertes",
+      "tekst": "Je hebt prijzen opgevraagd bij een paar bureaus en schrok van de bedragen, plus het onderhoud dat er nog bovenop kwam. Daarna is het blijven liggen. Dat was een jaar geleden."
+    }
+  ],
+
+  "vergelijking_kop": "Een lokaal bureau",
+  "vergelijking": [
+    { "wat": "Investering vooraf", "zij": "€3.000 tot €8.000", "wij": "€395 setup" },
+    { "wat": "Maandelijkse kosten", "zij": "Onderhoud op factuurbasis", "wij": "€120, alles inbegrepen" },
+    { "wat": "Doorlooptijd", "zij": "6 tot 12 weken", "wij": "2 tot 3 weken" },
+    { "wat": "Vindbaarheid", "zij": "Meestal een aparte offerte", "wij": "Standaard in de bouw" },
+    { "wat": "Wijzigingen", "zij": "Per uur gefactureerd", "wij": "30 minuten per maand inbegrepen" },
+    { "wat": "Hosting en onderhoud", "zij": "Apart contract", "wij": "Inbegrepen" },
+    { "wat": "Offertetraject", "zij": "Meerdere gesprekken", "wij": "Prijzen staan gewoon op de site" }
+  ],
+
+  "proces": [
+    {
+      "kop": "Kennismaking",
+      "tekst": "Twintig minuten bellen. We kijken naar je huidige site en zeggen eerlijk wat er te winnen valt. Past het niet, dan zeggen we dat ook."
+    },
+    {
+      "kop": "Keyword onderzoek",
+      "tekst": "Waar zoeken jouw klanten in {{STAD}} daadwerkelijk op, en in welke bewoordingen? Daaruit volgt de structuur van de site, nog voordat er iets ontworpen is."
+    },
+    {
+      "kop": "Bouwen",
+      "tekst": "Twee tot drie weken. Halverwege krijg je een preview om op te reageren. Jij levert teksten en beeld aan, wij doen de rest."
+    },
+    {
+      "kop": "Live en verder",
+      "tekst": "De site gaat online en je krijgt elke maand een rapport: wat er gebeurt, waar je staat, en wat de volgende stap zou zijn."
+    }
+  ],
+
+  "case_intro": "Recente projecten in {{STAD}}",
+  "case_slugs": ["legal-talents", "paul-breuker-fotografie"],
+
+  "lokale_context": "Optioneel. Achtergrond over de lokale markt — wordt in de huidige template niet getoond, wel bewaard voor later.",
+
+  "faqs": [
+    {
+      "vraag": "Werken jullie alleen voor bedrijven in {{STAD}}?",
+      "antwoord": "Nee. We hebben klanten in Nijmegen, Arnhem en Utrecht. Het meeste gaat op afstand. Voor het bouwen maakt locatie weinig uit, voor lokale vindbaarheid des te meer."
+    },
+    {
+      "vraag": "Wat kost het en zit ik ergens aan vast?",
+      "antwoord": "€120 per maand plus €395 setup. Daarin zitten hosting, domein, onderhoud en 30 minuten wijzigingen per maand. De eerste twaalf maanden liggen vast omdat het bouwwerk vooraf gebeurt, daarna is het maandelijks opzegbaar. Wil je de site liever in één keer kopen, dan is dat €3.150."
+    },
+    {
+      "vraag": "Hoe lang duurt het voordat ik hoger sta in Google?",
+      "antwoord": "Lokale zoektermen bewegen sneller dan landelijke, maar reken op drie tot zes maanden voordat je echte verschuivingen ziet. Wie je binnen een maand positie 1 belooft, verkoopt je iets wat niet bestaat."
+    },
+    {
+      "vraag": "Ik heb al een website. Kan die blijven?",
+      "antwoord": "Soms. We kijken er gratis naar. Draait hij op WordPress met tien plugins en laadt hij in vier seconden, dan is opnieuw bouwen meestal goedkoper dan repareren. Dat rekenen we voor je uit voordat je iets beslist."
+    },
+    {
+      "vraag": "Is de website van mij?",
+      "antwoord": "Je domein, je teksten en je inhoud zijn altijd van jou. De code en het onderhoud blijven van ons zolang je abonnee bent. Stop je, dan koop je de site af voor €950 en verhuizen we hem samen naar je eigen hosting."
+    }
+  ],
+
+  "gerelateerd": [],
+  "gepubliceerd": false
+}

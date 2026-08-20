@@ -1,0 +1,139 @@
+---
+interface Props {
+  klant: string;
+  plaats: string;
+  metriek: string;   // "Nieuwe opdrachtgevers via de site"
+  voor: string;      // "0"
+  na: string;        // "3"
+  periode: string;   // "in de eerste maand"
+  url: string;       // live site van de klant
+}
+
+const { klant, plaats, metriek, voor, na, periode, url } = Astro.props;
+---
+
+<a
+  class="case"
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Bekijk de website van ${klant} (opent in nieuw tabblad)`}
+>
+  <p class="cijfer">
+    <span class="voor">{voor}</span>
+    <span class="pijl" aria-hidden="true">→</span>
+    <span class="na">{na}</span>
+  </p>
+
+  <p class="metriek">{metriek}</p>
+  <p class="periode">{periode}</p>
+
+  <div class="voet">
+    <span class="klant">{klant}</span>
+    <span class="plaats">{plaats}</span>
+    <span class="link">Bekijk de site <span aria-hidden="true">↗</span></span>
+  </div>
+</a>
+
+<style>
+  .case {
+    display: flex;
+    flex-direction: column;
+    background: var(--deep-card);
+    border: 1px solid var(--deep-line);
+    border-radius: 20px;
+    padding: 32px;
+    min-height: 280px;
+    color: #fff;
+    text-decoration: none;
+    transition: border-color 180ms ease, transform 180ms ease;
+  }
+  .case:hover {
+    border-color: var(--accent-light);
+    transform: translateY(-2px);
+  }
+  .case:focus-visible {
+    outline: 2px solid var(--accent-light);
+    outline-offset: 3px;
+  }
+
+  /* het cijfer draagt de kaart */
+  .cijfer {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 0;
+    line-height: 1;
+  }
+  .voor {
+    font-size: 1.9rem;
+    color: #fff;
+    opacity: 0.35;
+    letter-spacing: -0.03em;
+  }
+  .pijl {
+    font-size: 1.4rem;
+    color: #fff;
+    opacity: 0.35;
+  }
+  .na {
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    color: var(--accent-light);
+  }
+
+  .metriek {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #fff;
+    margin: 18px 0 0;
+    max-width: 26ch;
+    line-height: 1.35;
+  }
+  .periode {
+    font-size: 0.9rem;
+    color: #fff;
+    opacity: 0.55;
+    margin: 6px 0 0;
+  }
+
+  /* klantnaam onderin, bescheiden */
+  .voet {
+    margin-top: auto;
+    padding-top: 26px;
+    border-top: 1px solid var(--deep-line);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 0.88rem;
+  }
+  .klant {
+    font-weight: 600;
+    color: #fff;
+    opacity: 0.85;
+  }
+  .plaats {
+    color: #fff;
+    opacity: 0.45;
+  }
+  .link {
+    margin-left: auto;
+    color: #fff;
+    opacity: 0.55;
+    white-space: nowrap;
+    transition: opacity 180ms ease;
+  }
+  .case:hover .link { opacity: 1; }
+
+  @media (max-width: 700px) {
+    .case { padding: 26px; min-height: 0; }
+    .voet { flex-wrap: wrap; }
+    .link { margin-left: 0; width: 100%; padding-top: 8px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .case { transition: none; }
+    .case:hover { transform: none; }
+  }
+</style>

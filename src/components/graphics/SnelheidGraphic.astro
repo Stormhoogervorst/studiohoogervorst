@@ -1,0 +1,52 @@
+---
+// Snelheid: een PageSpeed-achtige score naast een geladen pagina.
+// Cirkelomtrek bij r=26 ≈ 163.4; 98% gevuld.
+const r = 26;
+const omtrek = 2 * Math.PI * r;
+const gevuld = omtrek * 0.98;
+---
+<svg
+  viewBox="0 0 300 170"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="graphic"
+>
+  <defs>
+    <linearGradient id="snel-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0f2ee" />
+      <stop offset="1" stop-color="#e2ecd6" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="170" rx="14" fill="url(#snel-bg)" />
+
+  <!-- score-cirkel -->
+  <circle cx="70" cy="85" r={r} fill="none" stroke="var(--navy)" stroke-width="6" opacity=".1" />
+  <circle
+    cx="70" cy="85" r={r}
+    fill="none" stroke="var(--lime)" stroke-width="6" stroke-linecap="round"
+    stroke-dasharray={`${gevuld} ${omtrek}`}
+    transform="rotate(-90 70 85)"
+  />
+  <text x="70" y="92" class="t score" text-anchor="middle">98</text>
+  <text x="70" y="132" class="t muted" text-anchor="middle">PageSpeed</text>
+
+  <!-- browservenster -->
+  <rect x="126" y="34" width="152" height="102" rx="9" fill="#fff" />
+  <rect x="126" y="34" width="152" height="18" rx="9" fill="var(--navy)" opacity=".06" />
+  <circle cx="138" cy="43" r="2.5" fill="var(--navy)" opacity=".25" />
+  <circle cx="146" cy="43" r="2.5" fill="var(--navy)" opacity=".25" />
+  <circle cx="154" cy="43" r="2.5" fill="var(--navy)" opacity=".25" />
+  <rect x="138" y="62" width="72" height="8" rx="4" fill="var(--navy)" opacity=".8" />
+  <rect x="138" y="76" width="118" height="5" rx="2.5" fill="var(--navy)" opacity=".12" />
+  <rect x="138" y="86" width="96" height="5" rx="2.5" fill="var(--navy)" opacity=".1" />
+  <rect x="138" y="104" width="52" height="16" rx="8" fill="var(--lime)" />
+  <text x="202" y="119" class="t muted">0,8s</text>
+</svg>
+
+<style>
+  .graphic { display: block; width: 100%; height: auto; }
+  .t { font-family: "Geist", system-ui, sans-serif; font-size: 11px; font-weight: 500; fill: var(--navy); opacity: .8; }
+  .t.score { font-size: 18px; font-weight: 600; opacity: 1; }
+  .t.muted { opacity: .5; font-size: 10px; }
+</style>

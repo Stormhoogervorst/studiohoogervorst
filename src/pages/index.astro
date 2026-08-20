@@ -1,0 +1,275 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import FaqList from "../components/FaqList.astro";
+import UitgelichteProjecten from "../components/UitgelichteProjecten.astro";
+import KernwaardenSectie from "../components/KernwaardenSectie.astro";
+import BewijsSectie from "../components/BewijsSectie.astro";
+import TrustRating from "../components/TrustRating.astro";
+import PrijzenSectie from "../components/PrijzenSectie.astro";
+
+const faqs = [
+  {
+    vraag: "Is de website dan wel van mij?",
+    antwoord:
+      "Je domein, je teksten en je inhoud zijn altijd van jou. De code en het onderhoud blijven van ons zolang je abonnee bent. Stop je, dan koop je de site af voor €950 en verhuizen we hem samen naar je eigen hosting.",
+  },
+  {
+    vraag: "Waarom niet gewoon eenmalig betalen?",
+    antwoord:
+      "Dat kan: €3.150 eenmalig, dan is de site direct van jou. Je mist dan wel het onderhoud en de doorlopende optimalisatie. Een site die niet wordt bijgehouden loopt binnen twee jaar achter.",
+  },
+  {
+    vraag: "Zit ik ergens aan vast?",
+    antwoord:
+      "Twaalf maanden minimaal, daarna maandelijks opzegbaar. Die twaalf maanden zijn er omdat het bouwwerk vooraf gebeurt. De setup fee van €395 dekt een deel van die bouwtijd.",
+  },
+  {
+    vraag: "Hoe snel staat mijn site online?",
+    antwoord:
+      "Twee tot drie weken na aanlevering van je teksten en beeld. Heb je die nog niet, dan duurt het langer — dat ligt vrijwel altijd aan het aanleveren, niet aan het bouwen.",
+  },
+  {
+    vraag: "Wat betekent gebouwd voor AI precies?",
+    antwoord:
+      "Dat je site zo is opgezet dat modellen als ChatGPT, Perplexity en Gemini je bedrijf kunnen lezen, begrijpen en noemen. Structured data, toegelaten crawlers, feiten in platte tekst. Dat zit standaard in het abonnement. Actief werken aan die vermeldingen is een add-on.",
+  },
+  {
+    vraag: "Voor wie is dit niet bedoeld?",
+    antwoord:
+      "Voor webshops, klantportalen en maatwerkapplicaties zijn we niet de juiste partij. Ook niet als je ongelimiteerde wijzigingen verwacht — het abonnement bevat 30 minuten per maand.",
+  },
+];
+---
+
+<BaseLayout
+  title="Storm Sites | Websites die klanten opleveren"
+  description="Wij bouwen sites die technisch kloppen voor Google én voor AI-modellen. Binnen twee weken live, vanaf €120 per maand."
+>
+  <SiteHeader />
+
+  <main id="inhoud">
+    <div class="band-navy">
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <p class="eyebrow">Gebouwd voor bedrijven die gevonden willen worden</p>
+          <h1>Websites moeten geld opleveren.</h1>
+          <p class="sub">
+            Wij bouwen sites die technisch kloppen voor Google én voor
+            AI-modellen. Binnen twee weken live, vanaf €120 per maand.
+          </p>
+          <div class="actions">
+            <a class="btn" href="/abonnement/">Doe nu een aanvraag ›</a>
+            <a class="btn btn-outline" href="/abonnement/">Prijzen</a>
+          </div>
+          <div class="hero-rating">
+            <TrustRating />
+          </div>
+        </div>
+      </section>
+
+      <BewijsSectie inBand />
+    </div>
+
+    <KernwaardenSectie />
+
+    <section class="statement">
+      <div class="wrap">
+        <p>
+          Storm bouwt websites die <span>gevonden</span> worden — door
+          Google, door AI-modellen, en door de klant die je zoekt.
+        </p>
+      </div>
+    </section>
+
+    <UitgelichteProjecten />
+
+    <PrijzenSectie />
+
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="badge badge-dark">FAQ</p>
+            <h2>Veelgestelde vragen,<br />eerlijke antwoorden.</h2>
+          </div>
+          <div class="faq-aside">
+            <p class="lede">
+              Staat je vraag er niet bij? Neem contact met ons op!
+            </p>
+            <a class="btn" href="/contact/">Neem contact op</a>
+          </div>
+        </div>
+        <FaqList faqs={faqs} tint="navy" />
+      </div>
+    </section>
+
+    <section class="close">
+      <div class="wrap close-inner">
+        <h2>Minder wachten.<br />Meer aanvragen.</h2>
+        <p>
+          Twintig minuten bellen, geen verkooppraatje. Je krijgt een eerlijk
+          antwoord over of dit bij je past.
+        </p>
+        <a class="btn" href="/contact/">Plan een gesprek ›</a>
+        <p class="trust">Geen offertetraject · Binnen 2 weken live</p>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .band-navy {
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .hero {
+    padding: 88px 0 64px;
+  }
+
+  .hero-inner {
+    max-width: 780px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .eyebrow {
+    margin-bottom: 22px;
+    color: #9ecfe8;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .sub {
+    max-width: 36em;
+    margin: 22px auto 0;
+    color: var(--dim);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .hero-rating {
+    margin-top: 36px;
+  }
+
+  .trust {
+    margin-top: 36px;
+    color: var(--dim);
+    font-size: 0.875rem;
+  }
+
+  .lede {
+    color: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .statement {
+    padding: calc(var(--section) + 40px) 0 var(--section);
+    background-color: #fff;
+    background-image: radial-gradient(circle, #dfe5e8 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: var(--ink);
+    text-align: center;
+  }
+
+  .statement p {
+    max-width: 16.5em;
+    margin-inline: auto;
+    font-size: clamp(1.7rem, 3.6vw, 2.7rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  .statement span {
+    color: #6f9fbb;
+  }
+
+  .faq {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .faq .lede {
+    color: #b6c8d2;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+    align-items: end;
+    margin-bottom: 48px;
+  }
+
+  .badge {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .badge-dark {
+    border-color: var(--navy-line);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .faq-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .close {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+  }
+
+  .close-inner {
+    max-width: 640px;
+  }
+
+  .close p {
+    margin: 18px auto 28px;
+    color: var(--dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .close .trust {
+    margin-top: 28px;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 939px) {
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .split {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

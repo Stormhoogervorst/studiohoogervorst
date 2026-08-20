@@ -1,0 +1,139 @@
+---
+import { getCollection } from "astro:content";
+import UitgelichteSite from "./UitgelichteSite.astro";
+
+interface Props {
+  limiet?: number;
+  ids?: string[];
+  kop?: string;
+  lede?: string;
+  compactTop?: boolean;
+}
+
+const {
+  limiet,
+  ids,
+  kop = "Uitgelichte projecten.",
+  lede = "Projecten in Nijmegen, Arnhem en Utrecht. Van recruitment tot zorg.",
+  compactTop = false,
+} = Astro.props;
+
+const alle = await getCollection("cases", ({ data }) => data.gepubliceerd);
+const standaardIds = [
+  "legal-talents",
+  "paul-breuker-fotografie",
+  "zorgcooperatie",
+  "nso-eques",
+] as const;
+const uitgelichtIds = ids?.length ? ids : [...standaardIds];
+const tints = ["sage", "paper", "mist", "navy"] as const;
+const siteUrls: Record<string, string> = {
+  "legal-talents": "https://www.legaltalentsrecruitment.nl/",
+  "paul-breuker-fotografie": "https://www.fotograafpromotiesradboud.nl/",
+  "nso-eques": "https://equesnijmegen.nl/",
+  zorgcooperatie: "https://www.ccsz.nl/",
+};
+const hoverResultaten: Record<string, { kop: string; tekst: string }> = {
+  "legal-talents": {
+    kop: "€50.000",
+    tekst: "In de eerste 2 maanden al 3 nieuwe aanvragen via de site",
+  },
+  "paul-breuker-fotografie": {
+    kop: "5–8 opdrachten",
+    tekst: "Elke maand organisch via de site",
+  },
+};
+const uitgelicht = uitgelichtIds
+  .map((id) => alle.find((entry) => entry.id === id))
+  .filter((entry): entry is (typeof alle)[number] => Boolean(entry))
+  .slice(0, limiet);
+---
+
+<section
+  class:list={["cases", compactTop && "cases--compact"]}
+  id={limiet ? undefined : "cases"}
+>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="badge">Werk</p>
+        <h2>{kop}</h2>
+      </div>
+      <p class="lede">
+        {lede}
+      </p>
+    </div>
+    <div class="sites-grid">
+      {
+        uitgelicht.map((entry, i) => (
+          <UitgelichteSite
+                id={entry.id}
+                klant={entry.data.klant}
+                aanpak={entry.data.aanpak}
+                tint={tints[i] ?? "paper"}
+                href={siteUrls[entry.id]}
+                resultaat={hoverResultaten[entry.id]}
+              />
+        ))
+      }
+    </div>
+    {
+      limiet && (
+        <a class="btn meer" href="/#cases">Meer projecten</a>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .lede {
+    color: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .cases {
+    padding: var(--section) 0;
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .cases--compact {
+    padding-top: 40px;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+    align-items: end;
+    margin-bottom: 48px;
+  }
+
+  .badge {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .sites-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px 32px;
+  }
+
+  .meer {
+    margin-top: 64px;
+  }
+
+  @media (max-width: 939px) {
+    .split,
+    .sites-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,587 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import FaqList from "../../components/FaqList.astro";
+import PrijsCalculator from "../../components/PrijsCalculator.astro";
+
+const faqs = [
+  {
+    vraag: "Is de website dan wel van mij?",
+    antwoord:
+      "Je domein, je teksten en je inhoud zijn altijd van jou. De code en het onderhoud blijven van ons zolang je abonnee bent. Stop je, dan koop je de site af voor €950 en verhuizen we hem samen naar je eigen hosting.",
+  },
+  {
+    vraag: "Waarom niet gewoon eenmalig betalen?",
+    antwoord:
+      "Dat kan: €3.150 eenmalig, dan is de site direct van jou. Je mist dan wel het onderhoud en de doorlopende optimalisatie. Een site die niet wordt bijgehouden loopt binnen twee jaar achter.",
+  },
+  {
+    vraag: "Zit ik ergens aan vast?",
+    antwoord:
+      "Twaalf maanden minimaal, daarna maandelijks opzegbaar. Die twaalf maanden zijn er omdat het bouwwerk vooraf gebeurt. De setup fee van €395 dekt een deel van die bouwtijd.",
+  },
+  {
+    vraag: "Hoe snel staat mijn site online?",
+    antwoord:
+      "Twee tot drie weken na aanlevering van je teksten en beeld. Heb je die nog niet, dan duurt het langer — dat ligt vrijwel altijd aan het aanleveren, niet aan het bouwen.",
+  },
+  {
+    vraag: "Wat betekent gebouwd voor AI precies?",
+    antwoord:
+      "Dat je site zo is opgezet dat modellen als ChatGPT, Perplexity en Gemini je bedrijf kunnen lezen, begrijpen en noemen. Structured data, toegelaten crawlers, feiten in platte tekst. Dat zit standaard in het abonnement. Actief werken aan die vermeldingen is een add-on.",
+  },
+  {
+    vraag: "Voor wie is dit niet bedoeld?",
+    antwoord:
+      "Voor webshops, klantportalen en maatwerkapplicaties zijn we niet de juiste partij. Ook niet als je ongelimiteerde wijzigingen verwacht — het abonnement bevat 30 minuten per maand.",
+  },
+];
+
+const inbegrepen = [
+  {
+    icon: "site",
+    pill: "Website",
+    titel: "De website",
+    items: [
+      "Ontwerp op maat, geen template",
+      "Werkt op mobiel, tablet en desktop",
+      "Contactformulier met spamfilter",
+      "Cookiemelding die aan de AVG voldoet",
+    ],
+  },
+  {
+    icon: "search",
+    pill: "Vindbaarheid",
+    titel: "Vindbaarheid",
+    items: [
+      "Slim keyword onderzoek",
+      "Structured data voor Google",
+      "Sitemap en canonicals die kloppen",
+      "Google Search Console gekoppeld",
+      "Laadtijd onder één seconde",
+    ],
+  },
+  {
+    icon: "care",
+    pill: "Onderhoud",
+    titel: "Onderhoud",
+    items: [
+      "Hosting en SSL inbegrepen",
+      "Verhuizen huidige domein",
+      "Updates en beveiliging",
+      "30 minuten wijzigingen per maand",
+      "Maandelijkse rapportage",
+    ],
+  },
+];
+
+const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
+const pageUrl = new URL(Astro.url.pathname, site).href;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Website Abonnement",
+  serviceType: "Website as a Service",
+  description:
+    "Een professionele website zonder investering vooraf. €120 per maand inclusief hosting, onderhoud en updates. Binnen twee weken live.",
+  url: pageUrl,
+  provider: {
+    "@type": "ProfessionalService",
+    name: "Storm Sites",
+    url: "https://studiohoogervorst.nl",
+  },
+  areaServed: "NL",
+  offers: {
+    "@type": "Offer",
+    price: 120,
+    priceCurrency: "EUR",
+    billingIncrement: "maand",
+    url: pageUrl,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: new URL("/", site).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Abonnement",
+      item: pageUrl,
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Website abonnement vanaf €120 per maand | Storm Sites"
+  description="Een professionele website zonder investering vooraf. €120 per maand inclusief hosting, onderhoud en updates. Binnen twee weken live. Alle prijzen en voorwaarden staan hieronder."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <SiteHeader />
+
+  <main id="inhoud">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Website as a Service</p>
+        <h1>Een website die klaar is<br />voor €120 per maand.</h1>
+        <p class="sub">
+          Geen investering van duizenden euro's vooraf. Je betaalt per maand,
+          inclusief hosting, onderhoud en updates. Binnen twee weken live.
+        </p>
+        <div class="actions">
+          <a class="btn" href="/contact/">Plan een gesprek</a>
+          <a class="btn btn-outline" href="/abonnement/">Bekijk wat je krijgt</a>
+        </div>
+        <p class="trust">
+          €395 setup · 12 maanden minimum · daarna maandelijks opzegbaar
+        </p>
+      </div>
+    </section>
+
+    <section class="included">
+      <div class="wrap">
+        <h2>Alles wat er<br />standaard in zit.</h2>
+        <p class="lede">
+          Hosting, onderhoud en updates zitten in het website abonnement. Dit is
+          wat je bij de start krijgt, zonder extra kosten.
+        </p>
+        <div class="include-grid">
+          {
+            inbegrepen.map((kolom) => (
+              <article class="include-card">
+                <span class="include-pill">
+                  {kolom.icon === "site" && (
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                      <rect x="2" y="3" width="12" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.3" />
+                      <path d="M2 6.5h12" fill="none" stroke="currentColor" stroke-width="1.3" />
+                    </svg>
+                  )}
+                  {kolom.icon === "search" && (
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                      <circle cx="7" cy="7" r="4.2" fill="none" stroke="currentColor" stroke-width="1.3" />
+                      <path d="M10.2 10.2L13.5 13.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>
+                  )}
+                  {kolom.icon === "care" && (
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                      <path d="M8 2.5l5 2v4.2c0 3-2.1 4.8-5 5.8-2.9-1-5-2.8-5-5.8V4.5l5-2z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" />
+                    </svg>
+                  )}
+                  {kolom.pill}
+                </span>
+                <h3>{kolom.titel}</h3>
+                <ul class="list-check">
+                  {kolom.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="prices" id="prijs">
+      <div class="wrap">
+        <p class="badge">Prijs</p>
+        <h2>Twee manieren<br />om het te doen.</h2>
+
+        <div class="price-duo">
+          <article class="price-card fund">
+            <span class="pill pill-lime">Meest gekozen</span>
+            <h3>Website Abonnement</h3>
+            <p class="amount">
+              <span class="euro">€120</span>
+              <span class="per">/ maand</span>
+            </p>
+            <p class="setup">+ €395 setup · 12 maanden minimum</p>
+            <ul class="list-check">
+              <li>Alles uit “Wat je krijgt” inbegrepen</li>
+              <li>Hosting en domein inbegrepen</li>
+              <li>Updates en onderhoud doorlopend</li>
+              <li>30 min wijzigingen per maand</li>
+              <li>Maandelijkse rapportage</li>
+              <li>Afkopen kan altijd voor €950</li>
+            </ul>
+            <a class="btn btn-navy btn-full" href="/contact/">Plan een gesprek</a>
+          </article>
+
+          <article class="price-card quiet">
+            <h3>Eenmalig kopen</h3>
+            <p class="amount">
+              <span class="euro">€3.150</span>
+            </p>
+            <p class="setup">eenmalig, de site is direct van jou</p>
+            <ul class="list-check">
+              <li>Dezelfde website</li>
+              <li>Direct je eigen eigendom</li>
+              <li>Hosting regel je zelf</li>
+              <li>Geen doorlopend onderhoud</li>
+              <li>Updates op factuurbasis</li>
+              <li>Geen rapportage</li>
+            </ul>
+            <a class="btn btn-outline-navy btn-full" href="/contact/">Ook mogelijk</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="addons" id="addons">
+      <div class="wrap">
+        <p class="badge">Add-ons</p>
+        <h2>
+          Begin <span class="addons-accent">klein</span>.<br />
+          Breid uit wanneer je wilt.
+        </h2>
+        <p class="lede">
+          Het abonnement is het fundament. Elke add-on is een losse stap
+          erbovenop — maandelijks te starten en te stoppen.
+        </p>
+        <PrijsCalculator />
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <p class="badge badge-dark">FAQ</p>
+        <h2>Veelgestelde vragen,<br />eerlijke antwoorden.</h2>
+        <FaqList faqs={faqs} tint="navy" />
+      </div>
+    </section>
+
+    <section class="close">
+      <div class="wrap close-inner">
+        <h2>Twintig minuten.<br />Daarna weet je het.</h2>
+        <p>
+          Geen verkooppraatje. We kijken samen of dit bij je past, en zo niet,
+          dan zeggen we dat.
+        </p>
+        <a class="btn" href="/contact/">Plan een gesprek ›</a>
+        <p class="trust">Binnen 2 weken live · Geen offertetraject</p>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 88px 0 var(--section);
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .hero-inner {
+    max-width: 780px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .eyebrow {
+    margin-bottom: 22px;
+    color: var(--lime);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .sub {
+    max-width: 36em;
+    margin: 22px auto 0;
+    color: var(--dim);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .trust {
+    margin-top: 36px;
+    color: var(--dim);
+    font-size: 0.875rem;
+  }
+
+  .prices {
+    padding: var(--section) 0;
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .faq {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .included {
+    padding: var(--section) 0;
+    background-color: var(--paper);
+    background-image: radial-gradient(
+      ellipse 90% 70% at 50% -20%,
+      #dce7ec 0%,
+      var(--paper) 58%
+    );
+    color: var(--ink);
+    text-align: center;
+  }
+
+  .included .lede {
+    max-width: 34em;
+    margin: 16px auto 0;
+  }
+
+  .include-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 56px;
+    text-align: left;
+  }
+
+  .include-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+    padding: 32px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(8, 42, 60, 0.07);
+  }
+
+  .include-card:nth-child(2) {
+    margin-top: 40px;
+  }
+
+  .include-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    padding: 5px 10px 5px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--body);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .include-pill svg {
+    flex-shrink: 0;
+  }
+
+  .include-card h3 {
+    margin-top: 22px;
+    font-size: clamp(1.55rem, 2.2vw, 2.05rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+
+  .include-card .list-check {
+    margin-top: auto;
+    padding-top: 24px;
+  }
+
+  .badge {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .badge-dark {
+    border-color: var(--navy-line);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .lede {
+    max-width: 36em;
+    margin-top: 16px;
+    color: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .price-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin-top: 48px;
+  }
+
+  .price-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+
+  .fund {
+    border: 2px solid var(--lime);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--body);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .pill-lime {
+    background: var(--lime);
+    color: var(--navy);
+  }
+
+  .price-card h3 {
+    margin-top: 14px;
+  }
+
+  .quiet h3 {
+    margin-top: 0;
+  }
+
+  .amount {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .euro {
+    font-size: 3.2rem;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+
+  .per {
+    color: var(--body);
+    font-weight: 500;
+  }
+
+  .setup {
+    margin: 16px 0 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    color: var(--body);
+    font-size: 0.9rem;
+  }
+
+  .price-card .list-check {
+    margin-bottom: 28px;
+  }
+
+  .price-card .btn {
+    margin-top: auto;
+  }
+
+  .btn-outline-navy {
+    background: transparent;
+    border-color: var(--navy);
+    color: var(--navy);
+  }
+
+  .btn-outline-navy:hover {
+    background: var(--paper);
+  }
+
+  .addons {
+    padding: var(--section) 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .addons h2 {
+    max-width: 18em;
+  }
+
+  .addons-accent {
+    color: #6f9fbb;
+  }
+
+  .addons .lede {
+    margin-bottom: 48px;
+  }
+
+  .faq h2 {
+    margin-bottom: 40px;
+  }
+
+  .close {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+  }
+
+  .close-inner {
+    max-width: 640px;
+  }
+
+  .close p {
+    margin: 18px auto 28px;
+    color: var(--dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .close .trust {
+    margin-top: 28px;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 939px) {
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .include-grid,
+    .price-duo {
+      grid-template-columns: 1fr;
+    }
+
+    .include-card:nth-child(2) {
+      margin-top: 0;
+      min-height: 0;
+    }
+
+    .include-card,
+    .price-card {
+      padding: 28px 24px;
+    }
+
+    .addons .lede {
+      margin-bottom: 32px;
+    }
+  }
+</style>

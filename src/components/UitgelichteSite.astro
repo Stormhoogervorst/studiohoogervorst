@@ -1,0 +1,278 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  id: string;
+  klant: string;
+  aanpak: string;
+  tint?: "sage" | "paper" | "mist" | "navy";
+  href?: string;
+  resultaat?: {
+    kop: string;
+    tekst: string;
+  };
+}
+
+const { id, klant, aanpak, tint = "paper", href, resultaat } = Astro.props;
+
+const bestanden = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/sites/*.{png,jpg,jpeg,webp}",
+  { eager: true },
+);
+
+const treffer = Object.entries(bestanden).find(([pad]) =>
+  pad.split("/").pop()?.replace(/\.[^.]+$/, "") === id,
+);
+const foto = treffer?.[1].default;
+
+// De grid is één kolom onder 939px, daarboven twee kolommen binnen --max.
+const beeldSizes = "(max-width: 939px) calc(100vw - 48px), 574px";
+const beeldClass = ["beeld", href && "beeld--link"];
+---
+
+<article class:list={["site", `site--${tint}`]}>
+  {
+    href ? (
+      <a
+        class:list={beeldClass}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {
+          foto ? (
+            <Image
+              class:list={{ midden: id === "nso-eques" }}
+              src={foto}
+              alt=""
+              width={1200}
+              widths={[600, 900, 1200]}
+              sizes={beeldSizes}
+              format="webp"
+              quality={70}
+            />
+          ) : (
+            <span class="wacht" aria-hidden="true"></span>
+          )
+        }
+        <span class:list={["overlay", resultaat && "overlay--resultaat"]}>
+          <span class="pijl" aria-hidden="true">
+            <svg viewBox="0 0 16 16" width="16" height="16">
+              <path
+                d="M4.5 11.5L11.5 4.5M6.5 4.5h5v5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          {
+            resultaat && (
+              <span class="resultaat">
+                <strong>{resultaat.kop}</strong>
+                <span>{resultaat.tekst}</span>
+              </span>
+            )
+          }
+        </span>
+        <span class="sr">Website van {klant}</span>
+      </a>
+    ) : (
+      <div class="beeld">
+        {
+          foto ? (
+            <Image
+              class:list={{ midden: id === "nso-eques" }}
+              src={foto}
+              alt={`Website van ${klant}`}
+              width={1200}
+              widths={[600, 900, 1200]}
+              sizes={beeldSizes}
+              format="webp"
+              quality={70}
+            />
+          ) : (
+            <span class="wacht" aria-hidden="true"></span>
+          )
+        }
+      </div>
+    )
+  }
+  <div class="info">
+    <h3>{klant}</h3>
+    <p>{aanpak}</p>
+  </div>
+</article>
+
+<style>
+  .site {
+    min-width: 0;
+  }
+
+  .beeld {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+    border-radius: 32px;
+    background: var(--paper);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .beeld--link:focus-visible {
+    outline: 2px solid var(--lime);
+    outline-offset: 3px;
+  }
+
+  .site--sage .beeld {
+    background: color-mix(in srgb, var(--lime) 16%, var(--paper));
+  }
+
+  .site--mist .beeld {
+    background: #e8eef0;
+  }
+
+  .site--navy .beeld {
+    background: color-mix(in srgb, var(--navy) 8%, var(--paper));
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  img.midden {
+    object-position: center;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.28);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  .overlay--resultaat {
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    background: color-mix(in srgb, var(--lime) 78%, #fff);
+    opacity: 0;
+  }
+
+  .resultaat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 20em;
+    color: var(--navy);
+  }
+
+  .resultaat strong {
+    font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .resultaat span {
+    font-size: 1.02rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+  }
+
+  .beeld--link:hover .overlay,
+  .beeld--link:focus-visible .overlay {
+    opacity: 1;
+  }
+
+  .pijl {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--navy);
+  }
+
+  .sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .info {
+    margin-top: 20px;
+  }
+
+  h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  .info p {
+    max-width: 36em;
+    margin-top: 8px;
+    color: var(--body);
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.55;
+    overflow-wrap: break-word;
+  }
+
+  @media (max-width: 899px) {
+    .beeld {
+      border-radius: 24px;
+    }
+
+    .overlay--resultaat {
+      padding: 22px;
+    }
+
+    .info {
+      margin-top: 18px;
+    }
+  }
+
+  @media (hover: none) {
+    .overlay--resultaat {
+      inset: auto 0 0 0;
+      opacity: 1;
+      padding: 20px 22px;
+    }
+
+    .resultaat strong {
+      font-size: 1.45rem;
+    }
+
+    .resultaat span {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+

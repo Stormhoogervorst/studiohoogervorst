@@ -1,0 +1,112 @@
+---
+interface Faq {
+  vraag: string;
+  antwoord: string;
+}
+
+interface Props {
+  faqs: Faq[];
+  tint?: "licht" | "navy";
+}
+
+const { faqs, tint = "licht" } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.vraag,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.antwoord,
+    },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<div class:list={["list", `list--${tint}`]}>
+  {
+    faqs.map((faq, i) => (
+      <details class="item" name="faq" {...(i === 0 ? { open: true } : {})}>
+        <summary>{faq.vraag}</summary>
+        <p>{faq.antwoord}</p>
+      </details>
+    ))
+  }
+</div>
+
+<style>
+  .list {
+    --faq-line: var(--line);
+    --faq-vraag: var(--ink);
+    --faq-antwoord: var(--body);
+    border-top: 1px solid var(--faq-line);
+  }
+
+  .list--navy {
+    --faq-line: var(--navy-line);
+    --faq-vraag: #fff;
+    --faq-antwoord: #b6c8d2;
+  }
+
+  .item {
+    border-bottom: 1px solid var(--faq-line);
+  }
+
+  summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 22px 40px 22px 0;
+    color: var(--faq-vraag);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::before,
+  summary::after {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    background: var(--faq-vraag);
+    content: "";
+    pointer-events: none;
+  }
+
+  summary::before {
+    width: 14px;
+    height: 1.5px;
+    margin-top: -0.75px;
+  }
+
+  summary::after {
+    width: 1.5px;
+    height: 14px;
+    right: 8.25px;
+    margin-top: -7px;
+    transform-origin: center;
+    transition: transform 0.2s ease;
+  }
+
+  .item[open] summary::after {
+    transform: rotate(90deg);
+  }
+
+  .item p {
+    max-width: 42em;
+    padding: 0 40px 22px 0;
+    color: var(--faq-antwoord);
+    line-height: 1.6;
+  }
+</style>

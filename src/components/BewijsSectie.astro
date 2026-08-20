@@ -1,0 +1,187 @@
+---
+import { Image } from "astro:assets";
+import stockFoto from "../assets/stock-foto-1.jpg";
+
+interface Props {
+  inBand?: boolean;
+}
+
+const { inBand = false } = Astro.props;
+---
+
+<section class:list={["duo", inBand && "duo--in-band"]} aria-label="Bewijs">
+  <div class="wrap duo-grid">
+    <article class="panel panel-photo">
+      <Image
+        class="panel-photo-img"
+        src={stockFoto}
+        alt=""
+        width={1400}
+        widths={[700, 1000, 1400]}
+        sizes="(max-width: 939px) calc(100vw - 48px), 700px"
+        format="webp"
+        quality={70}
+        loading={inBand ? "eager" : "lazy"}
+      />
+      <h2>Eén opdracht kwam binnen via ChatGPT.</h2>
+      <p>
+        Een opdrachtgever van Legal Talents vond ze niet via Google, maar via
+        ChatGPT. Dat is geen toeval — daar bouwen we op.
+      </p>
+      <a class="lime-link" href="/kennisbank/">Lees hoe dat werkt →</a>
+    </article>
+    <blockquote class="panel quote">
+      <span class="mark" aria-hidden="true">“</span>
+      <p>
+        Binnen een maand kwamen er drie nieuwe opdrachtgevers binnen via de
+        site. Daarvoor was dat nul.
+      </p>
+      <footer>Legal Talents · Nijmegen</footer>
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  .duo {
+    padding: 48px 0;
+    background: var(--sky);
+    color: #fff;
+  }
+
+  .duo--in-band {
+    padding-top: 0;
+    padding-bottom: var(--section);
+    background: transparent;
+  }
+
+  .duo-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 16px;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+    border-radius: 20px;
+    background: var(--navy-card);
+  }
+
+  .panel p {
+    margin-top: 16px;
+    color: var(--dim);
+    line-height: 1.6;
+  }
+
+  .panel-photo {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    justify-content: flex-start;
+    background: #16384a;
+  }
+
+  .panel-photo-img,
+  .panel-photo::after {
+    position: absolute;
+    inset: 0;
+  }
+
+  .panel-photo-img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+
+  .panel-photo::after {
+    content: "";
+    background: linear-gradient(
+      180deg,
+      rgba(8, 42, 60, 0.78) 0%,
+      rgba(8, 42, 60, 0.28) 42%,
+      rgba(8, 42, 60, 0.12) 100%
+    );
+  }
+
+  .panel-photo > :not(.panel-photo-img) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel-photo h2 {
+    max-width: 12.5em;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+  }
+
+  .panel-photo p {
+    max-width: 28em;
+    margin-top: 12px;
+    color: #fff;
+    font-size: 0.95rem;
+  }
+
+  .panel-photo .lime-link {
+    margin-top: 20px;
+    padding-top: 0;
+  }
+
+  .lime-link {
+    margin-top: auto;
+    padding-top: 28px;
+    color: var(--lime);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .lime-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .quote {
+    position: relative;
+  }
+
+  .mark {
+    display: block;
+    color: var(--lime);
+    font-size: 4.5rem;
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 0.7;
+  }
+
+  .quote p {
+    margin-top: 16px;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+  }
+
+  .quote footer {
+    margin-top: auto;
+    padding-top: 28px;
+    color: var(--dim);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 939px) {
+    .duo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .panel {
+      padding: 28px 24px;
+    }
+
+    .panel-photo {
+      min-height: 340px;
+    }
+  }
+</style>

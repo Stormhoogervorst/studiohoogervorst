@@ -1,0 +1,45 @@
+---
+// Investering: een factuur in miniatuur — wat het kost en wat inbegrepen is.
+---
+<svg
+  viewBox="0 0 300 170"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="graphic"
+>
+  <defs>
+    <linearGradient id="prijs-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef1f3" />
+      <stop offset="1" stop-color="#e0e9ee" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="170" rx="14" fill="url(#prijs-bg)" />
+
+  <!-- factuurblad -->
+  <rect x="40" y="18" width="220" height="134" rx="10" fill="#fff" />
+
+  <!-- regels -->
+  <text x="56" y="44" class="t">Website</text>
+  <text x="244" y="44" class="t" text-anchor="end">€120</text>
+  <line x1="56" y1="52" x2="244" y2="52" stroke="var(--navy)" stroke-width="1" opacity=".08" />
+
+  <text x="56" y="70" class="t">Hosting</text>
+  <text x="244" y="70" class="t muted" text-anchor="end">inbegrepen</text>
+  <line x1="56" y1="78" x2="244" y2="78" stroke="var(--navy)" stroke-width="1" opacity=".08" />
+
+  <text x="56" y="96" class="t">Onderhoud</text>
+  <text x="244" y="96" class="t muted" text-anchor="end">inbegrepen</text>
+
+  <!-- totaalbalk -->
+  <rect x="56" y="110" width="188" height="28" rx="8" fill="var(--lime)" />
+  <text x="68" y="128" class="t strong">Per maand</text>
+  <text x="232" y="128" class="t strong" text-anchor="end">€120</text>
+</svg>
+
+<style>
+  .graphic { display: block; width: 100%; height: auto; }
+  .t { font-family: "Geist", system-ui, sans-serif; font-size: 11px; font-weight: 500; fill: var(--navy); opacity: .8; }
+  .t.muted { opacity: .45; }
+  .t.strong { opacity: 1; font-weight: 600; }
+</style>

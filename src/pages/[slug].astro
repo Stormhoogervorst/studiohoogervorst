@@ -1,0 +1,663 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import FaqList from "../components/FaqList.astro";
+import PrijzenSectie from "../components/PrijzenSectie.astro";
+import UitgelichteProjecten from "../components/UitgelichteProjecten.astro";
+import KernwaardenSectie from "../components/KernwaardenSectie.astro";
+import BewijsSectie from "../components/BewijsSectie.astro";
+import TrustRating from "../components/TrustRating.astro";
+
+interface Props {
+  entry: CollectionEntry<"landing">;
+  gerelateerd: CollectionEntry<"landing">[];
+}
+
+export async function getStaticPaths() {
+  const landings = await getCollection("landing", ({ data }) => data.gepubliceerd);
+  const landingById = new Map(landings.map((item) => [item.id, item]));
+
+  return landings.map((entry) => {
+    const gerelateerd = entry.data.gerelateerd
+      .map((slug) => landingById.get(slug))
+      .filter((item): item is CollectionEntry<"landing"> => Boolean(item));
+
+    return {
+      params: { slug: entry.id },
+      props: {
+        entry,
+        gerelateerd,
+      } satisfies Props,
+    };
+  });
+}
+
+const { entry, gerelateerd } = Astro.props;
+const {
+  h1,
+  titel,
+  beschrijving,
+  intro,
+  zoekterm,
+  probleem,
+  vergelijking,
+  vergelijking_kop,
+  wanneer_niet_kop,
+  wanneer_niet,
+  proces,
+  case_intro,
+  case_slugs,
+  faqs,
+} = entry.data;
+
+const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
+const pageUrl = new URL(Astro.url.pathname, site).href;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: titel,
+  serviceType: zoekterm,
+  description: beschrijving,
+  url: pageUrl,
+  provider: {
+    "@type": "ProfessionalService",
+    name: "Storm Sites",
+    url: "https://studiohoogervorst.nl",
+  },
+  areaServed: "NL",
+  offers: {
+    "@type": "Offer",
+    price: 120,
+    priceCurrency: "EUR",
+    description: "€120 per maand + €395 setup, 12 maanden minimum",
+    url: new URL("/abonnement/", site).href,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: new URL("/", site).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: h1,
+      item: pageUrl,
+    },
+  ],
+};
+---
+
+<BaseLayout title={titel} description={beschrijving}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <SiteHeader />
+
+  <main id="inhoud">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <h1>{h1}</h1>
+        <p class="sub">{intro}</p>
+        <div class="actions">
+          <a class="btn" href="/contact/">Stuur je site, krijg een eerlijke inschatting</a>
+          <a class="btn btn-outline" href="/abonnement/">Bekijk de prijzen</a>
+        </div>
+        <div class="hero-rating">
+          <TrustRating />
+        </div>
+      </div>
+    </section>
+
+    <section class="probleem">
+      <div class="wrap">
+        <h2>Herken je dit?</h2>
+        <p class="probleem-lede">
+          Drie dingen die we bijna elke week horen van bedrijven die contact opnemen.
+        </p>
+        <ol class="probleem-grid">
+          {
+            probleem.map((item, i) => (
+              <li>
+                <span class="nr" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3>{item.kop}</h3>
+                <p>{item.tekst}</p>
+              </li>
+            ))
+          }
+        </ol>
+        <a class="btn probleem-cta" href="/contact/">Plan kennismaking</a>
+      </div>
+    </section>
+
+    <BewijsSectie />
+
+    <KernwaardenSectie />
+
+    <section class="aanpak">
+      <div class="wrap">
+        <h2>Zo pakken we het aan.</h2>
+        <ol class="proces-grid">
+          {
+            proces.map((item, i) => (
+              <li>
+                <span class="nr" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3>{item.kop}</h3>
+                <p>{item.tekst}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <UitgelichteProjecten
+      limiet={2}
+      ids={case_slugs}
+      kop="En zo pakt het uit."
+      lede={case_intro}
+      compactTop
+    />
+
+    <section class="vergelijking">
+      <div class="wrap">
+        <p class="badge">Vergelijking</p>
+        <h2>{vergelijking_kop} versus Storm Sites.</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Wat</th>
+              <th scope="col">{vergelijking_kop}</th>
+              <th scope="col" class="wij">Storm Sites</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              vergelijking.map((rij) => (
+                <tr>
+                  <th scope="row" data-label="Wat">{rij.wat}</th>
+                  <td data-label={vergelijking_kop}>{rij.zij}</td>
+                  <td class="wij" data-label="Storm Sites">{rij.wij}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    {
+      wanneer_niet_kop && wanneer_niet && (
+        <section class="wanneer">
+          <div class="wrap wanneer-inner">
+            <h2>{wanneer_niet_kop}</h2>
+            <p>{wanneer_niet}</p>
+          </div>
+        </section>
+      )
+    }
+
+    <PrijzenSectie flushTop />
+
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="badge">FAQ</p>
+            <h2>Veelgestelde vragen,<br />eerlijke antwoorden.</h2>
+          </div>
+          <div class="faq-aside">
+            <p class="faq-lede">
+              Staat je vraag er niet bij? Neem contact met ons op!
+            </p>
+            <a class="btn" href="/contact/">Neem contact op</a>
+          </div>
+        </div>
+        <FaqList faqs={faqs} tint="navy" />
+      </div>
+    </section>
+
+    <section class="close">
+      <div class="wrap close-inner">
+        <h2>Twintig minuten. Daarna weet je het.</h2>
+        <a class="btn" href="/contact/">Plan een gesprek</a>
+        {
+          gerelateerd.length > 0 && (
+            <nav class="related" aria-label="Gerelateerd">
+              {gerelateerd.map((pagina) => (
+                <a href={`/${pagina.id}/`}>{pagina.data.h1}</a>
+              ))}
+            </nav>
+          )
+        }
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 88px 0 64px;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .hero-inner {
+    max-width: 780px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .sub {
+    max-width: 36em;
+    margin: 22px auto 0;
+    color: var(--dim);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .hero-rating {
+    margin-top: 36px;
+  }
+
+  .probleem {
+    padding: 96px 0;
+    background: var(--sky);
+    color: var(--ink);
+  }
+
+  .probleem-lede {
+    max-width: 52ch;
+    margin-top: 16px;
+    margin-bottom: 56px;
+    color: var(--ink);
+    opacity: 0.7;
+  }
+
+  .probleem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    list-style: none;
+  }
+
+  .probleem-grid li {
+    min-width: 0;
+    padding-top: 24px;
+    border-top: 2px solid var(--line);
+  }
+
+  .probleem-grid li:first-child {
+    border-top-color: var(--accent);
+  }
+
+  .probleem-grid .nr {
+    color: var(--ink);
+    opacity: 0.45;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+  }
+
+  .probleem-grid h3 {
+    margin: 10px 0 12px;
+    color: var(--ink);
+    font-size: 1.1rem;
+  }
+
+  .probleem-grid p {
+    max-width: 34ch;
+    color: var(--ink);
+    opacity: 0.7;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+
+  .probleem-cta {
+    margin-top: 48px;
+  }
+
+  .vergelijking {
+    padding: var(--section) 0;
+    background: var(--deep);
+    color: #fff;
+  }
+
+  .badge {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 5px 12px;
+    border: 1px solid var(--deep-line);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .vergelijking h2 {
+    margin-bottom: 44px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  th,
+  td {
+    padding: 18px 24px;
+    text-align: left;
+    vertical-align: top;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  thead th {
+    padding-bottom: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  thead th.wij {
+    padding-top: 18px;
+    border-radius: 20px 20px 0 0;
+    color: var(--lime);
+  }
+
+  tbody th,
+  tbody td {
+    border-top: 1px solid var(--deep-line);
+  }
+
+  tbody th {
+    font-weight: 600;
+  }
+
+  tbody td {
+    color: rgba(255, 255, 255, 0.68);
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0;
+  }
+
+  .wij {
+    background: var(--deep-card);
+  }
+
+  tbody td.wij {
+    position: relative;
+    padding-left: 50px;
+    border-top-color: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    font-weight: 500;
+  }
+
+  tbody td.wij::before {
+    position: absolute;
+    left: 24px;
+    color: var(--lime);
+    font-weight: 600;
+    content: "✓";
+  }
+
+  tbody tr:last-child td.wij {
+    border-radius: 0 0 20px 20px;
+  }
+
+  .wanneer {
+    padding: var(--section) 0;
+    background: var(--sky);
+    color: var(--ink);
+  }
+
+  .wanneer-inner {
+    max-width: 62ch;
+    margin-inline: 0;
+  }
+
+  .wanneer p {
+    margin-top: 18px;
+    color: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .aanpak {
+    padding: calc(var(--section) + 40px) 0 var(--section);
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .proces-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px 28px;
+    margin-top: 40px;
+    list-style: none;
+  }
+
+  .proces-grid li {
+    min-width: 0;
+    padding-top: 20px;
+    border-top: 2px solid var(--line);
+  }
+
+  .proces-grid li:first-child {
+    border-top-color: var(--accent);
+  }
+
+  .nr {
+    display: block;
+    font-weight: 500;
+  }
+
+  .proces-grid .nr {
+    color: var(--ink);
+    opacity: 0.45;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+
+  .proces-grid h3 {
+    margin-top: 14px;
+    color: var(--ink);
+  }
+
+  .proces-grid p {
+    margin-top: 10px;
+    color: var(--ink);
+    opacity: 0.7;
+    line-height: 1.55;
+  }
+
+  .faq {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+    align-items: end;
+    margin-bottom: 48px;
+  }
+
+  .faq-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .faq-lede {
+    color: #b6c8d2;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .close {
+    padding: var(--section) 0;
+    background: var(--deep);
+    color: #fff;
+    text-align: center;
+  }
+
+  .close-inner {
+    max-width: 640px;
+  }
+
+  .close .btn {
+    margin-top: 28px;
+  }
+
+  .related {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 28px;
+    margin-top: 36px;
+  }
+
+  .related a {
+    color: var(--lime);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .related a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 899px) {
+    .probleem {
+      padding: 70px 0;
+    }
+
+    .probleem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 939px) {
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .split {
+      grid-template-columns: 1fr;
+    }
+
+    .proces-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 699px) {
+    .proces-grid {
+      grid-template-columns: 1fr;
+    }
+
+    table,
+    thead,
+    tbody,
+    tr,
+    th,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    tbody tr {
+      margin-bottom: 14px;
+      padding: 22px;
+      border-radius: 16px;
+      background: var(--deep-card);
+    }
+
+    tbody th,
+    tbody td {
+      padding: 0;
+      border: 0;
+    }
+
+    tbody th {
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+    }
+
+    tbody td,
+    tbody td.wij {
+      padding-top: 12px;
+      margin-top: 12px;
+      border-top: 1px solid var(--deep-line);
+      background: none;
+    }
+
+    tbody td.wij {
+      padding-left: 0;
+      border-radius: 0;
+    }
+
+    tbody td::before,
+    tbody td.wij::before {
+      position: static;
+      display: block;
+      margin-bottom: 4px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      content: attr(data-label);
+    }
+
+    tbody td.wij::before {
+      color: var(--lime);
+    }
+  }
+</style>

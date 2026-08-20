@@ -1,0 +1,45 @@
+---
+// Vindbaarheid: een zoekresultaat in miniatuur, jouw site bovenaan.
+// Decoratief — aria-hidden, de inhoud staat al in de kaart.
+---
+<svg
+  viewBox="0 0 300 170"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="graphic"
+>
+  <defs>
+    <linearGradient id="zoek-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef4f2" />
+      <stop offset="1" stop-color="#dcecd0" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="170" rx="14" fill="url(#zoek-bg)" />
+
+  <!-- zoekbalk -->
+  <rect x="22" y="18" width="256" height="26" rx="13" fill="#fff" />
+  <circle cx="38" cy="31" r="5" fill="none" stroke="var(--navy)" stroke-width="1.6" opacity=".45" />
+  <line x1="42" y1="35" x2="46" y2="39" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round" opacity=".45" />
+  <text x="56" y="35" class="t">website laten maken</text>
+
+  <!-- resultaat 1: jij -->
+  <rect x="22" y="58" width="256" height="40" rx="9" fill="#fff" />
+  <rect x="32" y="66" width="22" height="24" rx="6" fill="var(--lime)" />
+  <text x="43" y="83" class="t num" text-anchor="middle">1</text>
+  <text x="62" y="76" class="t strong">studiohoogervorst.nl</text>
+  <rect x="62" y="83" width="150" height="6" rx="3" fill="var(--navy)" opacity=".12" />
+
+  <!-- resultaat 2 en 3: anoniem -->
+  <rect x="22" y="108" width="256" height="22" rx="7" fill="#fff" opacity=".6" />
+  <rect x="32" y="116" width="120" height="6" rx="3" fill="var(--navy)" opacity=".1" />
+  <rect x="22" y="138" width="256" height="22" rx="7" fill="#fff" opacity=".4" />
+  <rect x="32" y="146" width="96" height="6" rx="3" fill="var(--navy)" opacity=".08" />
+</svg>
+
+<style>
+  .graphic { display: block; width: 100%; height: auto; }
+  .t { font-family: "Geist", system-ui, sans-serif; font-size: 11px; font-weight: 500; fill: var(--navy); opacity: .7; }
+  .t.strong { opacity: 1; font-weight: 600; }
+  .t.num { opacity: 1; font-weight: 700; font-size: 12px; }
+</style>

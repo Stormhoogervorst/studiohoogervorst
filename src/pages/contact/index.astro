@@ -1,0 +1,905 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import FaqList from "../../components/FaqList.astro";
+import TrustRating from "../../components/TrustRating.astro";
+import { CONTACT_LIMITS, HULP_OPTIES } from "../../lib/contact";
+
+const title = "Contact — plan een gesprek | Storm Sites";
+const description =
+  "Twintig minuten bellen over je website. Geen verkooppraatje. Reactie binnen één werkdag.";
+
+const site = Astro.site ?? new URL("https://studiohoogervorst.nl");
+const pageUrl = new URL(Astro.url.pathname, site).href;
+const hasError = Astro.url.searchParams.get("error") === "1";
+const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
+const thanksUrl = new URL("/contact/bedankt/", site).href;
+
+/** TODO: telefoonnummer aanleveren */
+const telefoon = "";
+/** TODO: LinkedIn-URL aanleveren */
+const linkedinUrl = "";
+
+const faqs = [
+  {
+    vraag: "Wat kost een gesprek?",
+    antwoord:
+      "Niets. Twintig minuten, en je zit nergens aan vast. Als het niet past zeggen we dat, dan heb je in ieder geval een eerlijk antwoord.",
+  },
+  {
+    vraag: "Waar moet ik op voorbereid zijn?",
+    antwoord:
+      "Nergens op. Handig is als je weet hoeveel aanvragen je nu via je site krijgt, maar als je dat niet bijhoudt is dat ook een antwoord.",
+  },
+  {
+    vraag: "Hoe snel kunnen we beginnen?",
+    antwoord:
+      "Meestal binnen een week na het gesprek. De site staat twee tot drie weken later online, mits je teksten en beeld op tijd aanlevert.",
+  },
+  {
+    vraag: "Werken jullie alleen in Gelderland?",
+    antwoord:
+      "Nee. We zitten in Nijmegen en hebben klanten in Arnhem en Utrecht, maar het werk gebeurt grotendeels op afstand. Locatie maakt niet uit.",
+  },
+  {
+    vraag: "Ik heb al een website. Is dit dan zinvol?",
+    antwoord:
+      "Vaak wel. We kijken gratis naar je huidige site en zeggen eerlijk of aanpassen genoeg is of dat opnieuw bouwen verstandiger is.",
+  },
+  {
+    vraag: "Wat als ik nog niet weet wat ik wil?",
+    antwoord:
+      "Dan is dit precies het juiste moment om te bellen. Het gesprek is er om uit te zoeken wat je nodig hebt, niet om iets te verkopen.",
+  },
+];
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: title,
+  description,
+  url: pageUrl,
+  inLanguage: "nl-NL",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Storm Sites",
+    url: site.href,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: new URL("/", site).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact",
+      item: pageUrl,
+    },
+  ],
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Storm Sites",
+  url: site.href,
+  email: "storm@studiohoogervorst.nl",
+  description:
+    "Websites op abonnementsbasis, gebouwd om gevonden te worden door Google én AI-modellen.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Nijmegen",
+    addressRegion: "Gelderland",
+    addressCountry: "NL",
+  },
+  areaServed: "NL",
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(contactSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <SiteHeader />
+
+  <main id="inhoud">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="intro">
+          <p class="pill">
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+              <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.3"></circle>
+              <path d="M8 5v3.2L10.2 10" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path>
+            </svg>
+            Reactie binnen 1 werkdag
+          </p>
+          <h1>Plan een gesprek</h1>
+          <p class="lede">
+            Twintig minuten over je huidige site en wat er te winnen valt. Geen
+            verkooppraatje — als het niet past, zeggen we dat.
+          </p>
+          <div class="hero-rating">
+            <TrustRating align="start" />
+          </div>
+        </div>
+
+        <div class="card">
+          <div id="form-ok" class="form-ok" hidden>
+            <p class="ok-title" tabindex="-1">Bedankt — je bericht is binnen.</p>
+            <p>Je hoort binnen één werkdag van ons. Meestal sneller.</p>
+          </div>
+
+          <form
+            id="contact-form"
+            class="form"
+            method="POST"
+            action="https://api.web3forms.com/submit"
+          >
+            <input type="hidden" name="access_key" value={accessKey} />
+            <input type="hidden" name="from_name" value="Storm Sites" />
+            <input type="hidden" name="subject" value="Nieuw gesprekverzoek via studiohoogervorst.nl" />
+            <input type="hidden" name="redirect" value={thanksUrl} />
+
+            <p
+              id="fout-form"
+              class="form-error"
+              role="alert"
+              tabindex="-1"
+              hidden={!hasError}
+            >
+              {
+                hasError
+                  ? "Versturen is niet gelukt. Controleer je gegevens en probeer het opnieuw."
+                  : ""
+              }
+            </p>
+
+            <div class="hp-wrap" aria-hidden="true">
+              <input
+                class="hp"
+                type="checkbox"
+                name="botcheck"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="fields">
+              <div class="pair">
+                <div class="field">
+                  <label for="naam">Naam*</label>
+                  <p id="fout-name" class="field-error" role="alert" hidden></p>
+                  <input
+                    id="naam"
+                    name="name"
+                    type="text"
+                    placeholder="Storm Hoogervorst"
+                    autocomplete="name"
+                    maxlength={CONTACT_LIMITS.naam}
+                    required
+                    aria-required="true"
+                    aria-describedby="fout-name"
+                  />
+                </div>
+                <div class="field">
+                  <label for="email">E-mail*</label>
+                  <p id="fout-email" class="field-error" role="alert" hidden></p>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="storm@bedrijf.nl"
+                    autocomplete="email"
+                    inputmode="email"
+                    maxlength={CONTACT_LIMITS.email}
+                    required
+                    aria-required="true"
+                    aria-describedby="fout-email"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="bedrijf">Bedrijf*</label>
+                <p id="fout-bedrijf" class="field-error" role="alert" hidden></p>
+                <input
+                  id="bedrijf"
+                  name="bedrijf"
+                  type="text"
+                  placeholder="Bijv. Legal Talents"
+                  autocomplete="organization"
+                  maxlength={CONTACT_LIMITS.bedrijf}
+                  required
+                  aria-required="true"
+                  aria-describedby="fout-bedrijf"
+                />
+              </div>
+
+              <div class="field">
+                <label for="huidige_website">Huidige website</label>
+                <p id="fout-huidige_website" class="field-error" role="alert" hidden></p>
+                <input
+                  id="huidige_website"
+                  name="huidige_website"
+                  type="url"
+                  placeholder="https://..."
+                  autocomplete="url"
+                  inputmode="url"
+                  maxlength={CONTACT_LIMITS.huidige_website}
+                  aria-describedby="fout-huidige_website"
+                />
+              </div>
+
+              <div class="field">
+                <label for="hulp">Waar kun je hulp bij gebruiken?</label>
+                <p id="fout-hulp" class="field-error" role="alert" hidden></p>
+                <select
+                  id="hulp"
+                  name="hulp"
+                  aria-describedby="fout-hulp"
+                >
+                  {
+                    HULP_OPTIES.map((optie) => (
+                      <option value={optie.value}>{optie.label}</option>
+                    ))
+                  }
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="bericht">Bericht</label>
+                <p id="fout-message" class="field-error" role="alert" hidden></p>
+                <textarea
+                  id="bericht"
+                  name="message"
+                  rows="4"
+                  placeholder="Kort: waar loop je tegenaan?"
+                  maxlength={CONTACT_LIMITS.bericht}
+                  aria-describedby="fout-message"
+                ></textarea>
+              </div>
+            </div>
+
+            <label class="opt-in" for="nieuwsbrief">
+              <span class="check">
+                <input
+                  class="native"
+                  type="checkbox"
+                  id="nieuwsbrief"
+                  name="nieuwsbrief"
+                  value="ja"
+                />
+                <span class="box" aria-hidden="true"></span>
+              </span>
+              <span>
+                Ja, stuur me af en toe iets over vindbaarheid. Je kunt je altijd
+                afmelden.
+              </span>
+            </label>
+
+            <button class="btn btn-full" type="submit" data-idle="Verstuur" data-busy="Versturen...">
+              Verstuur
+            </button>
+            <p class="legal">
+              Door te versturen ga je akkoord met ons{" "}
+              <a href="/privacy/">privacybeleid</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="other">
+      <div class="wrap">
+        <h2>Liever op een andere manier?</h2>
+        <div class="ways">
+          <article class="way">
+            <h3>Direct mailen</h3>
+            <p>Voor vragen, samenwerkingen of iets anders</p>
+            <a href="mailto:storm@studiohoogervorst.nl">storm@studiohoogervorst.nl</a>
+          </article>
+          <article class="way">
+            <h3>Even bellen</h3>
+            <p>Bereikbaar op werkdagen tussen 9 en 18 uur</p>
+            {
+              telefoon ? (
+                <a href={`tel:${telefoon.replace(/\s+/g, "")}`}>{telefoon}</a>
+              ) : (
+                <span class="todo">Nummer volgt</span>
+              )
+            }
+          </article>
+          <article class="way">
+            <h3>Volgen</h3>
+            <p>Wat we bouwen en wat we leren onderweg</p>
+            {
+              linkedinUrl ? (
+                <a href={linkedinUrl} rel="noopener noreferrer">LinkedIn</a>
+              ) : (
+                <span class="todo">LinkedIn volgt</span>
+              )
+            }
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <p class="badge badge-dark">FAQ</p>
+            <h2>Voordat je belt.</h2>
+          </div>
+          <p class="faq-lede">
+            De vragen die het vaakst langskomen. Staat die van jou er niet bij,
+            stel hem gewoon.
+          </p>
+        </div>
+        <FaqList faqs={faqs} tint="navy" />
+      </div>
+    </section>
+
+    <section class="close">
+      <div class="wrap close-inner">
+        <h2>Nog steeds aan het twijfelen?</h2>
+        <p>
+          Stuur gewoon een mail met je website erin. Je krijgt binnen een
+          werkdag een eerlijke inschatting terug, gratis.
+        </p>
+        <a class="btn" href="mailto:storm@studiohoogervorst.nl">Mail ons direct</a>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+
+  <script>
+    import { hulpLabel, validateContact, type ContactInput } from "../../lib/contact";
+
+  const form = document.getElementById("contact-form");
+  const success = document.getElementById("form-ok");
+  const formError = document.getElementById("fout-form");
+  if (!(form instanceof HTMLFormElement) || !success || !formError) {
+    // Formulier werkt zonder dit script via gewone POST.
+  } else {
+    const button = form.querySelector("button[type='submit']");
+    const idle = button instanceof HTMLButtonElement ? button.dataset.idle ?? "Verstuur" : "Verstuur";
+    const busy = button instanceof HTMLButtonElement ? button.dataset.busy ?? "Versturen..." : "Versturen...";
+    form.noValidate = true;
+
+    const fields = [
+      { key: "naam", name: "name" },
+      { key: "email", name: "email" },
+      { key: "bedrijf", name: "bedrijf" },
+      { key: "huidige_website", name: "huidige_website" },
+      { key: "hulp", name: "hulp" },
+      { key: "bericht", name: "message" },
+    ] as const;
+
+    const clearErrors = () => {
+      for (const { name } of fields) {
+        const input = form.elements.namedItem(name);
+        const err = document.getElementById(`fout-${name}`);
+        if (input instanceof HTMLElement) input.removeAttribute("aria-invalid");
+        if (err) {
+          err.hidden = true;
+          err.textContent = "";
+        }
+      }
+      formError.hidden = true;
+      formError.textContent = "";
+    };
+
+    const showErrors = (errors: Partial<Record<(typeof fields)[number]["key"], string>>, message?: string) => {
+      let first: HTMLElement | null = null;
+      for (const { key, name } of fields) {
+        const text = errors[key];
+        if (!text) continue;
+        const err = document.getElementById(`fout-${name}`);
+        const input = form.elements.namedItem(name);
+        if (err) {
+          err.hidden = false;
+          err.textContent = text;
+        }
+        if (input instanceof HTMLElement) {
+          input.setAttribute("aria-invalid", "true");
+          if (!first) first = input;
+        }
+      }
+      if (message) {
+        formError.hidden = false;
+        formError.textContent = message;
+        if (!first) first = formError;
+      }
+      first?.focus();
+    };
+
+    const readInput = (): ContactInput => {
+      const data = new FormData(form);
+      const str = (key: string) => {
+        const value = data.get(key);
+        return typeof value === "string" ? value : "";
+      };
+      return {
+        naam: str("name"),
+        email: str("email"),
+        bedrijf: str("bedrijf"),
+        huidige_website: str("huidige_website"),
+        hulp: str("hulp"),
+        bericht: str("message"),
+        nieuwsbrief: str("nieuwsbrief") === "ja",
+      };
+    };
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearErrors();
+
+      const errors = validateContact(readInput());
+      if (Object.keys(errors).length > 0) {
+        showErrors(errors);
+        return;
+      }
+
+      const bot = form.elements.namedItem("botcheck");
+      if (bot instanceof HTMLInputElement && bot.checked) {
+        form.hidden = true;
+        success.hidden = false;
+        success.querySelector<HTMLElement>(".ok-title")?.focus();
+        return;
+      }
+
+      if (button instanceof HTMLButtonElement) {
+        button.disabled = true;
+        button.textContent = busy;
+      }
+
+      try {
+        const input = readInput();
+        const accessKey = String(new FormData(form).get("access_key") ?? "").trim();
+        if (!accessKey) {
+          showErrors(
+            {},
+            "Versturen is tijdelijk niet mogelijk. Mail ons gerust direct.",
+          );
+          return;
+        }
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            from_name: "Storm Sites",
+            subject: `Gesprekverzoek van ${input.naam.trim()} (${input.bedrijf.trim()})`,
+            name: input.naam.trim(),
+            email: input.email.trim(),
+            bedrijf: input.bedrijf.trim(),
+            huidige_website: input.huidige_website.trim() || "—",
+            hulp: input.hulp.trim() ? hulpLabel(input.hulp.trim()) : "—",
+            nieuwsbrief: input.nieuwsbrief ? "Ja" : "Nee",
+            message: input.bericht.trim() || "—",
+          }),
+        });
+
+        const payload = (await response.json().catch(() => null)) as
+          | { success?: boolean; message?: string }
+          | null;
+
+        if (response.ok && payload?.success) {
+          form.hidden = true;
+          success.hidden = false;
+          const heading = success.querySelector<HTMLElement>(".ok-title");
+          heading?.focus();
+          return;
+        }
+
+        showErrors(
+          {},
+          payload?.message ||
+            "Versturen is niet gelukt. Probeer het opnieuw of mail ons.",
+        );
+      } catch {
+        showErrors(
+          {},
+          "Versturen is niet gelukt. Probeer het opnieuw of mail ons.",
+        );
+      } finally {
+        if (button instanceof HTMLButtonElement && !form.hidden) {
+          button.disabled = false;
+          button.textContent = idle;
+        }
+      }
+    });
+  }
+  </script>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 90px 24px;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 64px;
+    align-items: start;
+    max-width: var(--max);
+    margin-inline: auto;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    padding: 6px 12px 6px 10px;
+    border: 1px solid var(--navy-line);
+    border-radius: 999px;
+    background: var(--navy-card);
+    color: #cddbe3;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .pill svg {
+    flex-shrink: 0;
+  }
+
+  .lede {
+    max-width: 460px;
+    margin-top: 18px;
+    color: #b6c8d2;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .hero-rating {
+    margin-top: 48px;
+  }
+
+  .card {
+    min-width: 0;
+    padding: 34px;
+    border: 1px solid var(--navy-line);
+    border-radius: 20px;
+    background: var(--navy-card);
+  }
+
+  .form-ok {
+    color: #b6c8d2;
+    line-height: 1.6;
+  }
+
+  .ok-title {
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+
+  .form-error {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 180, 162, 0.35);
+    border-radius: 10px;
+    background: rgba(255, 180, 162, 0.1);
+    color: #ffb4a2;
+    font-size: 0.9rem;
+  }
+
+  .hp-wrap {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .hp {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .fields {
+    display: grid;
+    gap: 16px;
+  }
+
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .field label {
+    display: block;
+    margin-bottom: 6px;
+    color: #cddbe3;
+    font-size: 0.88rem;
+  }
+
+  .field-error {
+    margin: 0 0 6px;
+    color: #ffb4a2;
+    font-size: 0.82rem;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid var(--navy-line);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .field textarea {
+    resize: vertical;
+    min-height: 6.5rem;
+  }
+
+  .field select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='none' stroke='%236d8b9c' stroke-width='1.4' stroke-linecap='round' d='M1.5 1.5L6 6 10.5 1.5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+  }
+
+  .field select:has(option[value=""]:checked) {
+    color: #6d8b9c;
+  }
+
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: #6d8b9c;
+    opacity: 1;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    border-color: var(--lime);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(199, 248, 110, 0.15);
+  }
+
+  .opt-in {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: #cddbe3;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    cursor: pointer;
+  }
+
+  .check {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .native {
+    position: absolute;
+    inset: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .native:focus,
+  .native:focus-visible {
+    outline: none;
+  }
+
+  .box {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--navy-line);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .opt-in:has(:checked) .box {
+    border-color: var(--lime);
+    background: var(--lime);
+  }
+
+  .opt-in:has(:checked) .box::after {
+    content: "";
+    width: 5px;
+    height: 9px;
+    margin-top: -1px;
+    border: solid var(--navy);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .opt-in:has(.native:focus-visible) .box {
+    outline: 2px solid var(--lime);
+    outline-offset: 3px;
+  }
+
+  .form .btn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+  }
+
+  .legal {
+    margin-top: 12px;
+    color: #8399a6;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .legal a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .legal a:hover {
+    color: #fff;
+  }
+
+  .other {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+  }
+
+  .ways {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+    text-align: left;
+  }
+
+  .way {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 28px;
+    border: 1px solid var(--navy-line);
+    border-radius: 16px;
+    background: var(--navy-card);
+  }
+
+  .way h3 {
+    font-size: 1.15rem;
+  }
+
+  .way p {
+    margin-top: 10px;
+    color: #b6c8d2;
+    line-height: 1.55;
+  }
+
+  .way a,
+  .way .todo {
+    margin-top: auto;
+    padding-top: 20px;
+    color: var(--lime);
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .way a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .way .todo {
+    color: var(--dim);
+    font-weight: 500;
+  }
+
+  .faq {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+    align-items: end;
+    margin-bottom: 48px;
+  }
+
+  .badge {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .badge-dark {
+    border-color: var(--navy-line);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .faq-lede {
+    color: #b6c8d2;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .close {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+  }
+
+  .close-inner {
+    max-width: 640px;
+  }
+
+  .close p {
+    margin: 18px auto 28px;
+    color: var(--dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 939px) {
+    .hero {
+      padding: 64px 20px;
+    }
+
+    .hero-inner,
+    .ways,
+    .split {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      padding: 24px 20px;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .pair {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,40 @@
+---
+// AI-modellen: een chatgesprek waarin jij genoemd wordt.
+---
+<svg
+  viewBox="0 0 300 170"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  focusable="false"
+  class="graphic"
+>
+  <defs>
+    <linearGradient id="ai-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaf0f4" />
+      <stop offset="1" stop-color="#dbe7ef" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="170" rx="14" fill="url(#ai-bg)" />
+
+  <!-- vraag: rechts, navy bubbel -->
+  <rect x="96" y="18" width="182" height="30" rx="12" fill="var(--navy)" />
+  <text x="110" y="37" class="t light">Wie bouwt snelle websites?</text>
+
+  <!-- antwoord: links, witte bubbel -->
+  <rect x="22" y="60" width="226" height="92" rx="12" fill="#fff" />
+  <circle cx="38" cy="76" r="6" fill="var(--lime)" />
+  <text x="50" y="80" class="t muted">AI-assistent</text>
+
+  <text x="34" y="102" class="t">Een goede optie is</text>
+  <rect x="34" y="110" width="122" height="18" rx="5" fill="var(--lime)" />
+  <text x="95" y="123" class="t strong" text-anchor="middle">Storm Sites</text>
+  <rect x="34" y="136" width="160" height="6" rx="3" fill="var(--navy)" opacity=".12" />
+</svg>
+
+<style>
+  .graphic { display: block; width: 100%; height: auto; }
+  .t { font-family: "Geist", system-ui, sans-serif; font-size: 11px; font-weight: 500; fill: var(--navy); opacity: .8; }
+  .t.light { fill: #fff; opacity: 1; }
+  .t.muted { opacity: .5; font-size: 10px; }
+  .t.strong { opacity: 1; font-weight: 600; }
+</style>

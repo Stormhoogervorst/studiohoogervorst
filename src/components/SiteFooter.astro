@@ -1,0 +1,182 @@
+---
+const studio = [
+  { href: "/abonnement/", label: "Prijzen" },
+  { href: "/diensten/", label: "Diensten" },
+  { href: "/website-laten-maken-nijmegen/", label: "Website maken Nijmegen" },
+];
+
+const juridisch = [
+  { href: "/voorwaarden/", label: "Algemene voorwaarden" },
+  { href: "/privacy/", label: "Privacy" },
+];
+---
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="card">
+      <div class="cols">
+        <div class="brand-col">
+          <a class="brand" href="/">
+            <span class="logo-mark logo-mark--navy" aria-hidden="true"></span>
+            Storm Sites
+          </a>
+          <p class="place">Nijmegen, Gelderland</p>
+        </div>
+        <div>
+          <p class="label">Studio</p>
+          <ul>
+            {studio.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p class="label">Juridisch</p>
+          <ul>
+            {juridisch.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="contact-col">
+          <p class="label">Contact</p>
+          <ul>
+            <li>
+              <a href="mailto:storm@studiohoogervorst.nl">storm@studiohoogervorst.nl</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slot">
+        <h2>Websites die<br />gevonden worden.</h2>
+        <a class="btn btn-navy" href="/contact/">Plan een gesprek</a>
+      </div>
+
+      <div class="meta">
+        <p>© 2026 Storm Sites · KvK TODO</p>
+        <a href="https://www.linkedin.com/" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--navy);
+    padding: 0 0 40px;
+    color: var(--ink);
+  }
+
+  .card {
+    padding: 48px 48px 28px;
+    border-radius: 24px;
+    background: #fff;
+  }
+
+  .cols {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1.15fr;
+    gap: 32px 24px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+  }
+
+  .place {
+    margin-top: 12px;
+    color: var(--body);
+    font-size: 0.9rem;
+  }
+
+  .label {
+    margin-bottom: 12px;
+    color: var(--body);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .cols ul {
+    display: grid;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .cols a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .cols a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .slot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--body);
+    font-size: 0.8rem;
+  }
+
+  .meta a {
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .meta a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 939px) {
+    .card {
+      padding: 32px 24px 24px;
+    }
+
+    .cols {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .slot {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .meta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  /* Het e-mailadres is één ondeelbaar woord dat een halve kolom uitrekt. */
+  @media (max-width: 599px) {
+    .contact-col {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

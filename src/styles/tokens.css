@@ -1,0 +1,229 @@
+:root {
+  --navy: #082a3c;
+  --navy-card: #0d3549;
+  --navy-line: rgba(255, 255, 255, 0.12);
+  --lime: #c7f86e;
+  --accent: var(--lime);
+  --accent-light: #e8836f; /* accenttekst op donkere vlakken, niet op licht */
+  --paper: #f4f7f8;
+  --ink: #0b0f12;
+  --body: #545d66;
+  --dim: #93a8b5;
+  --line: #e4e8ea;
+  --deep: var(--navy);
+  --deep-card: var(--navy-card);
+  --deep-line: var(--navy-line);
+  --sky: var(--paper);
+  --max: 1180px;
+  --font: "Geist", system-ui, sans-serif;
+  --section: 96px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+ul,
+ol,
+blockquote,
+figure,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+:where(a) {
+  color: inherit;
+}
+
+:where(:focus-visible) {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.6vw, 4.2rem);
+}
+
+h2 {
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.wrap {
+  width: min(100% - 48px, var(--max));
+  margin-inline: auto;
+}
+
+.logo-mark {
+  display: block;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 8px 2px 8px 2px;
+  background: var(--lime);
+}
+
+.logo-mark--navy {
+  background: var(--navy);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 13px 24px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--lime);
+  color: var(--navy);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  background: #d4ffa3;
+}
+
+.btn-navy {
+  background: var(--navy);
+  color: #fff;
+}
+
+.btn-navy:hover {
+  background: var(--navy-card);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--navy);
+}
+
+.btn-white:hover {
+  background: var(--paper);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.list-check,
+.list-cross {
+  display: grid;
+  gap: 11px;
+  list-style: none;
+}
+
+.list-check li,
+.list-cross li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.45;
+}
+
+.list-check li::before,
+.list-cross li::before {
+  flex-shrink: 0;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.list-check li::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.2rem;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--navy);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.list-cross li::before {
+  content: "×";
+  color: #e07a3c;
+}
+
+@media (max-width: 939px) {
+  :root {
+    --section: 70px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

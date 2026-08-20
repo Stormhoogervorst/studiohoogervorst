@@ -1,0 +1,111 @@
+---
+import ZoekGraphic from "./graphics/ZoekGraphic.astro";
+import AiGraphic from "./graphics/AiGraphic.astro";
+import SnelheidGraphic from "./graphics/SnelheidGraphic.astro";
+import PrijsGraphic from "./graphics/PrijsGraphic.astro";
+
+interface Props {
+  graphic: "zoek" | "ai" | "snelheid" | "prijs";
+  label: string;
+  titel: string;
+  punten: readonly string[];
+}
+
+const { graphic, label, titel, punten } = Astro.props;
+
+const graphics = {
+  zoek: ZoekGraphic,
+  ai: AiGraphic,
+  snelheid: SnelheidGraphic,
+  prijs: PrijsGraphic,
+};
+const Graphic = graphics[graphic];
+---
+
+<article class="kaart">
+  <div class="kaart-graphic"><Graphic /></div>
+  <div class="kaart-tekst">
+    <span class="kaart-label">{label}</span>
+    <h3 class="kaart-titel">{titel}</h3>
+    <ul class="kaart-punten">
+      {punten.map((punt) => <li set:html={punt} />)}
+    </ul>
+  </div>
+</article>
+
+<style>
+  .kaart {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    align-items: start;
+    height: 100%;
+  }
+  .kaart-graphic {
+    width: 240px;
+    aspect-ratio: 300 / 170;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .kaart-tekst {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+  }
+  .kaart-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .kaart-titel {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 8px 0 10px;
+  }
+  .kaart-punten {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .kaart-punten li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 9px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--body);
+  }
+  .kaart-punten li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+  .kaart-punten li:last-child {
+    margin-bottom: 0;
+  }
+  .kaart-punten li :global(strong) {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  @media (max-width: 699px) {
+    .kaart {
+      grid-template-columns: 1fr;
+    }
+    .kaart-graphic {
+      width: 100%;
+    }
+  }
+</style>

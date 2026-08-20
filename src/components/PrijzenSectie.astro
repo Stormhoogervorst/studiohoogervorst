@@ -1,0 +1,227 @@
+---
+interface Props {
+  flushTop?: boolean;
+}
+
+const { flushTop = false } = Astro.props;
+---
+
+<section class:list={["prices", flushTop && "prices--flush"]} id="prijzen">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="badge">Prijzen</p>
+        <h2>Eén prijs.<br />Geen verrassingen.</h2>
+      </div>
+      <p class="lede">
+        Alles staat gewoon op de site. Geen vreemde facturen of betalen voor
+        dingen die je niet hebt gevraagd. Lijkt ons het fijnst.
+      </p>
+    </div>
+
+    <div class="price-grid">
+      <article class="price-card fund">
+        <span class="pill">Het fundament</span>
+        <h3>Website Abonnement</h3>
+        <p class="explain">
+          Een site die technisch klopt voor Google en voor AI. Hosting,
+          onderhoud en updates inbegrepen.
+        </p>
+        <p class="amount">
+          <span class="euro">€120</span>
+          <span class="per">/ maand</span>
+        </p>
+        <p class="setup">+ €395 setup · 12 maanden minimum</p>
+        <ul class="list-check">
+          <li>Website op maat, geen template</li>
+          <li>Hosting en domein inbegrepen</li>
+          <li>Structured data voor Google en AI</li>
+          <li>Laadtijd onder één seconde</li>
+          <li>30 minuten wijzigingen per maand</li>
+          <li>Maandelijkse rapportage</li>
+        </ul>
+        <a class="btn btn-full" href="/contact/">Plan een gesprek</a>
+      </article>
+
+      <div class="side">
+        <article class="price-card">
+          <h3>Breid uit wanneer je wilt</h3>
+          <ul class="addons">
+            <li>
+              <span>Extra landingspagina's</span>
+              <span>€15,50 p/m</span>
+            </li>
+            <li>
+              <span>Lokale vindbaarheid</span>
+              <span>€10 p/m</span>
+            </li>
+            <li>
+              <span>AI-zichtbaarheid</span>
+              <span>€10,50 p/m</span>
+            </li>
+            <li>
+              <span>Content</span>
+              <span>€100 p/m</span>
+            </li>
+          </ul>
+          <a class="lime-link" href="/abonnement/">Alle add-ons →</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .prices {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .prices--flush {
+    padding-top: 0;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 48px;
+    align-items: end;
+    margin-bottom: 48px;
+  }
+
+  .badge {
+    display: inline-flex;
+    margin-bottom: 16px;
+    padding: 5px 12px;
+    border: 1px solid var(--navy-line);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .lede {
+    color: #b6c8d2;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--lime);
+    color: var(--navy);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .price-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .price-card {
+    padding: 32px;
+    border-radius: 20px;
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .price-card h3 {
+    margin-top: 14px;
+  }
+
+  .price-card > h3:first-child {
+    margin-top: 0;
+  }
+
+  .explain {
+    margin-top: 10px;
+    color: var(--body);
+    line-height: 1.55;
+  }
+
+  .amount {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .euro {
+    font-size: 3.2rem;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+
+  .per {
+    color: var(--body);
+    font-weight: 500;
+  }
+
+  .setup {
+    margin: 16px 0 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    color: var(--body);
+    font-size: 0.9rem;
+  }
+
+  .fund .list-check {
+    margin-bottom: 28px;
+  }
+
+  .side {
+    display: grid;
+    gap: 16px;
+  }
+
+  .addons {
+    margin: 18px 0 20px;
+    list-style: none;
+  }
+
+  .addons li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+  }
+
+  .addons span:last-child {
+    color: var(--body);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .lime-link {
+    color: var(--navy);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .lime-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 939px) {
+    .split,
+    .price-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .price-card {
+      padding: 28px 24px;
+    }
+  }
+</style>

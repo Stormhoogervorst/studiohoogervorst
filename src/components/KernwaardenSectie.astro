@@ -1,0 +1,89 @@
+---
+import KernwaardeKaart from "./KernwaardeKaart.astro";
+
+const kernwaarden = [
+  {
+    graphic: "zoek",
+    label: "Vindbaarheid",
+    titel: "Gevonden worden in Google",
+    punten: [
+      "Keyword onderzoek",
+      "Aparte landingspagina per dienst",
+      "Beland bovenaan in Google",
+    ],
+  },
+  {
+    graphic: "ai",
+    label: "AI-modellen",
+    titel: "ChatGPT kent je site",
+    punten: [
+      "Structured data in elke site",
+      "Geef AI-crawlers toegang",
+      "Wordt aanbevolen door AI",
+    ],
+  },
+  {
+    graphic: "snelheid",
+    label: "Snelheid",
+    titel: "Laadt onder één seconde",
+    punten: [
+      "Ook op mobiel en matige verbinding",
+      "<strong>Geen plugins</strong> die na een jaar breken",
+      "PageSpeed-score boven de 95",
+    ],
+  },
+  {
+    graphic: "prijs",
+    label: "Investering",
+    titel: "Geen investering vooraf",
+    punten: [
+      "<strong>€120 per maand</strong>, geen offerte vooraf",
+      "Hosting, domein en SSL inbegrepen",
+      "Onderhoud en updates doorlopend",
+    ],
+  },
+] as const;
+---
+
+<section class="kernwaarden">
+  <div class="wrap">
+    <h2 class="kernwaarden-kop">
+      Een website van Storm<br />
+      <span>onderscheidt zich op vier vlakken.</span>
+    </h2>
+    <div class="kernwaarden-grid">
+      {kernwaarden.map((k) => <KernwaardeKaart {...k} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .kernwaarden {
+    padding: var(--section) 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .kernwaarden-kop {
+    max-width: var(--max);
+    text-wrap: wrap;
+  }
+
+  .kernwaarden-kop span {
+    color: var(--dim);
+  }
+
+  .kernwaarden-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 1099px) {
+    .kernwaarden-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

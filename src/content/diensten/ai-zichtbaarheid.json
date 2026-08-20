@@ -1,0 +1,27 @@
+{
+  "naam": "AI-zichtbaarheid",
+  "slug": "ai-zichtbaarheid",
+  "prijs": "€10,50 p/m",
+  "terugkerend": true,
+  "wat_je_krijgt": [
+    "Promptpanel van 30 vragen over ChatGPT, Perplexity, Gemini en Claude",
+    "Wekelijks gemeten",
+    "Content aangepast op de vragen waar je nog niet verschijnt",
+    "Maandelijkse rapportage met trend"
+  ],
+  "voor_wie": "Je klanten vragen AI om een aanbeveling en je wilt weten of je genoemd wordt.",
+  "faqs": [
+    {
+      "vraag": "Wat is een promptpanel precies?",
+      "antwoord": "Een vaste set van 30 vragen die jouw klanten aan ChatGPT, Perplexity, Gemini of Claude zouden stellen. We stellen die vragen wekelijks opnieuw, zodat we zien of je genoemd wordt en of dat verandert."
+    },
+    {
+      "vraag": "Kunnen jullie garanderen dat ChatGPT me noemt?",
+      "antwoord": "Nee. Niemand kan dat eerlijk beloven. We meten of je verschijnt, en passen content aan op de vragen waar je nog niet genoemd wordt. De rapportage laat de trend zien, niet een belofte."
+    },
+    {
+      "vraag": "Zit structured data niet al in het abonnement?",
+      "antwoord": "Ja. De technische basis — structured data, toegelaten crawlers, feiten in platte tekst — zit in het website abonnement. Deze add-on is het actieve werk: meten, bijsturen en rapporteren."
+    }
+  ]
+}

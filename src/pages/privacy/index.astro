@@ -1,0 +1,11 @@
+---
+import { getEntry } from "astro:content";
+import JuridischePagina from "../../components/JuridischePagina.astro";
+
+const entry = await getEntry("juridisch", "privacybeleid");
+if (!entry) {
+  throw new Error("Content ontbreekt: juridisch/privacybeleid");
+}
+---
+
+<JuridischePagina entry={entry} />

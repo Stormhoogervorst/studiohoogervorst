@@ -1,0 +1,104 @@
+---
+const links = [
+  { href: "/abonnement/", label: "Prijzen" },
+  { href: "/contact/", label: "Contact" },
+];
+---
+
+<header class="header">
+  <a class="skip" href="#inhoud">Ga naar inhoud</a>
+  <div class="wrap bar">
+    <a class="brand" href="/">
+      <span class="logo-mark" aria-hidden="true"></span>
+      Storm Sites
+    </a>
+    <nav class="nav" aria-label="Hoofd">
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+    <div class="actions">
+      <a class="btn btn-white" href="/contact/">Plan een gesprek</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: relative;
+    border-bottom: 1px solid var(--navy-line);
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .skip {
+    position: absolute;
+    left: 16px;
+    top: -40px;
+    z-index: 2;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--lime);
+    color: var(--navy);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .skip:focus {
+    top: 12px;
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 72px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    gap: 28px;
+    transform: translateX(-50%);
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    opacity: 0.88;
+  }
+
+  .nav a:hover {
+    opacity: 1;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 1;
+  }
+
+  @media (max-width: 939px) {
+    .nav {
+      display: none;
+    }
+  }
+</style>

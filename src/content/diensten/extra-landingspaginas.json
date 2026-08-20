@@ -1,0 +1,27 @@
+{
+  "naam": "Extra landingspagina's",
+  "slug": "extra-landingspaginas",
+  "prijs": "€15,50 p/m",
+  "terugkerend": true,
+  "wat_je_krijgt": [
+    "2 extra landingspagina's per maand",
+    "Keyword onderzoek per pagina",
+    "Geschreven en gebouwd",
+    "Interne links vanuit bestaande pagina's"
+  ],
+  "voor_wie": "Je hebt meerdere diensten of werkgebieden en wilt op elk daarvan apart gevonden worden.",
+  "faqs": [
+    {
+      "vraag": "Wat is een extra landingspagina precies?",
+      "antwoord": "Een pagina gericht op één zoekterm of dienst, naast de pagina's die bij de start van je website abonnement al staan. Elke maand komen er twee bij, met keyword onderzoek, tekst, bouw en interne links vanuit je bestaande pagina's."
+    },
+    {
+      "vraag": "Kan ik een maand overslaan?",
+      "antwoord": "Ja. Elke add-on is maandelijks te starten en te stoppen. Stop je, dan blijven de pagina's die al live staan gewoon staan — er komen er alleen geen nieuwe bij."
+    },
+    {
+      "vraag": "Schrijven jullie de teksten van die pagina's?",
+      "antwoord": "Ja. Bij deze add-on worden de landingspagina's geschreven én gebouwd. Dat is anders dan bij het website abonnement zelf, waar je de teksten voor de startsite aanlevert."
+    }
+  ]
+}

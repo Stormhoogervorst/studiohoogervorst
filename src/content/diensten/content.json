@@ -1,0 +1,27 @@
+{
+  "naam": "Content",
+  "slug": "content",
+  "prijs": "€100 p/m",
+  "terugkerend": true,
+  "wat_je_krijgt": [
+    "2 artikelen per maand",
+    "Onderwerpen op basis van zoekonderzoek",
+    "Geschreven, geplaatst en intern gelinkt",
+    "Afgestemd op hoe jouw klanten vragen stellen"
+  ],
+  "voor_wie": "Je wilt op meer zoektermen gevonden worden maar hebt zelf geen tijd om te schrijven.",
+  "faqs": [
+    {
+      "vraag": "Wie bepaalt de onderwerpen?",
+      "antwoord": "Wij, op basis van zoekonderzoek. We kiezen onderwerpen waar jouw klanten écht op zoeken, niet wat toevallig makkelijk schrijft. Jij keurt het onderwerp kort goed voordat we schrijven."
+    },
+    {
+      "vraag": "Is dit hetzelfde als de teksten bij de start?",
+      "antwoord": "Nee. Bij het website abonnement lever je de teksten voor de startsite zelf aan — of je neemt deze add-on. Content is doorlopend: twee artikelen per maand, geplaatst en intern gelinkt."
+    },
+    {
+      "vraag": "Mag ik de artikelen aanpassen?",
+      "antwoord": "Ja. Je krijgt de tekst ter review voordat hij live gaat. Feitelijke correcties verwerken we zonder discussie. Stijlvoorkeuren overleggen we één keer, daarna houden we die lijn aan."
+    }
+  ]
+}

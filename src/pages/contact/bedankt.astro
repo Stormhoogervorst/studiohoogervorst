@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+
+const title = "Bedankt — bericht ontvangen | Storm Sites";
+const description =
+  "Je bericht is binnen. Je hoort binnen één werkdag van ons. Meestal sneller.";
+---
+
+<BaseLayout title={title} description={description} noindex={true}>
+  <SiteHeader />
+
+  <main id="inhoud">
+    <section class="thanks">
+      <div class="wrap inner">
+        <h1>Bedankt — je bericht is binnen.</h1>
+        <p>Je hoort binnen één werkdag van ons. Meestal sneller.</p>
+        <div class="actions">
+          <a class="btn" href="/abonnement/">Bekijk wat je krijgt</a>
+          <a class="btn btn-outline" href="/">Terug naar home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .thanks {
+    padding: 90px 24px;
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+  }
+
+  .inner {
+    max-width: 640px;
+  }
+
+  .thanks p {
+    margin: 18px auto 32px;
+    color: var(--dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  @media (max-width: 939px) {
+    .thanks {
+      padding: 64px 20px;
+    }
+  }
+</style>

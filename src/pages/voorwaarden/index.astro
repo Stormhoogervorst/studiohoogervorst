@@ -1,0 +1,11 @@
+---
+import { getEntry } from "astro:content";
+import JuridischePagina from "../../components/JuridischePagina.astro";
+
+const entry = await getEntry("juridisch", "algemene-voorwaarden");
+if (!entry) {
+  throw new Error("Content ontbreekt: juridisch/algemene-voorwaarden");
+}
+---
+
+<JuridischePagina entry={entry} />

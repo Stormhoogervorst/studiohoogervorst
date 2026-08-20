@@ -1,0 +1,545 @@
+---
+const basis = { naam: "Website Abonnement", prijs: 120, setup: 395 };
+
+const addons = [
+  {
+    id: "paginas",
+    naam: "Extra landingspagina's",
+    prijs: 15.5,
+    kort: "2 extra landingspagina's per maand, met keyword onderzoek",
+    voor: "Meerdere diensten of werkgebieden",
+    punten: [
+      "2 extra landingspagina's per maand",
+      "Keyword onderzoek per pagina",
+      "Geschreven en gebouwd",
+      "Interne links vanuit bestaande pagina's",
+    ],
+  },
+  {
+    id: "lokaal",
+    naam: "Lokale vindbaarheid",
+    prijs: 10,
+    kort: "Google Bedrijfsprofiel, reviews en lokale posities",
+    voor: "Je klanten zoeken lokaal",
+    punten: [
+      "Google Bedrijfsprofiel beheer",
+      "Reviewproces opzetten en bewaken",
+      "Vermeldingen in relevante gidsen",
+      "Maandelijkse lokale positiecheck",
+    ],
+  },
+  {
+    id: "ai",
+    naam: "AI-zichtbaarheid",
+    prijs: 10.5,
+    kort: "Word genoemd als iemand ChatGPT om een aanbeveling vraagt",
+    voor: "Je klanten vragen AI om advies",
+    punten: [
+      "Promptpanel van 30 vragen over 4 AI-modellen",
+      "Wekelijks gemeten",
+      "Content aangepast waar je nog niet verschijnt",
+      "Maandrapport met trend en spreiding",
+    ],
+  },
+  {
+    id: "content",
+    naam: "Content",
+    prijs: 100,
+    kort: "2 artikelen per maand, geschreven en geplaatst",
+    voor: "Je hebt zelf geen tijd om te schrijven",
+    punten: [
+      "2 artikelen per maand",
+      "Onderwerpen uit zoekonderzoek",
+      "Geschreven, geplaatst en intern gelinkt",
+      "Afgestemd op hoe jouw klanten vragen stellen",
+    ],
+  },
+];
+
+const euro = (n: number) => {
+  const cents = Math.round(n * 100);
+  const whole = Math.floor(Math.abs(cents) / 100);
+  const frac = Math.abs(cents) % 100;
+  let s = String(whole).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  if (frac) s += "," + String(frac).padStart(2, "0");
+  return `€${s}`;
+};
+
+const eersteJaar = basis.setup + 12 * basis.prijs;
+---
+
+<div
+  class="pc"
+  id="prijscalculator"
+  data-basis={basis.prijs}
+  data-setup={basis.setup}
+  data-basis-naam={basis.naam}
+>
+  <div class="layout">
+    <div class="picks">
+      <div class="locked">
+        <span class="check">
+          <input
+            class="native"
+            type="checkbox"
+            checked
+            disabled
+            aria-label={`${basis.naam}, altijd inbegrepen`}
+          />
+          <span class="box" aria-hidden="true"></span>
+        </span>
+        <div class="locked-body">
+          <span class="pill">Altijd inbegrepen</span>
+          <div class="row">
+            <span class="naam">{basis.naam}</span>
+            <span class="prijs">{euro(basis.prijs)} p/m</span>
+          </div>
+        </div>
+      </div>
+
+      {
+        addons.map((addon) => (
+          <div class="addon">
+            <label class="hit" for={`addon-${addon.id}`}>
+              <span class="check">
+                <input
+                  class="native"
+                  id={`addon-${addon.id}`}
+                  type="checkbox"
+                  data-addon
+                  data-naam={addon.naam}
+                  data-prijs={addon.prijs}
+                />
+                <span class="box" aria-hidden="true"></span>
+              </span>
+              <span class="hit-body">
+                <span class="row">
+                  <span class="naam">{addon.naam}</span>
+                  <span class="prijs">+ {euro(addon.prijs)} p/m</span>
+                </span>
+                <span class="kort">{addon.kort}</span>
+              </span>
+            </label>
+            <details class="more">
+              <summary>
+                Wat zit erin
+                <span class="vh"> bij {addon.naam}</span>
+              </summary>
+              <ul>
+                {addon.punten.map((punt) => (
+                  <li>{punt}</li>
+                ))}
+              </ul>
+            </details>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="totals" aria-live="polite">
+      <h3>Jouw maandprijs</h3>
+      <ul data-lines>
+        <li>
+          <span>{basis.naam}</span>
+          <span>{euro(basis.prijs)}</span>
+        </li>
+      </ul>
+      <hr />
+      <p class="grand">
+        <span data-total>{euro(basis.prijs)}</span>
+        <span class="per">/ maand</span>
+      </p>
+      <p class="setup">+ {euro(basis.setup)} eenmalige setup</p>
+      <p class="year">Eerste jaar: <span data-year>{euro(eersteJaar)}</span></p>
+      <a class="btn btn-full" href="/contact/">Plan een gesprek</a>
+      <p class="fine">
+        Add-ons zijn maandelijks te starten en te stoppen. Alleen het
+        basisabonnement heeft een minimumtermijn van 12 maanden.
+      </p>
+    </div>
+  </div>
+
+  <p class="reassure">
+    De meeste klanten beginnen met alleen de basis en breiden na een paar
+    maanden uit. Je hoeft nu niets te kiezen.
+  </p>
+</div>
+
+<script is:inline>
+  (() => {
+    const root = document.getElementById("prijscalculator");
+    if (!root) return;
+    const basis = Number(root.dataset.basis);
+    const setup = Number(root.dataset.setup);
+    const basisNaam = root.dataset.basisNaam || "";
+    const lines = root.querySelector("[data-lines]");
+    const totalEl = root.querySelector("[data-total]");
+    const yearEl = root.querySelector("[data-year]");
+    if (!lines || !totalEl || !yearEl) return;
+
+    const euro = (n) => {
+      const cents = Math.round(n * 100);
+      const whole = Math.floor(Math.abs(cents) / 100);
+      const frac = Math.abs(cents) % 100;
+      let s = String(whole).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      if (frac) s += "," + String(frac).padStart(2, "0");
+      return "€" + s;
+    };
+
+    const line = (naam, prijs) => {
+      const li = document.createElement("li");
+      const a = document.createElement("span");
+      a.textContent = naam;
+      const b = document.createElement("span");
+      b.textContent = euro(prijs);
+      li.append(a, b);
+      return li;
+    };
+
+    const update = () => {
+      let som = Math.round(basis * 100);
+      lines.replaceChildren(line(basisNaam, basis));
+      for (const box of root.querySelectorAll("[data-addon]")) {
+        if (!(box instanceof HTMLInputElement) || !box.checked) continue;
+        const prijs = Number(box.dataset.prijs);
+        som += Math.round(prijs * 100);
+        lines.append(line(box.dataset.naam || "", prijs));
+      }
+      totalEl.textContent = euro(som / 100);
+      yearEl.textContent = euro(setup + (12 * som) / 100);
+    };
+
+    root.addEventListener("change", update);
+  })();
+</script>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+    gap: 28px;
+    align-items: start;
+  }
+
+  .picks {
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .locked,
+  .addon {
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: #fff;
+  }
+
+  .locked {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border-color: var(--lime);
+    background: color-mix(in srgb, var(--lime) 16%, #fff);
+  }
+
+  .locked-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .pill {
+    display: inline-flex;
+    margin-bottom: 8px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--lime);
+    color: var(--navy);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .addon:has(:checked) {
+    border-color: var(--lime);
+    background: color-mix(in srgb, var(--lime) 12%, #fff);
+  }
+
+  .addon:has(.native:focus-visible) {
+    outline: 2px solid var(--lime);
+    outline-offset: 3px;
+  }
+
+  .hit {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+  }
+
+  .hit-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .check {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .native {
+    position: absolute;
+    inset: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .locked .native {
+    cursor: default;
+  }
+
+  .native:focus,
+  .native:focus-visible {
+    outline: none;
+  }
+
+  .box {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .locked .box,
+  .addon:has(:checked) .box {
+    border-color: var(--lime);
+    background: var(--lime);
+  }
+
+  .locked .box::after,
+  .addon:has(:checked) .box::after {
+    content: "";
+    width: 5px;
+    height: 9px;
+    margin-top: -1px;
+    border: solid var(--navy);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .naam {
+    min-width: 0;
+    overflow-wrap: break-word;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  .prijs {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .kort {
+    display: block;
+    margin-top: 6px;
+    color: var(--body);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .more {
+    margin: 10px 0 0 32px;
+  }
+
+  summary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+    color: var(--navy);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    margin-top: -2px;
+    border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+  }
+
+  .more[open] summary::after {
+    margin-top: 2px;
+    transform: rotate(225deg);
+  }
+
+  .more ul {
+    display: grid;
+    gap: 8px;
+    margin-top: 10px;
+    list-style: none;
+  }
+
+  .more li {
+    position: relative;
+    padding-left: 14px;
+    color: var(--body);
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .more li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+    background: var(--navy);
+  }
+
+  .vh {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .totals {
+    position: sticky;
+    top: 24px;
+    min-width: 0;
+    padding: 28px;
+    border-radius: 20px;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .totals h3 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .totals ul {
+    display: grid;
+    gap: 10px;
+    list-style: none;
+  }
+
+  .totals li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .totals li span:last-child {
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .totals hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid var(--navy-line);
+  }
+
+  .grand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .grand [data-total] {
+    color: var(--lime);
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .per {
+    color: var(--dim);
+    font-weight: 500;
+  }
+
+  .setup,
+  .year {
+    margin-top: 10px;
+    color: var(--dim);
+    font-size: 0.9rem;
+  }
+
+  .totals .btn {
+    margin-top: 24px;
+  }
+
+  .fine {
+    margin-top: 14px;
+    color: var(--dim);
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .reassure {
+    margin-top: 28px;
+    color: var(--body);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 939px) {
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .totals {
+      position: static;
+      padding: 24px;
+    }
+
+    .more {
+      margin-left: 0;
+    }
+  }
+</style>
