@@ -1,0 +1,281 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import KennisbankKaart from "../../components/KennisbankKaart.astro";
+import {
+  artikelPad,
+  CATEGORIE_FILTERS,
+  getGepubliceerdeArtikelen,
+} from "../../lib/kennisbank";
+
+const title = "Kennisbank — over websites, vindbaarheid en AI | Neqst";
+const description =
+  "Uitleg over hoe websites gevonden worden in Google en door AI-modellen. Geen theorie, wel wat er in de praktijk werkt.";
+
+const artikelen = await getGepubliceerdeArtikelen();
+const site = Astro.site ?? new URL("https://neqst.nl");
+const pageUrl = new URL(Astro.url.pathname, site).href;
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: title,
+  description,
+  url: pageUrl,
+  inLanguage: "nl-NL",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Neqst",
+    url: site.href,
+  },
+  ...(artikelen.length > 0 && {
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: artikelen.map((artikel, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: artikel.data.titel,
+        url: new URL(artikelPad(artikel.id), site).href,
+      })),
+    },
+  }),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: new URL("/", site).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Kennisbank",
+      item: pageUrl,
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <SiteHeader />
+
+  <main id="inhoud">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Kennisbank</p>
+        <h1>Hoe websites gevonden worden.</h1>
+        <p class="lede">
+          Wat wij onderweg leren over Google, AI-modellen en wat een site
+          daadwerkelijk oplevert. Zonder verkooppraatje.
+        </p>
+      </div>
+    </section>
+
+    <section class="overzicht" data-kennisbank-overzicht>
+      <div class="wrap">
+        {
+          artikelen.length === 0 ? (
+            <p class="leeg">De eerste artikelen komen er binnenkort aan.</p>
+          ) : (
+            <>
+              <noscript>
+                <style>
+                  [data-kennisbank-filters] {
+                    display: none !important;
+                  }
+                </style>
+              </noscript>
+              <div
+                class="filters"
+                data-kennisbank-filters
+                role="group"
+                aria-label="Filter op categorie"
+              >
+                {
+                  CATEGORIE_FILTERS.map((filter) => (
+                    <button
+                      type="button"
+                      class="filter"
+                      data-filter={filter.id}
+                      aria-pressed={filter.id === "all" ? "true" : "false"}
+                    >
+                      {filter.label}
+                    </button>
+                  ))
+                }
+              </div>
+              <div class="grid">
+                {artikelen.map((artikel) => (
+                  <KennisbankKaart artikel={artikel} />
+                ))}
+              </div>
+              <p class="leeg" data-filter-leeg hidden role="status">
+                Geen artikelen in deze categorie.
+              </p>
+              <script is:inline>
+                const overzicht = document.querySelector("[data-kennisbank-overzicht]");
+                const filters = overzicht?.querySelector("[data-kennisbank-filters]");
+                if (overzicht && filters) {
+                  const kaarten = overzicht.querySelectorAll("[data-categorie]");
+                  const leeg = overzicht.querySelector("[data-filter-leeg]");
+
+                  filters.addEventListener("click", (event) => {
+                    const doel = event.target;
+                    const knop = doel instanceof Element ? doel.closest("[data-filter]") : null;
+                    if (!(knop instanceof HTMLButtonElement)) return;
+
+                    const waarde = knop.getAttribute("data-filter");
+                    for (const item of filters.querySelectorAll("[data-filter]")) {
+                      item.setAttribute("aria-pressed", String(item === knop));
+                    }
+
+                    let zichtbaar = 0;
+                    for (const kaart of kaarten) {
+                      const match =
+                        waarde === "all" || kaart.getAttribute("data-categorie") === waarde;
+                      kaart.toggleAttribute("hidden", !match);
+                      if (match) zichtbaar += 1;
+                    }
+
+                    if (leeg) leeg.hidden = zichtbaar > 0;
+                  });
+                }
+              </script>
+            </>
+          )
+        }
+      </div>
+    </section>
+
+    <section class="close">
+      <div class="wrap close-inner">
+        <h2>Liever iemand die het voor je doet?</h2>
+        <p>Wij bouwen websites die gevonden worden, vanaf €129 per maand.</p>
+        <a class="btn" href="/abonnement/">Bekijk wat je krijgt</a>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 88px 0 64px;
+    background: var(--deep);
+    color: #fff;
+  }
+
+  .hero-inner {
+    max-width: 760px;
+  }
+
+  .eyebrow {
+    margin-bottom: 22px;
+    color: var(--sky);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .lede {
+    max-width: 36em;
+    margin-top: 22px;
+    color: var(--dim);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  .overzicht {
+    padding: var(--section) 0;
+    background: var(--sky);
+    color: var(--ink);
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .filter {
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+
+  .filter[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--navy);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .grid :global([hidden]),
+  [data-filter-leeg][hidden] {
+    display: none;
+  }
+
+  .leeg {
+    color: var(--ink);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+
+  .close {
+    padding: var(--section) 0;
+    background: var(--deep);
+    color: #fff;
+    text-align: center;
+  }
+
+  .close-inner {
+    max-width: 640px;
+  }
+
+  .close h2 {
+    overflow-wrap: break-word;
+  }
+
+  .close p {
+    margin: 18px auto 28px;
+    color: var(--dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 699px) {
+    .grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 939px) {
+    .hero {
+      padding: 64px 0 48px;
+    }
+  }
+</style>

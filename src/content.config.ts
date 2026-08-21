@@ -69,6 +69,21 @@ const juridisch = defineCollection({
   }),
 });
 
+const kennisbank = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/kennisbank" }),
+  schema: z.object({
+    titel: z.string(),
+    beschrijving: z.string(),
+    hoofdvraag: z.string(),
+    deelvragen: z.array(z.string()).min(3),
+    categorie: z.enum(["seo", "ai", "website", "kosten"]),
+    gepubliceerd: z.coerce.date(),
+    bijgewerkt: z.coerce.date(),
+    gerelateerd: z.array(z.string()).max(3).optional(),
+    concept: z.boolean().default(false),
+  }),
+});
+
 const landing = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/content/landing" }),
   schema: z.object({
@@ -106,4 +121,4 @@ const landing = defineCollection({
   }),
 });
 
-export const collections = { branches, cases, diensten, juridisch, landing };
+export const collections = { branches, cases, diensten, juridisch, kennisbank, landing };

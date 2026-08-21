@@ -85,7 +85,7 @@ const serviceSchema = {
   name: "Website Abonnement",
   serviceType: "Website as a Service",
   description:
-    "Een professionele website zonder investering vooraf. €120 per maand inclusief hosting, onderhoud en updates. Binnen twee weken live.",
+    "Een professionele website zonder investering vooraf. €129 per maand inclusief hosting, onderhoud en updates. Binnen twee weken live.",
   url: pageUrl,
   provider: {
     "@type": "ProfessionalService",
@@ -95,7 +95,7 @@ const serviceSchema = {
   areaServed: "NL",
   offers: {
     "@type": "Offer",
-    price: 120,
+    price: 129,
     priceCurrency: "EUR",
     billingIncrement: "maand",
     url: pageUrl,
@@ -123,8 +123,8 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Website abonnement: €120 per maand + hosting | Neqst"
-  description="Een professionele website zonder investering vooraf. €120 per maand inclusief hosting en onderhoud. Binnen twee weken live, zonder offertetraject."
+  title="Website abonnement: €129 per maand + hosting | Neqst"
+  description="Een professionele website zonder investering vooraf. €129 per maand inclusief hosting en onderhoud. Binnen twee weken live, zonder offertetraject."
 >
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
@@ -134,7 +134,7 @@ const breadcrumbSchema = {
     <section class="hero">
       <div class="wrap hero-inner">
         <p class="eyebrow">Website as a Service</p>
-        <h1>Een website die klaar is<br />voor €120 per maand.</h1>
+        <h1>Een website die klaar is<br />voor €129 per maand.</h1>
         <p class="sub">
           Geen investering van duizenden euro's vooraf. Je betaalt per maand,
           inclusief hosting, onderhoud en updates. Binnen twee weken live.
@@ -144,14 +144,10 @@ const breadcrumbSchema = {
           <a class="btn btn-outline" href="/abonnement/">Bekijk wat je krijgt</a>
         </div>
         <p class="trust">
-          €395 setup · 12 maanden minimum · daarna maandelijks opzegbaar
+          <a href="/website-as-a-service/">Nog niet bekend met het WaaS-model? Lees eerst hoe het werkt →</a>
         </p>
       </div>
     </section>
-
-    <p class="waas-bridge">
-      <a href="/website-as-a-service/">Nog niet bekend met het WaaS-model? Lees eerst hoe het werkt →</a>
-    </p>
 
     <section class="included">
       <div class="wrap">
@@ -207,7 +203,7 @@ const breadcrumbSchema = {
             <span class="pill pill-lime">Meest gekozen</span>
             <h3>Website Abonnement</h3>
             <p class="amount">
-              <span class="euro">€120</span>
+              <span class="euro">€129</span>
               <span class="per">/ maand</span>
             </p>
             <p class="setup">+ €395 setup · 12 maanden minimum</p>
@@ -324,26 +320,18 @@ const breadcrumbSchema = {
     font-size: 0.875rem;
   }
 
-  .waas-bridge {
-    margin: 0;
-    padding: 16px 24px;
-    background: var(--navy);
-    color: var(--dim);
-    font-size: 0.95rem;
-    font-weight: 500;
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  .waas-bridge a {
+  .hero .trust a {
     display: inline-block;
     max-width: 100%;
     color: var(--lime);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
     text-decoration: none;
     overflow-wrap: break-word;
   }
 
-  .waas-bridge a:hover {
+  .hero .trust a:hover {
     text-decoration: underline;
     text-underline-offset: 3px;
   }

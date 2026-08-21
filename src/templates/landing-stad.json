@@ -1,8 +1,8 @@
 {
   "h1": "Website laten maken in {{STAD}}",
-  "titel": "Website laten maken in {{STAD}} — vanaf €120 p/m",
-  "beschrijving": "Een professionele website voor je bedrijf in {{STAD}}. Binnen twee weken live, vanaf €120 per maand. Gebouwd om gevonden te worden in Google.",
-  "intro": "Wij bouwen websites voor bedrijven die in {{STAD}} klanten zoeken. Binnen twee weken live, vanaf €120 per maand, inclusief hosting en onderhoud.",
+  "titel": "Website laten maken in {{STAD}} — vanaf €129 p/m",
+  "beschrijving": "Een professionele website voor je bedrijf in {{STAD}}. Binnen twee weken live, vanaf €129 per maand. Gebouwd om gevonden te worden in Google.",
+  "intro": "Wij bouwen websites voor bedrijven die in {{STAD}} klanten zoeken. Binnen twee weken live, vanaf €129 per maand, inclusief hosting en onderhoud.",
   "zoekterm": "website laten maken {{stad}}",
   "stad": "{{STAD}}",
   "vindbaarheid_keyword": "Keyword onderzoek op zoektermen in {{STAD}}",
@@ -25,7 +25,7 @@
   "vergelijking_kop": "Een lokaal bureau",
   "vergelijking": [
     { "wat": "Investering vooraf", "zij": "€3.000 tot €8.000", "wij": "€395 setup" },
-    { "wat": "Maandelijkse kosten", "zij": "Onderhoud op factuurbasis", "wij": "€120, alles inbegrepen" },
+    { "wat": "Maandelijkse kosten", "zij": "Onderhoud op factuurbasis", "wij": "€129, alles inbegrepen" },
     { "wat": "Doorlooptijd", "zij": "6 tot 12 weken", "wij": "2 tot 3 weken" },
     { "wat": "Vindbaarheid", "zij": "Meestal een aparte offerte", "wij": "Standaard in de bouw" },
     { "wat": "Wijzigingen", "zij": "Per uur gefactureerd", "wij": "30 minuten per maand inbegrepen" },
@@ -65,7 +65,7 @@
     },
     {
       "vraag": "Wat kost het en zit ik ergens aan vast?",
-      "antwoord": "€120 per maand plus €395 setup. Daarin zitten hosting, domein, onderhoud en 30 minuten wijzigingen per maand. De eerste twaalf maanden liggen vast omdat het bouwwerk vooraf gebeurt, daarna is het maandelijks opzegbaar. Wil je de site liever in één keer kopen, dan is dat €3.150."
+      "antwoord": "€129 per maand plus €395 setup. Daarin zitten hosting, domein, onderhoud en 30 minuten wijzigingen per maand. De eerste twaalf maanden liggen vast omdat het bouwwerk vooraf gebeurt, daarna is het maandelijks opzegbaar. Wil je de site liever in één keer kopen, dan is dat €3.150."
     },
     {
       "vraag": "Hoe lang duurt het voordat ik hoger sta in Google?",

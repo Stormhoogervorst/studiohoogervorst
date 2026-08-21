@@ -1,0 +1,547 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import KennisbankKaart from "../../components/KennisbankKaart.astro";
+import {
+  CATEGORIE_LABELS,
+  formatDatum,
+  gerelateerdeArtikelen,
+  getGepubliceerdeArtikelen,
+  isoDatum,
+  type KennisbankArtikel,
+} from "../../lib/kennisbank";
+
+interface Props {
+  entry: KennisbankArtikel;
+  artikelen: KennisbankArtikel[];
+}
+
+export async function getStaticPaths() {
+  const artikelen = await getGepubliceerdeArtikelen();
+
+  return artikelen.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry, artikelen } satisfies Props,
+  }));
+}
+
+const { entry, artikelen } = Astro.props;
+const { Content, headings } = await render(entry);
+const toc = headings.filter((item) => item.depth === 2);
+const gerelateerd = gerelateerdeArtikelen(entry, artikelen);
+
+const {
+  titel,
+  beschrijving,
+  categorie,
+  gepubliceerd,
+  bijgewerkt,
+  deelvragen,
+} = entry.data;
+
+const pageTitle = `${titel} | Neqst`;
+const site = Astro.site ?? new URL("https://neqst.nl");
+const pageUrl = new URL(Astro.url.pathname, site).href;
+const kennisbankUrl = new URL("/kennisbank/", site).href;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: titel,
+  description: beschrijving,
+  url: pageUrl,
+  datePublished: isoDatum(gepubliceerd),
+  dateModified: isoDatum(bijgewerkt),
+  inLanguage: "nl-NL",
+  author: {
+    "@type": "Organization",
+    name: "Neqst",
+    url: site.origin,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Neqst",
+    url: site.origin,
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": pageUrl,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: new URL("/", site).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Kennisbank",
+      item: kennisbankUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: titel,
+      item: pageUrl,
+    },
+  ],
+};
+---
+
+<BaseLayout title={pageTitle} description={beschrijving}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <SiteHeader />
+
+  <main id="inhoud">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <nav class="crumbs" aria-label="Broodkruimel">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/kennisbank/">Kennisbank</a>
+          <span aria-hidden="true">/</span>
+          <span>{titel}</span>
+        </nav>
+        <p class="pill">{CATEGORIE_LABELS[categorie]}</p>
+        <h1>{titel}</h1>
+        <p class="meta">
+          Gepubliceerd {formatDatum(gepubliceerd)} · Bijgewerkt {formatDatum(bijgewerkt)}
+        </p>
+      </div>
+    </section>
+
+    <section class="artikel">
+      <div class:list={["wrap", "layout", toc.length > 0 && "layout--toc"]}>
+        {
+          toc.length > 0 && (
+            <nav class="toc" aria-label="Inhoudsopgave">
+              <p class="toc-label">Inhoud</p>
+              <ol>
+                {toc.map((item) => (
+                  <li>
+                    <a href={`#${item.slug}`}>{item.text}</a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )
+        }
+        <article class="prose">
+          <Content />
+          <div class="deelvragen">
+            <h3>Kort antwoord op de deelvragen</h3>
+            <ul>
+              {deelvragen.map((vraag) => (
+                <li>{vraag}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    {
+      gerelateerd.length > 0 && (
+        <section class="gerelateerd">
+          <div class="wrap">
+            <h2>Verder lezen</h2>
+            <div class="grid">
+              {gerelateerd.map((artikel) => (
+                <KennisbankKaart artikel={artikel} heading="h3" />
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="close">
+      <div class="wrap close-inner">
+        <h2>Zelf geen tijd om dit uit te zoeken?</h2>
+        <p>
+          Wij bouwen websites die gevonden worden. Vanaf €129 per maand,
+          binnen twee weken live.
+        </p>
+        <div class="actions">
+          <a class="btn" href="/contact/">Plan een gesprek</a>
+          <a class="btn btn-outline" href="/abonnement/">Bekijk de prijzen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 72px 0 64px;
+    background: var(--deep);
+    color: #fff;
+  }
+
+  .hero-inner {
+    max-width: 760px;
+  }
+
+  .hero-inner h1 {
+    overflow-wrap: break-word;
+  }
+
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 8px;
+    margin-bottom: 22px;
+    color: #fff;
+    font-size: 0.8rem;
+    opacity: 0.6;
+  }
+
+  .crumbs a {
+    text-decoration: none;
+  }
+
+  .crumbs a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .crumbs span:last-child {
+    overflow-wrap: anywhere;
+  }
+
+  .pill {
+    display: inline-flex;
+    margin-bottom: 18px;
+    padding: 5px 12px;
+    border: 1px solid var(--navy-line);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .meta {
+    margin-top: 16px;
+    color: #fff;
+    font-size: 0.88rem;
+    opacity: 0.6;
+  }
+
+  .artikel {
+    padding: var(--section) 0;
+    background: var(--sky);
+    color: var(--ink);
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 68ch);
+    gap: 48px;
+    align-items: start;
+  }
+
+  .layout--toc {
+    grid-template-columns: 220px minmax(0, 68ch);
+  }
+
+  .toc {
+    position: sticky;
+    top: 100px;
+  }
+
+  .toc-label {
+    margin-bottom: 14px;
+    color: var(--ink);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  .toc ol {
+    display: grid;
+    gap: 10px;
+    list-style: none;
+  }
+
+  .toc a {
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    text-decoration: none;
+    overflow-wrap: break-word;
+    opacity: 0.7;
+  }
+
+  .toc a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 1;
+  }
+
+  .prose {
+    min-width: 0;
+    max-width: 68ch;
+    color: var(--ink);
+    overflow-x: auto;
+    overflow-wrap: break-word;
+  }
+
+  .prose :global(h2) {
+    margin-top: 52px;
+    margin-bottom: 16px;
+    scroll-margin-top: 24px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  .prose :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .prose :global(h3) {
+    margin-top: 32px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+  }
+
+  .prose :global(p) {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .prose :global(p + p) {
+    margin-top: 1em;
+  }
+
+  .prose :global(h2 + p),
+  .prose :global(h3 + p),
+  .prose :global(h2 + ul),
+  .prose :global(h3 + ul),
+  .prose :global(h2 + ol),
+  .prose :global(h3 + ol) {
+    margin-top: 0;
+  }
+
+  .prose :global(strong) {
+    font-weight: 600;
+    opacity: 1;
+  }
+
+  .prose :global(a) {
+    color: var(--navy);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    display: grid;
+    gap: 0.55em;
+    margin-top: 1em;
+  }
+
+  .prose :global(ul) {
+    list-style: none;
+  }
+
+  .prose :global(ul > li) {
+    position: relative;
+    padding-left: 1.45em;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .prose :global(ul > li)::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .prose :global(ol) {
+    padding-left: 1.25em;
+    list-style: decimal;
+  }
+
+  .prose :global(ol > li) {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .prose :global(blockquote) {
+    margin: 1.2em 0;
+    padding-left: 20px;
+    border-left: 3px solid var(--accent);
+    font-style: italic;
+  }
+
+  .prose :global(table) {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1em;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: break-word;
+  }
+
+  .prose :global(th) {
+    font-weight: 700;
+  }
+
+  .prose :global(:not(pre) > code) {
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    background: rgba(29, 82, 100, 0.08);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.9em;
+  }
+
+  .prose :global(pre) {
+    max-width: 100%;
+    margin-top: 1em;
+    padding: 16px;
+    overflow-x: auto;
+    border-radius: 12px;
+    background: rgba(29, 82, 100, 0.06);
+    font-size: 0.9rem;
+  }
+
+  .prose :global(img) {
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    border-radius: 12px;
+  }
+
+  .prose :global(figure) {
+    margin-top: 1.4em;
+  }
+
+  .prose :global(figcaption) {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    opacity: 0.5;
+  }
+
+  .deelvragen {
+    margin-top: 52px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: #fff;
+  }
+
+  .deelvragen h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .gerelateerd {
+    padding: 0 0 var(--section);
+    background: var(--sky);
+    color: var(--ink);
+  }
+
+  .gerelateerd h2 {
+    margin-bottom: 28px;
+    overflow-wrap: break-word;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .close {
+    padding: var(--section) 0;
+    background: var(--deep);
+    color: #fff;
+    text-align: center;
+  }
+
+  .close-inner {
+    max-width: 640px;
+  }
+
+  .close h2 {
+    overflow-wrap: break-word;
+  }
+
+  .close p {
+    margin: 18px auto 28px;
+    color: var(--dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  @media (max-width: 999px) {
+    .layout--toc {
+      grid-template-columns: minmax(0, 68ch);
+    }
+
+    .toc {
+      position: static;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+
+  @media (max-width: 699px) {
+    .grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .deelvragen {
+      padding: 22px;
+    }
+  }
+
+  @media (max-width: 939px) {
+    .hero {
+      padding: 56px 0 48px;
+    }
+  }
+</style>

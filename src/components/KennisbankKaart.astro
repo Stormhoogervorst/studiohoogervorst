@@ -1,0 +1,112 @@
+---
+import {
+  artikelPad,
+  CATEGORIE_LABELS,
+  formatDatum,
+  type KennisbankArtikel,
+} from "../lib/kennisbank";
+
+interface Props {
+  artikel: KennisbankArtikel;
+  heading?: "h2" | "h3";
+}
+
+const { artikel, heading = "h2" } = Astro.props;
+const Tag = heading;
+const { titel, beschrijving, categorie, bijgewerkt } = artikel.data;
+---
+
+<article class="kaart" data-categorie={categorie}>
+  <p class="pill">{CATEGORIE_LABELS[categorie]}</p>
+  <Tag class="titel">
+    <a class="stretched" href={artikelPad(artikel.id)}>{titel}</a>
+  </Tag>
+  <p class="desc">{beschrijving}</p>
+  <p class="meta">Bijgewerkt {formatDatum(bijgewerkt)}</p>
+</article>
+
+<style>
+  .kaart {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: #fff;
+    color: var(--ink);
+    transition: border-color 0.15s ease;
+  }
+
+  .kaart[hidden] {
+    display: none;
+  }
+
+  .kaart:hover {
+    border-color: var(--accent);
+  }
+
+  .kaart:has(.stretched:focus-visible) {
+    outline: 2px solid var(--lime);
+    outline-offset: 3px;
+  }
+
+  .pill {
+    align-self: flex-start;
+    margin-bottom: 14px;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--sky);
+    color: var(--body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .titel {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+  }
+
+  .stretched {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .stretched::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .stretched:focus {
+    outline: none;
+  }
+
+  .desc {
+    display: -webkit-box;
+    margin-top: 10px;
+    overflow: hidden;
+    color: var(--ink);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    opacity: 0.7;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .meta {
+    margin-top: auto;
+    padding-top: 20px;
+    color: var(--ink);
+    font-size: 0.85rem;
+    opacity: 0.5;
+  }
+</style>

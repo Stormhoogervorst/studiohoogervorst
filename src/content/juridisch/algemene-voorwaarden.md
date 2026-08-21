@@ -24,8 +24,7 @@ gevestigd te Nijmegen.
 ontwikkelt, host en onderhoudt tegen een maandelijkse vergoeding.
 
 **Add-on** — een aanvullende dienst die naast het abonnement wordt afgenomen,
-zoals extra landingspagina's, lokale vindbaarheid, AI-zichtbaarheid, content
-of linkbuilding.
+zoals extra landingspagina's, AI-zichtbaarheid, content of linkbuilding.
 
 **Website** — het geheel van vormgeving, opmaak, code en configuratie dat
 Neqst voor Opdrachtgever ontwikkelt en beheert.
