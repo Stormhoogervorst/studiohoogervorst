@@ -13,6 +13,7 @@ bijgewerkt: 2026-08-04
 gerelateerd:
   - "blokkeert-je-website-chatgpt"
   - "wat-is-geo"
+  - "vraag-chatgpt-of-je-genoemd-wordt"
 concept: false
 ---
 
@@ -36,8 +37,8 @@ zijn voor het model dat hem ophaalt.
 Bij Legal Talents zaten drie dingen goed die daarvoor nodig zijn. De site was
 technisch schoon en snel, dus makkelijk te verwerken. Er stonden aparte
 pagina's per specialisatie, elk met een duidelijke kop en een antwoord in de
-eerste alinea. En de structured data benoemde expliciet wat het bedrijf doet en
-waar het zit.
+eerste alinea. En de [structured data](/kennisbank/wat-is-structured-data/)
+benoemde expliciet wat het bedrijf doet en waar het zit.
 
 Dat is geen truc. Het is dezelfde basis die ook voor Google werkt, alleen
 strenger toegepast.
@@ -71,6 +72,8 @@ afbeelding, dan kan geen enkel model het lezen.
 
 En stel de vraag zelf. Open ChatGPT, Perplexity en Gemini en vraag wat een
 potentiële klant zou vragen. Word je niet genoemd, dan weet je waar je staat.
+Hoe je dat meet zonder jezelf voor de gek te houden, staat in
+[Hoe vraag je ChatGPT of jouw bedrijf genoemd wordt?](/kennisbank/vraag-chatgpt-of-je-genoemd-wordt/).
 
 ## Is dit al belangrijk?
 

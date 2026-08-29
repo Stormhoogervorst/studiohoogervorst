@@ -12,8 +12,8 @@ gepubliceerd: 2026-08-08
 bijgewerkt: 2026-08-08
 gerelateerd:
   - "blokkeert-je-website-chatgpt"
-  - "opdracht-via-chatgpt"
-  - "website-geen-bezoekers"
+  - "waarom-ai-andere-bronnen-citeert"
+  - "vraag-chatgpt-of-je-genoemd-wordt"
 concept: false
 ---
 
@@ -44,8 +44,8 @@ worden. Beloof daar niets over, en geloof niemand die het wel doet.
 Minder dan de bureaus je willen doen geloven, en tegelijk meer dan je zou
 denken.
 
-Hetzelfde: technische basis, snelheid, structured data, heldere koppen, een
-site die crawlers binnenlaat.
+Hetzelfde: technische basis, snelheid, [structured data](/kennisbank/wat-is-structured-data/),
+heldere koppen, een site die crawlers binnenlaat.
 
 Anders: een model splitst de vraag van de gebruiker op in deelvragen en zoekt
 daarop. Vraagt iemand naar de beste optie voor een klein bedrijf, dan zoekt het
@@ -57,6 +57,8 @@ En dit is de grootste: het model citeert vaak níet de pagina's die bovenaan in
 Google staan. Er zijn analyses die suggereren dat de overlap tussen Google's
 topresultaten en de bronnen die AI daadwerkelijk citeert flink is gedaald.
 Dat betekent dat je op positie één kunt staan en toch niet genoemd worden.
+Waarom dat gebeurt, staat in
+[Waarom AI-modellen andere bronnen citeren dan Google toont](/kennisbank/waarom-ai-andere-bronnen-citeert/).
 
 ## Waar het echt gewonnen wordt
 
@@ -80,7 +82,8 @@ organische posities in Google, die vaak maandenlang stabiel blijven.
 Wie je een strakke maandgrafiek laat zien met een keurig stijgende lijn, meet
 te weinig of laat je niet alles zien. Serieus meten betekent een vaste set van
 dertig tot vijftig vragen, meerdere keren per week, over meerdere modellen, met
-de spreiding erbij.
+de spreiding erbij. Hoe je dat zelf opzet, staat in
+[Hoe vraag je ChatGPT of jouw bedrijf genoemd wordt?](/kennisbank/vraag-chatgpt-of-je-genoemd-wordt/).
 
 ## Moet je er nu iets mee?
 

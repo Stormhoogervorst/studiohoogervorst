@@ -13,6 +13,7 @@ bijgewerkt: 2026-08-06
 gerelateerd:
   - "opdracht-via-chatgpt"
   - "wat-is-geo"
+  - "vraag-chatgpt-of-je-genoemd-wordt"
 concept: false
 ---
 
@@ -84,7 +85,9 @@ bovenaan een algemene regel die alles toestaat, daaronder de vier crawlers bij
 naam met dezelfde toestemming, en onderaan een verwijzing naar je sitemap.
 
 Die verwijzing is belangrijker dan hij lijkt: hij vertelt elke crawler waar hij
-de volledige lijst met je pagina's kan vinden.
+de volledige lijst met je pagina's kan vinden. Wat er in zo'n sitemap hoort te
+staan, lees je in
+[Wat is een sitemap?](/kennisbank/wat-is-een-sitemap/).
 
 Weet je niet hoe je dit bestand aanpast, dan zit het meestal in je SEO-plugin
 of bij je hostingpartij. Kom je er niet uit, dan is dat ook een teken over hoe

@@ -13,6 +13,7 @@ bijgewerkt: 2026-08-19
 gerelateerd:
   - "waarom-bureaus-geen-prijzen-tonen"
   - "wat-lever-je-aan-voor-een-website"
+  - "waarom-je-contactformulier-geen-mail-verstuurt"
 concept: false
 ---
 
@@ -78,7 +79,9 @@ misgaat.
 Niet meteen iets, en dat is precies het probleem.
 
 **Na een half jaar:** kleine dingen die niet meer werken. Een formulier dat
-geen mail meer verstuurt zonder dat iemand het merkt.
+geen mail meer verstuurt zonder dat iemand het merkt — de oorzaken daarvan
+staan in
+[Waarom je contactformulier geen mail meer verstuurt](/kennisbank/waarom-je-contactformulier-geen-mail-verstuurt/).
 
 **Na een jaar:** je site is trager geworden, ziet er gedateerd uit op nieuwere
 telefoons, en er zitten verouderde onderdelen in.

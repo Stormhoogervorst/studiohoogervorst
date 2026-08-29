@@ -13,6 +13,7 @@ bijgewerkt: 2026-08-13
 gerelateerd:
   - "website-geen-bezoekers"
   - "bovenaan-in-google-maps"
+  - "wat-levert-een-website-op"
 concept: false
 ---
 
@@ -103,4 +104,6 @@ volgende stap is. Ook in de maanden dat het cijfermatig nog weinig voorstelt,
 want dat is precies de periode waarin de meeste mensen afhaken.
 
 Wie je binnen een maand positie 1 belooft, verkoopt je iets wat niet bestaat.
+Hoe je uitrekent of de site zichzelf terugverdient, staat in
+[Wat een website oplevert](/kennisbank/wat-levert-een-website-op/).
 Waar wij wel op sturen staat op [de abonnementspagina](/abonnement/).

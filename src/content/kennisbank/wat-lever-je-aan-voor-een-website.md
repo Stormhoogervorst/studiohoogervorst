@@ -13,6 +13,7 @@ bijgewerkt: 2026-08-19
 gerelateerd:
   - "trage-website-wat-kost-het"
   - "wat-kost-website-onderhoud"
+  - "domeinnaam-kwijt"
 concept: false
 ---
 
@@ -81,7 +82,10 @@ gidsen staat. Verschillen daarin kosten je lokale vindbaarheid.
 - **Google Search Console en Analytics**, als je die hebt
 
 Weet je niet meer waar je domein staat? Zoek op je domeinnaam in een
-WHOIS-tool, dan zie je bij welke registrar hij geregistreerd is.
+WHOIS-tool, dan zie je bij welke registrar hij geregistreerd is. Staat hij op
+naam van iemand anders, dan is
+[Je domeinnaam kwijt of onvindbaar?](/kennisbank/domeinnaam-kwijt/)
+de volgende stap.
 
 ## Wat je níet hoeft aan te leveren
 

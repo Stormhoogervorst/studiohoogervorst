@@ -35,6 +35,8 @@ gewoon woord intikt.
 
 Dat repareer je niet met een mooiere pagina. Je moet eerst weten welke woorden
 mensen daadwerkelijk gebruiken, en dan bepalen welke pagina's daarbij horen.
+Hoe je dat zonder dure tools doet, staat in
+[Zoekwoordonderzoek voor beginners](/kennisbank/zoekwoordonderzoek-voor-beginners/).
 
 ## 2. Je hebt één pagina waar je er vijf nodig hebt
 
@@ -46,6 +48,8 @@ concurreert op alle vier de onderwerpen met pagina's die over één ding gaan.
 Die verliest hij.
 
 Dit is de goedkoopste winst die er te halen valt bij de meeste bestaande sites.
+Hoeveel pagina's je daarvoor nodig hebt, staat in
+[Hoeveel pagina's heeft je website nodig?](/kennisbank/hoeveel-paginas-heeft-je-website-nodig/).
 
 ## 3. Je site is niet goed vindbaar voor de techniek
 
@@ -55,7 +59,8 @@ een structuur waarin belangrijke pagina's vier klikken diep liggen.
 Dit klinkt technisch, maar het is meestal in een dag op te lossen. Begin met
 Google Search Console: die vertelt je gratis welke van je pagina's Google kent
 en welke niet. Weet je niet of je die hebt, dan is dat het eerste dat je
-regelt.
+regelt. Wat een sitemap is en hoe je controleert of je er een hebt, staat in
+[Wat is een sitemap?](/kennisbank/wat-is-een-sitemap/).
 
 ## 4. Je site is te traag
 
