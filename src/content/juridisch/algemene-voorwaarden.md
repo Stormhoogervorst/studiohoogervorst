@@ -7,7 +7,7 @@ bijgewerkt: 2026-08-20
 
 **Neqst**, handelsnaam van Hoogervorst Works
 Hugo de Grootstraat 30, 6522 DE Nijmegen
-KvK 98269429 · Btw NL004668710B46 · hoogervorstworks@gmail.com
+KvK 98269429 · Btw NL004668710B46 · storm@neqst.nl
 
 Versie van 20 augustus 2026.
 

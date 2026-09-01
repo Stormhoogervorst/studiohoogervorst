@@ -7,7 +7,7 @@ bijgewerkt: 2026-08-20
 
 **Neqst**, handelsnaam van Hoogervorst Works
 Hugo de Grootstraat 30, 6522 DE Nijmegen
-KvK 98269429 · hoogervorstworks@gmail.com
+KvK 98269429 · storm@neqst.nl
 
 Versie van 20 augustus 2026.
 
@@ -24,7 +24,7 @@ Hoogervorst Works, handelend onder de naam Neqst, is
 verwerkingsverantwoordelijke voor de gegevens die via neqst.nl worden
 verzameld.
 
-Vragen over dit beleid? Mail naar hoogervorstworks@gmail.com.
+Vragen over dit beleid? Mail naar storm@neqst.nl.
 
 ---
 
@@ -106,7 +106,7 @@ draaien en om je te kunnen helpen. Het gaat om de volgende categorieën:
 
 Met al deze partijen is een verwerkersovereenkomst gesloten. Wil je weten welke
 partijen dit concreet zijn, dan vertellen we je dat op verzoek — stuur een mail
-naar hoogervorstworks@gmail.com.
+naar storm@neqst.nl.
 
 Waar gegevens buiten de EER worden verwerkt, gebeurt dat op basis van
 standaardcontractbepalingen van de Europese Commissie of een geldig
@@ -141,7 +141,7 @@ Je hebt het recht om:
 - je gegevens in een gangbaar formaat te **ontvangen of over te laten dragen**
 - gegeven **toestemming in te trekken**
 
-Stuur je verzoek naar hoogervorstworks@gmail.com. We reageren binnen vier weken. Om misbruik te
+Stuur je verzoek naar storm@neqst.nl. We reageren binnen vier weken. Om misbruik te
 voorkomen kunnen we vragen je identiteit aan te tonen.
 
 Ben je het niet eens met hoe we met je gegevens omgaan, dan kun je een klacht
@@ -156,7 +156,7 @@ beschermen. De site draait volledig over HTTPS, toegang tot systemen is
 beveiligd met tweefactorauthenticatie, en we beperken de toegang tot gegevens
 tot wie ze nodig heeft.
 
-Vermoed je een datalek of een kwetsbaarheid? Mail naar hoogervorstworks@gmail.com. We reageren
+Vermoed je een datalek of een kwetsbaarheid? Mail naar storm@neqst.nl. We reageren
 binnen twee werkdagen.
 
 ---
