@@ -1,5 +1,6 @@
 ---
 import "../styles/tokens.css";
+import CookieBanner from "../components/CookieBanner.astro";
 import SEO from "../components/SEO.astro";
 
 interface Props {
@@ -30,6 +31,90 @@ const org = {
 <!doctype html>
 <html lang="nl-NL">
   <head>
+    <script is:inline>
+      (function () {
+        var MEASUREMENT_ID = "G-GBP06Z8PJY";
+        var STORAGE_KEY = "neqst-cookie-consent";
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          window.dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+
+        function readChoice() {
+          try {
+            return localStorage.getItem(STORAGE_KEY);
+          } catch (error) {
+            return null;
+          }
+        }
+
+        function writeChoice(value) {
+          try {
+            localStorage.setItem(STORAGE_KEY, value);
+          } catch (error) {
+            /* privémodus of geblokkeerde opslag */
+          }
+        }
+
+        function loadAnalytics() {
+          if (window.__neqstGaLoaded) return;
+          window.__neqstGaLoaded = true;
+
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id=" + MEASUREMENT_ID;
+          script.onload = function () {
+            gtag("js", new Date());
+            gtag("config", MEASUREMENT_ID);
+          };
+          document.head.appendChild(script);
+        }
+
+        function clearAnalyticsCookies() {
+          var cookies = document.cookie.split(";");
+          for (var i = 0; i < cookies.length; i++) {
+            var name = cookies[i].split("=")[0].trim();
+            if (name !== "_ga" && name.indexOf("_ga_") !== 0 && name !== "_gid" && name !== "_gat") {
+              continue;
+            }
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+            document.cookie =
+              name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" + location.hostname;
+          }
+        }
+
+        window.neqstConsent = {
+          get: readChoice,
+          accept: function () {
+            writeChoice("accepted");
+            loadAnalytics();
+            document.dispatchEvent(new CustomEvent("neqst-consent", { detail: "accepted" }));
+          },
+          reject: function () {
+            writeChoice("rejected");
+            clearAnalyticsCookies();
+            document.dispatchEvent(new CustomEvent("neqst-consent", { detail: "rejected" }));
+          },
+          open: function () {
+            document.dispatchEvent(new CustomEvent("neqst-consent-open"));
+          },
+        };
+
+        if (readChoice() === "accepted") {
+          loadAnalytics();
+        }
+
+        document.addEventListener("click", function (event) {
+          var target = event.target;
+          if (!(target instanceof Element)) return;
+          if (!target.closest("[data-cookie-settings]")) return;
+          event.preventDefault();
+          window.neqstConsent.open();
+        });
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
@@ -51,5 +136,6 @@ const org = {
   </head>
   <body>
     <slot />
+    <CookieBanner />
   </body>
 </html>

@@ -2,19 +2,20 @@
 titel: "Privacybeleid"
 seoTitel: "Privacybeleid van Neqst | wat we bewaren en waarom"
 beschrijving: "Hoe Neqst omgaat met je persoonsgegevens: wat we bewaren, waarom we dat doen, hoe lang we het bewaren, en welke rechten je als bezoeker hebt."
-bijgewerkt: 2026-08-20
+bijgewerkt: 2026-09-06
 ---
 
 **Neqst**, handelsnaam van Hoogervorst Works
 Hugo de Grootstraat 30, 6522 DE Nijmegen
 KvK 98269429 · storm@neqst.nl
 
-Versie van 20 augustus 2026.
+Versie van 6 september 2026.
 
 Kort samengevat: we bewaren zo min mogelijk. Vul je het contactformulier in,
 dan bewaren we die gegevens om je vraag te beantwoorden. Voor de nieuwsbrief
 gebruiken we je e-mailadres alleen als je daar apart toestemming voor geeft —
-dat vinkje staat niet vooraf aan.
+dat vinkje staat niet vooraf aan. Google Analytics zetten we alleen aan als
+je daar via de cookiebanner ja tegen zegt.
 
 ---
 
@@ -64,6 +65,22 @@ laten werken en te beveiligen, zoals het opgevraagde adres, tijdstip,
 browsertype en een verkort IP-adres. Deze gegevens gebruiken we niet om
 individuele bezoekers te herleiden.
 
+### Google Analytics
+
+Alleen als je daar via de cookiebanner toestemming voor geeft, gebruiken we
+Google Analytics om te zien welke pagina’s worden bezocht en hoe bezoekers de
+site gebruiken. Dan kan Google onder meer verwerken:
+
+- welke pagina’s je opent en hoe lang
+- via welke site of zoekopdracht je binnenkomt
+- het type apparaat, browser en schermformaat
+- een globale locatie (land en regio), niet je adres
+- een willekeurig client-ID in een cookie
+
+We gebruiken deze gegevens niet om je te identificeren, niet voor advertenties
+en niet om profielen te bouwen voor derden. Zeg je nee, of maak je geen keuze,
+dan laden we Google Analytics niet.
+
 ---
 
 ## 3. Waarom we ze verwerken, en op welke grondslag
@@ -74,6 +91,7 @@ individuele bezoekers te herleiden.
 | De overeenkomst uitvoeren en factureren | Uitvoering van de overeenkomst |
 | Facturen bewaren | Wettelijke verplichting (fiscale bewaarplicht) |
 | Nieuwsbrief versturen | Jouw toestemming |
+| Bezoekgedrag meten (Google Analytics) | Jouw toestemming |
 | De site laten werken en beveiligen | Gerechtvaardigd belang |
 
 Toestemming die je hebt gegeven kun je op elk moment intrekken. Dat heeft geen
@@ -89,7 +107,9 @@ gevolgen voor wat daarvoor al is verstuurd.
   zolang dat nodig is voor garantie, geschillen en administratie
 - **Facturen en administratie** — zeven jaar, wettelijk verplicht
 - **Nieuwsbrief** — tot je je afmeldt of je toestemming intrekt
-- **Bezoekgegevens** — maximaal zes maanden
+- **Bezoekgegevens van de hosting** — maximaal zes maanden
+- **Google Analytics** — maximaal veertien maanden in de rapportage; de
+  cookies zelf tot twee jaar, of eerder als je je toestemming intrekt
 
 ---
 
@@ -103,6 +123,10 @@ draaien en om je te kunnen helpen. Het gaat om de volgende categorieën:
 - **E-mailbezorging** — voor het versturen van formulierberichten
 - **Nieuwsbriefsoftware** — alleen als je je hebt aangemeld
 - **Boekhoudsoftware** — voor facturatie en administratie
+- **Google Analytics** — alleen als je cookies accepteert. Verwerker is
+  Google Ireland Limited. Gegevens kunnen worden doorgegeven aan Google LLC
+  in de Verenigde Staten, op basis van het EU-VS-dataprotectiekader of
+  standaardcontractbepalingen van de Europese Commissie
 
 Met al deze partijen is een verwerkersovereenkomst gesloten. Wil je weten welke
 partijen dit concreet zijn, dan vertellen we je dat op verzoek — stuur een mail
@@ -118,14 +142,21 @@ Daarnaast kunnen we gegevens delen als we daartoe wettelijk verplicht zijn.
 
 ## 6. Cookies
 
-Neqst plaatst geen tracking- of advertentiecookies.
+Neqst plaatst geen advertentiecookies.
 
-Er worden uitsluitend functionele en strikt noodzakelijke cookies gebruikt,
-die nodig zijn om de site te laten werken en om formuliermisbruik tegen te
-gaan. Daarvoor is geen toestemming vereist.
+**Noodzakelijk.** Om de site te laten werken, formuliermisbruik tegen te gaan
+en om te onthouden of je Analytics wel of niet wilt. Daarvoor is geen
+toestemming vereist.
 
-Gebruiken we in de toekomst analytische of andere cookies, dan vragen we daar
-vooraf toestemming voor en passen we dit beleid aan.
+**Analytisch.** Google Analytics, alleen na jouw toestemming. Weigeren kan
+zonder dat de site anders werkt. Je keuze wijzig je via Cookies onderaan
+elke pagina.
+
+| Naam | Soort | Doel | Bewaartermijn |
+|---|---|---|---|
+| `neqst-cookie-consent` | Functioneel (localStorage) | Onthoudt of je Analytics toestaat | Tot je de keuze wist in je browser |
+| `_ga` | Analytisch | Onderscheidt bezoekers van elkaar | Tot twee jaar |
+| `_ga_*` | Analytisch | Houdt de sessiestatus bij | Tot twee jaar |
 
 ---
 

@@ -1,0 +1,119 @@
+<div
+  id="cookie-banner"
+  class="banner"
+  hidden
+  role="region"
+  aria-label="Cookievoorkeuren"
+  aria-describedby="cookie-banner-text"
+>
+  <div class="inner">
+    <p id="cookie-banner-text">
+      We gebruiken Google Analytics om te zien welke pagina’s worden bezocht.
+      Dat gebeurt alleen als je het toestaat. Meer in het <a href="/privacy/#6-cookies">privacybeleid</a>.
+    </p>
+    <div class="actions">
+      <button type="button" class="btn btn-navy" data-cookie-reject>Weigeren</button>
+      <button type="button" class="btn" data-cookie-accept>Accepteren</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById("cookie-banner");
+    if (!banner || !window.neqstConsent) return;
+
+    function hide() {
+      banner.hidden = true;
+    }
+
+    function show() {
+      banner.hidden = false;
+    }
+
+    if (!window.neqstConsent.get()) show();
+
+    var accept = banner.querySelector("[data-cookie-accept]");
+    var reject = banner.querySelector("[data-cookie-reject]");
+
+    if (accept) {
+      accept.addEventListener("click", function () {
+        window.neqstConsent.accept();
+        hide();
+      });
+    }
+
+    if (reject) {
+      reject.addEventListener("click", function () {
+        window.neqstConsent.reject();
+        hide();
+      });
+    }
+
+    document.addEventListener("neqst-consent-open", show);
+  })();
+</script>
+
+<style>
+  .banner {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 40;
+    padding: 16px 0 calc(16px + env(safe-area-inset-bottom));
+    pointer-events: none;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: min(100% - 48px, var(--max));
+    margin-inline: auto;
+    padding: 20px 24px;
+    border-radius: 20px;
+    background: #fff;
+    color: var(--ink);
+    box-shadow: 0 16px 40px rgba(8, 42, 60, 0.18);
+    pointer-events: auto;
+  }
+
+  p {
+    max-width: 62ch;
+    color: var(--body);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  a {
+    color: var(--ink);
+    font-weight: 500;
+    text-underline-offset: 3px;
+  }
+
+  .actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 10px;
+  }
+
+  .actions .btn {
+    padding: 11px 20px;
+  }
+
+  @media (max-width: 739px) {
+    .inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      width: min(100% - 32px, var(--max));
+      padding: 20px;
+    }
+
+    .actions .btn {
+      flex: 1;
+    }
+  }
+</style>
