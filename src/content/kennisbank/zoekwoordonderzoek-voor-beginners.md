@@ -118,4 +118,4 @@ de precisie van de cijfers.
 
 Wij doen dit onderzoek voordat er één pagina ontworpen wordt. Dat is het
 verschil tussen een site die er goed uitziet en een site die gevonden wordt.
-Meer daarover op [de abonnementspagina](/abonnement/).
+Meer daarover op [de abonnementspagina](/prijzen/).

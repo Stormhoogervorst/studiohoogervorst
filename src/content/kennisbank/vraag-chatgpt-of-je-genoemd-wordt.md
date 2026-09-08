@@ -111,4 +111,4 @@ hebt gevonden. Dat is het langste traject en het is waar de meeste winst zit.
 Wij draaien een vast panel van dertig vragen over vier modellen, meerdere keren
 per week, en rapporteren maandelijks met de spreiding erbij. Dat is een aparte
 dienst naast het abonnement; wat er verder standaard in zit staat op
-[de abonnementspagina](/abonnement/).
+[de abonnementspagina](/prijzen/).

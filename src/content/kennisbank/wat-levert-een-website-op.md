@@ -115,4 +115,4 @@ Niet "is €120 per maand veel". Maar: "hoeveel aanvragen moet dit opleveren
 voordat het uit kan, en is dat een realistisch aantal in mijn branche?"
 
 Als het antwoord drie aanvragen per jaar is, is de vraag beantwoord. Alle
-bedragen staan op [de abonnementspagina](/abonnement/).
+bedragen staan op [de abonnementspagina](/prijzen/).

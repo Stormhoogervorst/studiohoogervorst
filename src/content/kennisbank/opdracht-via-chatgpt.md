@@ -97,4 +97,4 @@ bouwen.
 
 Actief meten of je genoemd wordt en daarop bijsturen is wel een aparte dienst.
 Meer daarover staat op de pagina over
-[ons abonnement](/abonnement/).
+[ons abonnement](/prijzen/).

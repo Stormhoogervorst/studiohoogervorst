@@ -9,12 +9,12 @@ const faqs = [
   {
     vraag: "Is de website dan wel van mij?",
     antwoord:
-      "Je domein, je teksten en je inhoud zijn altijd van jou. De code en het onderhoud blijven van ons zolang je abonnee bent. Stop je na twaalf maanden, dan koop je de site af voor €1.750 en verhuizen we hem samen naar je eigen hosting.",
+      "Je domein, je teksten en je inhoud zijn altijd van jou. De code en het onderhoud blijven van ons zolang je abonnee bent. Stop je na twaalf maanden, dan koop je de site af voor €795 en verhuizen we hem samen naar je eigen hosting.",
   },
   {
-    vraag: "Waarom niet gewoon eenmalig betalen?",
+    vraag: "Eenmalig of per maand — wat is slimmer?",
     antwoord:
-      "Dat kan: €3.150 eenmalig, dan is de site direct van jou. Je mist dan wel het onderhoud en de doorlopende optimalisatie. Een site die niet wordt bijgehouden loopt binnen twee jaar achter.",
+      "Dat hangt af van wat er na de oplevering gebeurt. Bij eenmalig betaal je vanaf €2.150 en is de site meteen van jou, maar hosting, updates en wijzigingen regel je zelf of op factuurbasis. Bij het abonnement zit dat er allemaal in, inclusief dertig minuten wijzigingen per maand — voor de meeste bedrijven ruim voldoende. Een site die niet wordt bijgehouden loopt binnen twee jaar achter, en dat is precies het verschil waar je voor betaalt.",
   },
   {
     vraag: "Zit ik ergens aan vast?",
@@ -77,15 +77,15 @@ const inbegrepen = [
 ];
 
 const site = Astro.site ?? new URL("https://neqst.nl");
-const pageUrl = new URL(Astro.url.pathname, site).href;
+const pageUrl = new URL("/prijzen/", site).href;
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Website Abonnement",
-  serviceType: "Website as a Service",
+  name: "Website laten maken",
+  serviceType: "Website",
   description:
-    "Een professionele website zonder investering vooraf. €129 per maand inclusief hosting, onderhoud en updates. Binnen twee weken live.",
+    "Een website eenmalig laten bouwen vanaf €2.150, of €129 per maand inclusief hosting, onderhoud en updates. Vaste prijzen, geen offertetraject.",
   url: pageUrl,
   provider: {
     "@type": "ProfessionalService",
@@ -93,13 +93,25 @@ const serviceSchema = {
     url: site.origin,
   },
   areaServed: "NL",
-  offers: {
-    "@type": "Offer",
-    price: 129,
-    priceCurrency: "EUR",
-    billingIncrement: "maand",
-    url: pageUrl,
-  },
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Eenmalig",
+      price: 2150,
+      priceCurrency: "EUR",
+      description: "vanaf €2.150 eenmalig, de site is direct van jou",
+      url: pageUrl,
+    },
+    {
+      "@type": "Offer",
+      name: "Per maand",
+      price: 129,
+      priceCurrency: "EUR",
+      billingIncrement: "maand",
+      description: "€129 per maand + €395 setup, 12 maanden minimum",
+      url: pageUrl,
+    },
+  ],
 };
 
 const breadcrumbSchema = {
@@ -115,7 +127,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Abonnement",
+      name: "Prijzen",
       item: pageUrl,
     },
   ],
@@ -123,8 +135,8 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Website abonnement: €129 per maand + hosting | Neqst"
-  description="Een professionele website zonder investering vooraf. €129 per maand inclusief hosting en onderhoud. Binnen twee weken live, zonder offertetraject."
+  title="Wat kost een website? Vanaf €2.150 of €129 per maand | Neqst"
+  description="Een website eenmalig laten bouwen vanaf €2.150, of €129 per maand inclusief hosting, onderhoud en updates. Vaste prijzen, geen offertetraject."
 >
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
@@ -133,23 +145,21 @@ const breadcrumbSchema = {
   <main id="inhoud">
     <section class="hero">
       <div class="wrap hero-inner">
-        <p class="eyebrow">Website as a Service</p>
-        <h1>Een website die klaar is<br />voor €129 per maand.</h1>
+        <p class="eyebrow">Prijzen</p>
+        <h1>Een website vanaf €2.150. Of €129 per maand.</h1>
         <p class="sub">
-          Geen investering van duizenden euro's vooraf. Je betaalt per maand,
-          inclusief hosting, onderhoud en updates. Binnen twee weken live.
+          Twee manieren om dezelfde site te krijgen. Eenmalig, dan is hij
+          direct van jou. Of per maand, dan zitten hosting, onderhoud en updates
+          erbij in. Allebei binnen twee weken live.
         </p>
         <div class="actions">
           <a class="btn" href="/contact/">Plan een gesprek</a>
-          <a class="btn btn-outline" href="/abonnement/">Bekijk wat je krijgt</a>
+          <a class="btn btn-outline" href="/prijzen/">Bekijk wat je krijgt</a>
         </div>
-        <p class="trust">
-          <a href="/website-as-a-service/">Nog niet bekend met het WaaS-model? Lees eerst hoe het werkt →</a>
-        </p>
       </div>
     </section>
 
-    <section class="included">
+    <section class="included" id="inbegrepen">
       <div class="wrap">
         <h2>Alles wat er<br />standaard in zit.</h2>
         <p class="lede">
@@ -196,44 +206,63 @@ const breadcrumbSchema = {
     <section class="prices" id="prijs">
       <div class="wrap">
         <p class="badge">Prijs</p>
-        <h2>Twee manieren<br />om het te doen.</h2>
+        <h2>Eenmalig of per maand.</h2>
+        <p class="lede">
+          Zelfde website, zelfde kwaliteit. Het verschil zit in eigendom en
+          onderhoud.
+        </p>
 
         <div class="price-duo">
-          <article class="price-card fund">
-            <span class="pill pill-lime">Meest gekozen</span>
-            <h3>Website Abonnement</h3>
+          <article class="price-card">
+            <h3>Eenmalig</h3>
+            <p class="amount">
+              <span class="from">vanaf</span>
+              <span class="euro">€2.150</span>
+            </p>
+            <p class="setup">eenmalig · de site is direct van jou</p>
+            <ul class="list-check">
+              <li>Volledige website, ontwerp op maat</li>
+              <li>Vindbaarheid ingericht bij oplevering</li>
+              <li>Direct je eigen eigendom</li>
+              <li>Hosting en domein regel je zelf</li>
+              <li>Updates en wijzigingen op factuurbasis</li>
+              <li>Prijs hangt af van het aantal pagina's</li>
+            </ul>
+            <a class="btn btn-navy btn-full" href="/contact/">Plan een gesprek</a>
+          </article>
+
+          <article class="price-card">
+            <h3>Per maand</h3>
             <p class="amount">
               <span class="euro">€129</span>
               <span class="per">/ maand</span>
             </p>
             <p class="setup">+ €395 setup · 12 maanden minimum</p>
             <ul class="list-check">
-              <li>Alles uit “Wat je krijgt” inbegrepen</li>
-              <li>Hosting en domein inbegrepen</li>
-              <li>Updates en onderhoud doorlopend</li>
-              <li>30 min wijzigingen per maand</li>
+              <li>Dezelfde website</li>
+              <li>Hosting, SSL en domein inbegrepen</li>
+              <li>Updates en beveiliging doorlopend</li>
+              <li>30 minuten wijzigingen per maand</li>
               <li>Maandelijkse rapportage</li>
-              <li>Afkopen na 12 maanden voor €1.750</li>
+              <li>Afkopen na 12 maanden voor €795</li>
             </ul>
             <a class="btn btn-navy btn-full" href="/contact/">Plan een gesprek</a>
+            <a class="model-link" href="/website-as-a-service/">Hoe werkt dit model? →</a>
           </article>
+        </div>
 
-          <article class="price-card quiet">
-            <h3>Eenmalig kopen</h3>
-            <p class="amount">
-              <span class="euro">€3.150</span>
-            </p>
-            <p class="setup">eenmalig, de site is direct van jou</p>
-            <ul class="list-check">
-              <li>Dezelfde website</li>
-              <li>Direct je eigen eigendom</li>
-              <li>Hosting regel je zelf</li>
-              <li>Geen doorlopend onderhoud</li>
-              <li>Updates op factuurbasis</li>
-              <li>Geen rapportage</li>
-            </ul>
-            <a class="btn btn-outline-navy btn-full" href="/contact/">Ook mogelijk</a>
-          </article>
+        <div class="price-note">
+          <p>
+            Eenmalig is goedkoper als je zelf een hostingpartij hebt en je site
+            voorlopig niet verandert. Per maand is voordeliger zodra je onderhoud,
+            updates en kleine wijzigingen nodig hebt — voor de meeste bedrijven is
+            die dertig minuten per maand genoeg.
+          </p>
+          <p class="price-note-fine">
+            €2.150 is voor een site van vijf pagina's. Meer pagina's betekent meer
+            werk en een hogere prijs, maar je weet het exacte bedrag voordat we
+            beginnen.
+          </p>
         </div>
       </div>
     </section>
@@ -241,10 +270,11 @@ const breadcrumbSchema = {
     <section class="addons" id="addons">
       <div class="wrap">
         <p class="badge">Add-ons</p>
-        <h2>
-          Begin <span class="addons-accent">klein</span>.<br />
-          Breid uit wanneer je wilt.
-        </h2>
+        <h2>Stel je abonnement samen</h2>
+        <p class="lede">
+          Kies je voor eenmalig? Add-ons kun je dan nog steeds los per maand
+          afnemen.
+        </p>
         <p class="lede">
           Het abonnement is het fundament. Elke add-on is een losse stap
           erbovenop — maandelijks te starten en te stoppen.
@@ -290,6 +320,10 @@ const breadcrumbSchema = {
     text-align: center;
   }
 
+  .hero-inner h1 {
+    overflow-wrap: break-word;
+  }
+
   .eyebrow {
     margin-bottom: 22px;
     color: var(--lime);
@@ -318,22 +352,6 @@ const breadcrumbSchema = {
     margin-top: 36px;
     color: var(--dim);
     font-size: 0.875rem;
-  }
-
-  .hero .trust a {
-    display: inline-block;
-    max-width: 100%;
-    color: var(--lime);
-    font-size: 0.95rem;
-    font-weight: 500;
-    line-height: 1.5;
-    text-decoration: none;
-    overflow-wrap: break-word;
-  }
-
-  .hero .trust a:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 
   .prices {
@@ -376,6 +394,7 @@ const breadcrumbSchema = {
   .include-card {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     min-height: 320px;
     padding: 32px;
     border-radius: 20px;
@@ -452,57 +471,38 @@ const breadcrumbSchema = {
   .price-card {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     padding: 32px;
     border-radius: 20px;
     border: 1px solid var(--line);
     background: #fff;
   }
 
-  .fund {
-    border: 2px solid var(--lime);
-  }
-
-  .pill {
-    display: inline-flex;
-    align-self: flex-start;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: var(--paper);
-    color: var(--body);
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-
-  .pill-lime {
-    background: var(--lime);
-    color: var(--navy);
-  }
-
   .price-card h3 {
-    margin-top: 14px;
-  }
-
-  .quiet h3 {
     margin-top: 0;
   }
 
   .amount {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: 8px;
     margin-top: 28px;
   }
 
-  .euro {
-    font-size: 3.2rem;
-    font-weight: 500;
-    letter-spacing: -0.05em;
-    line-height: 1;
-  }
-
+  .from,
   .per {
     color: var(--body);
     font-weight: 500;
+  }
+
+  .euro {
+    min-width: 0;
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    overflow-wrap: anywhere;
   }
 
   .setup {
@@ -511,6 +511,7 @@ const breadcrumbSchema = {
     border-bottom: 1px solid var(--line);
     color: var(--body);
     font-size: 0.9rem;
+    overflow-wrap: break-word;
   }
 
   .price-card .list-check {
@@ -521,14 +522,34 @@ const breadcrumbSchema = {
     margin-top: auto;
   }
 
-  .btn-outline-navy {
-    background: transparent;
-    border-color: var(--navy);
-    color: var(--navy);
+  .model-link {
+    display: block;
+    margin-top: 14px;
+    color: var(--body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
   }
 
-  .btn-outline-navy:hover {
-    background: var(--paper);
+  .model-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .price-note {
+    max-width: 46em;
+    margin-top: 40px;
+    color: var(--body);
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  .price-note-fine {
+    margin-top: 14px;
+    color: var(--body);
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 
   .addons {
@@ -539,13 +560,15 @@ const breadcrumbSchema = {
 
   .addons h2 {
     max-width: 18em;
-  }
-
-  .addons-accent {
-    color: #6f9fbb;
+    overflow-wrap: break-word;
   }
 
   .addons .lede {
+    margin-bottom: 0;
+  }
+
+  .addons .lede + .lede {
+    margin-top: 12px;
     margin-bottom: 48px;
   }
 
@@ -581,8 +604,7 @@ const breadcrumbSchema = {
       padding: 64px 0 48px;
     }
 
-    .include-grid,
-    .price-duo {
+    .include-grid {
       grid-template-columns: 1fr;
     }
 
@@ -596,8 +618,14 @@ const breadcrumbSchema = {
       padding: 28px 24px;
     }
 
-    .addons .lede {
+    .addons .lede + .lede {
       margin-bottom: 32px;
+    }
+  }
+
+  @media (max-width: 699px) {
+    .price-duo {
+      grid-template-columns: 1fr;
     }
   }
 </style>

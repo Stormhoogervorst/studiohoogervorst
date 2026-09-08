@@ -98,4 +98,4 @@ toegankelijk je huidige opzet is.
 Elke site die wij bouwen laat deze crawlers toe, met de sitemap erin verwezen.
 Dat is geen apart product en er zit geen prijskaartje aan — het is een van de
 dingen die gewoon goed horen te staan. Wat er verder standaard in zit staat op
-[de abonnementspagina](/abonnement/).
+[de abonnementspagina](/prijzen/).

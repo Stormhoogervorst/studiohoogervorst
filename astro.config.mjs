@@ -9,9 +9,13 @@ export default defineConfig({
   site: "https://neqst.nl",
   trailingSlash: "always",
   adapter: vercel(),
+  redirects: {
+    "/abonnement/": { status: 301, destination: "/prijzen/" },
+  },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes("/contact/bedankt"),
+      filter: (page) =>
+        !page.includes("/contact/bedankt") && !page.includes("/abonnement"),
     }),
   ],
   build: {

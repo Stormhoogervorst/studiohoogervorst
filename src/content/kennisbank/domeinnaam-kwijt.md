@@ -103,4 +103,4 @@ lastig willen doen, maar omdat dit de meest voorkomende reden is dat een
 project stilvalt. Wat je verder nodig hebt bij de start staat in
 [Wat je moet aanleveren voor een nieuwe website](/kennisbank/wat-lever-je-aan-voor-een-website/).
 Wat er daarna in het abonnement zit, staat op
-[de abonnementspagina](/abonnement/).
+[de abonnementspagina](/prijzen/).

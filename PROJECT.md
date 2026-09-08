@@ -110,7 +110,7 @@ Ligt vast. Wijzigen achteraf kost maanden.
 
 ```
 /                        homepage
-/abonnement/             het €129-product, prijzen, voorwaarden
+/prijzen/                eenmalig vanaf €2.150 of €129/mnd
 /diensten/[slug]/        add-ons, elk een eigen commerciële pagina
 /branches/[slug]/        website voor recruitment, fotografie, zorg, ...
 /cases/                  overzicht
@@ -255,8 +255,8 @@ input. Maximaal 8 nieuwe commerciële pagina's per week.
 | | |
 |---|---|
 | Website Abonnement | €129/mnd + €395 setup, 12 mnd minimum |
-| Eenmalig kopen | €3.150 |
-| Afkoop bij opzeggen | €1.750 (na 12 maanden) |
+| Eenmalig kopen | vanaf €2.150 |
+| Afkoop bij opzeggen | €795 (na 12 maanden) |
 | Extra landingspagina's | €15,50/mnd |
 | AI-zichtbaarheid | €10,50/mnd |
 | Content | €100/mnd |

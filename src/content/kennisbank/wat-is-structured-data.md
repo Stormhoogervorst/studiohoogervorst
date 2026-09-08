@@ -107,4 +107,4 @@ niet achteraf.
 
 Organization, LocalBusiness, Service, FAQPage, Article en BreadcrumbList, op
 elke pagina waar ze horen, gegenereerd uit de content zelf. Geen los product en
-geen meerprijs — zie [de abonnementspagina](/abonnement/).
+geen meerprijs — zie [de abonnementspagina](/prijzen/).

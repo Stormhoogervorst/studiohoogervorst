@@ -102,4 +102,4 @@ Geen ruimte om te onderhandelen, dus ook geen reden om het weg te laten.
 
 Dat kost ons klanten die meer hadden willen betalen. Het levert ons gesprekken
 op met mensen die al weten waar ze aan toe zijn. Alle bedragen staan op
-[de abonnementspagina](/abonnement/).
+[de abonnementspagina](/prijzen/).

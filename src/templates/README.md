@@ -18,7 +18,7 @@ Layout: `src/pages/[slug].astro`. Data: `src/content/landing/*.json`.
 
 ### Sectievolgorde (vast)
 
-1. Hero — gecentreerd, TrustRating, knoppen naar contact/abonnement
+1. Hero — gecentreerd, TrustRating, knoppen naar contact/prijzen
 2. Herken je dit? — 3 probleemkolommen + knop Plan kennismaking
 3. Bewijs — ChatGPT-kaart + citaat (gedeeld component)
 4. Vier vlakken — KernwaardenSectie (gedeeld)

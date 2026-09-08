@@ -101,4 +101,4 @@ een test van het formulier.
 
 Dat klinkt als een detail, maar het is een van de weinige dingen op een website
 waar één storing direct omzet kost. Wat er verder in het onderhoud zit staat op
-[de abonnementspagina](/abonnement/).
+[de abonnementspagina](/prijzen/).

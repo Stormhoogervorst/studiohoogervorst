@@ -196,7 +196,7 @@ bij Neqst.
 niet-overdraagbaar, niet-exclusief gebruiksrecht op de Website.
 
 9.5 Opdrachtgever kan de Website na de minimale looptijd van twaalf maanden
-afkopen voor €1.750. Na volledige betaling van de afkoopsom en alle openstaande
+afkopen voor €795. Na volledige betaling van de afkoopsom en alle openstaande
 facturen draagt Neqst de rechten op het specifieke ontwerp en de
 specifieke implementatie over aan Opdrachtgever, en verleent zij redelijke
 medewerking aan de overdracht naar een andere hostingomgeving.

@@ -106,4 +106,4 @@ want dat is precies de periode waarin de meeste mensen afhaken.
 Wie je binnen een maand positie 1 belooft, verkoopt je iets wat niet bestaat.
 Hoe je uitrekent of de site zichzelf terugverdient, staat in
 [Wat een website oplevert](/kennisbank/wat-levert-een-website-op/).
-Waar wij wel op sturen staat op [de abonnementspagina](/abonnement/).
+Waar wij wel op sturen staat op [de abonnementspagina](/prijzen/).

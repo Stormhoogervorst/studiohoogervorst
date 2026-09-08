@@ -104,4 +104,4 @@ reputatieschade blijft.
 
 De technische basis zit standaard in elke site. Actief meten met een promptpanel
 over vier modellen en daarop bijsturen is een aparte dienst. Wat er precies in
-zit staat op [de abonnementspagina](/abonnement/).
+zit staat op [de abonnementspagina](/prijzen/).

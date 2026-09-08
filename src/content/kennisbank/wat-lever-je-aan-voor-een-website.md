@@ -108,4 +108,4 @@ tenminste, als je met een partij werkt die dat zo heeft afgesproken.
 Bij ons lever je teksten, beeld en je logo aan. Het keyword onderzoek, de
 structuur, het ontwerp, de bouw en de verhuizing van domein en e-mail nemen wij
 over. Wat er verder in zit staat op
-[de abonnementspagina](/abonnement/).
+[de abonnementspagina](/prijzen/).
