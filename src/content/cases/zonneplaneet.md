@@ -4,7 +4,7 @@ branche: "Duurzame energie"
 plaats: "Arnhem"
 url: "https://zonneplaneetactie.nl/"
 probleem: "Zonneplaneet wilde via de site aanvragen binnenhalen voor zonnepanelen, thuisbatterijen en laadpalen, en die leads meteen omzetten in een afspraak."
-aanpak: "Nieuwe site gebouwd om leads te genereren, met productpagina's en een slim afspraaksysteem waarmee bezoekers zelf een gesprek inplannen."
+aanpak: "Website gericht op het genereren van leads"
 resultaten:
   - metriek: "Van bezoeker tot gesprek"
     voor: "aanvraag"
