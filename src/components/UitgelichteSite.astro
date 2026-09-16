@@ -25,6 +25,7 @@ const treffer = Object.entries(bestanden).find(([pad]) =>
   pad.split("/").pop()?.replace(/\.[^.]+$/, "") === id,
 );
 const foto = treffer?.[1].default;
+const midden = id === "nso-eques" || id === "zonneplaneet";
 
 // De grid is één kolom onder 939px, daarboven twee kolommen binnen --max.
 const beeldSizes = "(max-width: 939px) calc(100vw - 48px), 574px";
@@ -44,7 +45,7 @@ const beeldClass = ["beeld", href && "beeld--link"];
         {
           foto ? (
             <Image
-              class:list={{ midden: id === "nso-eques" }}
+              class:list={{ midden }}
               src={foto}
               alt=""
               width={1200}
@@ -86,7 +87,7 @@ const beeldClass = ["beeld", href && "beeld--link"];
         {
           foto ? (
             <Image
-              class:list={{ midden: id === "nso-eques" }}
+              class:list={{ midden }}
               src={foto}
               alt={`Website van ${klant}`}
               width={1200}

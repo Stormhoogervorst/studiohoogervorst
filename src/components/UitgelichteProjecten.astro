@@ -14,7 +14,7 @@ const {
   limiet,
   ids,
   kop = "Uitgelichte projecten.",
-  lede = "Projecten in Nijmegen, Arnhem en Utrecht. Van recruitment tot zorg.",
+  lede = "Projecten in Nijmegen, Arnhem en Utrecht. Van recruitment tot duurzame energie.",
   compactTop = false,
 } = Astro.props;
 
@@ -22,7 +22,7 @@ const alle = await getCollection("cases", ({ data }) => data.gepubliceerd);
 const standaardIds = [
   "legal-talents",
   "paul-breuker-fotografie",
-  "zorgcooperatie",
+  "zonneplaneet",
   "nso-eques",
 ] as const;
 const uitgelichtIds = ids?.length ? ids : [...standaardIds];
@@ -31,7 +31,7 @@ const siteUrls: Record<string, string> = {
   "legal-talents": "https://www.legaltalentsrecruitment.nl/",
   "paul-breuker-fotografie": "https://www.fotograafpromotiesradboud.nl/",
   "nso-eques": "https://equesnijmegen.nl/",
-  zorgcooperatie: "https://www.ccsz.nl/",
+  zonneplaneet: "https://zonneplaneetactie.nl/",
 };
 const hoverResultaten: Record<string, { kop: string; tekst: string }> = {
   "legal-talents": {
@@ -42,9 +42,9 @@ const hoverResultaten: Record<string, { kop: string; tekst: string }> = {
     kop: "5–8 opdrachten",
     tekst: "Elke maand organisch via de site",
   },
-  zorgcooperatie: {
-    kop: "1 week",
-    tekst: "Binnen 1 week stond de site live",
+  zonneplaneet: {
+    kop: "Leads + afspraken",
+    tekst: "Website gebouwd om aanvragen binnen te halen, plus een slim afspraaksysteem.",
   },
   "nso-eques": {
     kop: "Complete redesign",

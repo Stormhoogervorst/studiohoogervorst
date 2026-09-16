@@ -16,7 +16,7 @@ resultaten:
     na: "2"
     periode: "opdrachtgevers en cliënten"
 type: "project"
-gepubliceerd: true
+gepubliceerd: false
 ---
 
 Een zorgcoöperatie met een trage WordPress-site die op relevante zoekopdrachten

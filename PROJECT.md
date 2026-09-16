@@ -154,7 +154,7 @@ Alles wat schaalt is data. De mens vult de data, de template rendert.
 - `"resultaat"` — uitkomstcijfers bekend. Navy kaart, lime voor→na cijfers.
   Nu: Legal Talents, Paul Breuker Fotografie.
 - `"project"` — nog geen uitkomstcijfers. Witte kaart, geen cijferblok, wel
-  wat er gebouwd is. Nu: Hugo AI, Finance Talents, NSO Eques, Zorgcoöperatie.
+  wat er gebouwd is. Nu: Hugo AI, Finance Talents, NSO Eques, Zonneplaneet.
 
 Zodra de cijfers van een klant binnen zijn: `type` omzetten naar `"resultaat"`
 en `resultaten` aanvullen. Verder verandert er niets.
