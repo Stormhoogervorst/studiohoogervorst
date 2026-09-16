@@ -6,7 +6,7 @@ const links = [
 ];
 ---
 
-<header class="header">
+<header class="header" data-header>
   <a class="skip" href="#inhoud">Ga naar inhoud</a>
   <div class="wrap bar">
     <a class="brand" href="/">
@@ -19,16 +19,69 @@ const links = [
       />
       Neqst
     </a>
-    <nav class="nav" aria-label="Hoofd">
+    <nav class="nav" id="hoofd-nav" aria-label="Hoofd">
       {links.map((link) => (
         <a href={link.href}>{link.label}</a>
       ))}
+      <a class="btn btn-white nav-cta" href="/contact/">Plan een gesprek</a>
     </nav>
-    <div class="actions">
-      <a class="btn btn-white" href="/contact/">Plan een gesprek</a>
-    </div>
+    <a class="btn btn-white bar-cta" href="/contact/">Plan een gesprek</a>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="hoofd-nav"
+      aria-label="Menu"
+      data-menu-toggle
+    >
+      <span class="menu-toggle-bars" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
   </div>
 </header>
+
+<script is:inline>
+  (function () {
+    var header = document.querySelector("[data-header]");
+    if (!header) return;
+
+    var toggle = header.querySelector("[data-menu-toggle]");
+    var nav = document.getElementById("hoofd-nav");
+    var desktopQuery = window.matchMedia("(min-width: 940px)");
+    if (!toggle || !nav) return;
+
+    function setOpen(open) {
+      header.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Menu sluiten" : "Menu");
+    }
+
+    toggle.addEventListener("click", function () {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    nav.addEventListener("click", function (event) {
+      if (event.target.closest("a")) setOpen(false);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") setOpen(false);
+    });
+
+    function onDesktopChange(event) {
+      if (event.matches) setOpen(false);
+    }
+
+    if (desktopQuery.addEventListener) {
+      desktopQuery.addEventListener("change", onDesktopChange);
+    } else {
+      desktopQuery.addListener(onDesktopChange);
+    }
+  })();
+</script>
 
 <style>
   .header {
@@ -92,7 +145,7 @@ const links = [
     transform: translateX(-50%);
   }
 
-  .nav a {
+  .nav a:not(.nav-cta) {
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: -0.01em;
@@ -100,20 +153,109 @@ const links = [
     opacity: 0.88;
   }
 
-  .nav a:hover {
+  .nav a:not(.nav-cta):hover {
     opacity: 1;
   }
 
-  .actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  .nav-cta {
+    display: none;
+  }
+
+  .bar-cta {
     z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .menu-toggle-bars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 20px;
+    height: 14px;
+    margin: auto;
+  }
+
+  .menu-toggle-bars span {
+    display: block;
+    height: 1.5px;
+    border-radius: 1px;
+    background: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-bars span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-bars span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-toggle-bars span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
   }
 
   @media (max-width: 939px) {
+    .bar {
+      flex-wrap: wrap;
+      gap: 0 16px;
+    }
+
+    .brand {
+      margin-right: auto;
+    }
+
+    .bar-cta {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: grid;
+    }
+
     .nav {
       display: none;
+      position: static;
+      left: auto;
+      order: 1;
+      width: 100%;
+      flex-direction: column;
+      gap: 0;
+      padding: 8px 0 24px;
+      border-top: 1px solid var(--navy-line);
+      transform: none;
+    }
+
+    .header.is-open .nav {
+      display: flex;
+    }
+
+    .nav a:not(.nav-cta) {
+      display: flex;
+      align-items: center;
+      min-height: 48px;
+      font-size: 1.05rem;
+      opacity: 1;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      width: 100%;
+      margin-top: 12px;
     }
   }
 </style>

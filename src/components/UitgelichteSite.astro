@@ -39,6 +39,7 @@ const beeldClass = ["beeld", href && "beeld--link"];
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`Bekijk case ${klant}`}
       >
         {
           foto ? (
@@ -57,6 +58,14 @@ const beeldClass = ["beeld", href && "beeld--link"];
           )
         }
         <span class:list={["overlay", resultaat && "overlay--resultaat"]}>
+          {
+            resultaat && (
+              <span class:list={["resultaat", id === "nso-eques" && "resultaat--een-regel"]}>
+                <strong>{resultaat.kop}</strong>
+                <span>{resultaat.tekst}</span>
+              </span>
+            )
+          }
           <span class="pijl" aria-hidden="true">
             <svg viewBox="0 0 16 16" width="16" height="16">
               <path
@@ -69,16 +78,8 @@ const beeldClass = ["beeld", href && "beeld--link"];
               />
             </svg>
           </span>
-          {
-            resultaat && (
-              <span class:list={["resultaat", id === "nso-eques" && "resultaat--een-regel"]}>
-                <strong>{resultaat.kop}</strong>
-                <span>{resultaat.tekst}</span>
-              </span>
-            )
-          }
         </span>
-        <span class="sr">Website van {klant}</span>
+        <span class="sr">Bekijk case {klant}</span>
       </a>
     ) : (
       <div class="beeld">
@@ -165,6 +166,8 @@ const beeldClass = ["beeld", href && "beeld--link"];
   .overlay--resultaat {
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
     padding: 28px;
     background: color-mix(in srgb, var(--lime) 78%, #fff);
     opacity: 0;
@@ -172,8 +175,10 @@ const beeldClass = ["beeld", href && "beeld--link"];
 
   .resultaat {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 8px;
+    min-width: 0;
     max-width: 20em;
     color: var(--navy);
   }
@@ -183,6 +188,7 @@ const beeldClass = ["beeld", href && "beeld--link"];
     font-weight: 500;
     letter-spacing: -0.04em;
     line-height: 1;
+    overflow-wrap: break-word;
   }
 
   .resultaat span {
@@ -190,6 +196,8 @@ const beeldClass = ["beeld", href && "beeld--link"];
     font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1.35;
+    overflow-wrap: break-word;
+    text-wrap: balance;
   }
 
   .resultaat--een-regel {
@@ -210,6 +218,7 @@ const beeldClass = ["beeld", href && "beeld--link"];
     top: 18px;
     right: 18px;
     display: grid;
+    flex-shrink: 0;
     place-items: center;
     width: 40px;
     height: 40px;
@@ -262,6 +271,10 @@ const beeldClass = ["beeld", href && "beeld--link"];
       padding: 22px;
     }
 
+    .resultaat--een-regel span {
+      white-space: normal;
+    }
+
     .info {
       margin-top: 18px;
     }
@@ -270,8 +283,13 @@ const beeldClass = ["beeld", href && "beeld--link"];
   @media (hover: none) {
     .overlay--resultaat {
       inset: auto 0 0 0;
+      align-items: center;
       opacity: 1;
       padding: 20px 22px;
+    }
+
+    .resultaat {
+      max-width: none;
     }
 
     .resultaat strong {
@@ -284,6 +302,12 @@ const beeldClass = ["beeld", href && "beeld--link"];
 
     .resultaat--een-regel span {
       white-space: normal;
+    }
+
+    .pijl {
+      position: static;
+      top: auto;
+      right: auto;
     }
   }
 </style>

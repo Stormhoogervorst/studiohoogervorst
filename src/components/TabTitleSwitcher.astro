@@ -1,0 +1,31 @@
+<script is:inline>
+  (function () {
+    const AWAY_TITLE = "Psst, vergeet je niet iets?";
+    let originalTitle = "";
+
+    function onVisibilityChange() {
+      if (document.hidden) {
+        if (document.title !== AWAY_TITLE) {
+          originalTitle = document.title;
+        }
+        document.title = AWAY_TITLE;
+        return;
+      }
+
+      if (originalTitle) {
+        document.title = originalTitle;
+      }
+    }
+
+    function cleanup() {
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      window.removeEventListener("pagehide", cleanup);
+      if (document.title === AWAY_TITLE && originalTitle) {
+        document.title = originalTitle;
+      }
+    }
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.addEventListener("pagehide", cleanup);
+  })();
+</script>
