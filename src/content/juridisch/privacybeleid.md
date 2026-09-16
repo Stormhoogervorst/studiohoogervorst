@@ -2,20 +2,18 @@
 titel: "Privacybeleid"
 seoTitel: "Privacybeleid van Neqst | wat we bewaren en waarom"
 beschrijving: "Hoe Neqst omgaat met je persoonsgegevens: wat we bewaren, waarom we dat doen, hoe lang we het bewaren, en welke rechten je als bezoeker hebt."
-bijgewerkt: 2026-09-06
+bijgewerkt: 2026-09-16
 ---
 
 **Neqst**, handelsnaam van Hoogervorst Works
 Hugo de Grootstraat 30, 6522 DE Nijmegen
 KvK 98269429 · storm@neqst.nl
 
-Versie van 6 september 2026.
+Versie van 16 september 2026.
 
-Kort samengevat: we bewaren zo min mogelijk. Vul je het contactformulier in,
-dan bewaren we die gegevens om je vraag te beantwoorden. Voor de nieuwsbrief
-gebruiken we je e-mailadres alleen als je daar apart toestemming voor geeft —
-dat vinkje staat niet vooraf aan. Google Analytics zetten we alleen aan als
-je daar via de cookiebanner ja tegen zegt.
+Kort samengevat: we bewaren zo min mogelijk. Plan je een gesprek via de
+agenda, dan verwerken we die gegevens om de afspraak na te komen. Google
+Analytics zetten we alleen aan als je daar via de cookiebanner ja tegen zegt.
 
 ---
 
@@ -31,27 +29,19 @@ Vragen over dit beleid? Mail naar storm@neqst.nl.
 
 ## 2. Welke gegevens we verwerken
 
-### Contactformulier
+### Afspraak inplannen
 
-Als je het contactformulier invult, verwerken we:
+Als je via de agenda op deze site een gesprek inplant, verwerken wij en onze
+planningstool Cal.com:
 
 - je naam
 - je e-mailadres
-- je bedrijfsnaam
-- de URL van je huidige website, als je die invult
-- je vraag of bericht
-- het onderwerp dat je selecteert
+- het gekozen moment
+- eventuele extra gegevens die je zelf bij het inplannen invult
 
-Deze gegevens gebruiken we uitsluitend om je vraag te beantwoorden en, als
-daar een opdracht uit voortkomt, om de overeenkomst uit te voeren.
-
-### Nieuwsbrief
-
-Alleen als je het vakje daarvoor aanvinkt, bewaren we je e-mailadres en
-voornaam om je af en toe iets te sturen over vindbaarheid. Dat vinkje staat
-standaard uit. Je kunt je in elke e-mail met één klik afmelden.
-
-Meld je je af, dan verwijderen we je gegevens uit de nieuwsbrieflijst.
+Deze gegevens gebruiken we om de afspraak te bevestigen en het gesprek te
+voeren, en, als daar een opdracht uit voortkomt, om de overeenkomst uit te
+voeren.
 
 ### E-mail en telefoon
 
@@ -87,10 +77,9 @@ dan laden we Google Analytics niet.
 
 | Doel | Grondslag |
 |---|---|
-| Je vraag beantwoorden | Uitvoering van de overeenkomst of gerechtvaardigd belang |
+| Een afspraak inplannen | Uitvoering van de overeenkomst of gerechtvaardigd belang |
 | De overeenkomst uitvoeren en factureren | Uitvoering van de overeenkomst |
 | Facturen bewaren | Wettelijke verplichting (fiscale bewaarplicht) |
-| Nieuwsbrief versturen | Jouw toestemming |
 | Bezoekgedrag meten (Google Analytics) | Jouw toestemming |
 | De site laten werken en beveiligen | Gerechtvaardigd belang |
 
@@ -101,12 +90,11 @@ gevolgen voor wat daarvoor al is verstuurd.
 
 ## 4. Hoe lang we ze bewaren
 
-- **Contactformulier zonder vervolg** — maximaal twaalf maanden, daarna
+- **Afspraakgegevens zonder vervolg** — maximaal twaalf maanden, daarna
   verwijderd
 - **Klantgegevens** — gedurende de looptijd van de overeenkomst en daarna
   zolang dat nodig is voor garantie, geschillen en administratie
 - **Facturen en administratie** — zeven jaar, wettelijk verplicht
-- **Nieuwsbrief** — tot je je afmeldt of je toestemming intrekt
 - **Bezoekgegevens van de hosting** — maximaal zes maanden
 - **Google Analytics** — maximaal veertien maanden in de rapportage; de
   cookies zelf tot twee jaar, of eerder als je je toestemming intrekt
@@ -120,8 +108,7 @@ delen ze alleen met dienstverleners die we nodig hebben om de site te laten
 draaien en om je te kunnen helpen. Het gaat om de volgende categorieën:
 
 - **Hosting** — voor het beschikbaar houden en beveiligen van de website
-- **E-mailbezorging** — voor het versturen van formulierberichten
-- **Nieuwsbriefsoftware** — alleen als je je hebt aangemeld
+- **Planning** — Cal.com, voor het inplannen van gesprekken
 - **Boekhoudsoftware** — voor facturatie en administratie
 - **Google Analytics** — alleen als je cookies accepteert. Verwerker is
   Google Ireland Limited. Gegevens kunnen worden doorgegeven aan Google LLC
@@ -144,13 +131,16 @@ Daarnaast kunnen we gegevens delen als we daartoe wettelijk verplicht zijn.
 
 Neqst plaatst geen advertentiecookies.
 
-**Noodzakelijk.** Om de site te laten werken, formuliermisbruik tegen te gaan
-en om te onthouden of je Analytics wel of niet wilt. Daarvoor is geen
-toestemming vereist.
+**Noodzakelijk.** Om de site te laten werken en om te onthouden of je
+Analytics wel of niet wilt. Daarvoor is geen toestemming vereist.
 
 **Analytisch.** Google Analytics, alleen na jouw toestemming. Weigeren kan
 zonder dat de site anders werkt. Je keuze wijzig je via Cookies onderaan
 elke pagina.
+
+**Planning.** De agenda op de contactpagina wordt geladen vanaf Cal.com. In
+dat venster kunnen cookies van Cal.com staan; die vallen onder hun eigen
+beleid en zijn nodig om een afspraak in te plannen.
 
 | Naam | Soort | Doel | Bewaartermijn |
 |---|---|---|---|
