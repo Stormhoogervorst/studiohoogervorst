@@ -160,6 +160,9 @@ Vóór je tekent, deze zeven:
 
 Ontbreekt een antwoord, laat het op papier zetten. Een bureau dat geen
 bandbreedte wil geven vóór het gesprek, geeft je daarmee ook een antwoord.
+De checklist om offertes post voor post naast elkaar te leggen, plus de
+valkuilen, staat in
+[Website-offertes vergelijken](/kennisbank/website-offertes-vergelijken/).
 
 ## Wanneer zelf doen, wanneer laten maken?
 
