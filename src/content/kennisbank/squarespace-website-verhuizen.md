@@ -175,8 +175,8 @@ Past het niet, dan zeggen we dat ook.
 Het maandbedrag bij Squarespace is lager. Het verschil is wie het werk
 doet. Reken je je eigen uren mee — bouwen, redirects, mail, het
 bijhouden daarna — dan is het verschil kleiner dan het abonnement
-suggereert. Onze bedragen: [PRIJS ABONNEMENT] per maand plus
-[PRIJS SETUP] setup, of eenmalig [PRIJS EENMALIG]. Alles op een rij
+suggereert. Onze bedragen: €129 per maand plus
+€395 setup, of eenmalig vanaf €2.150. Alles op een rij
 staat op [de prijzenpagina](/prijzen/).
 
 ## Wat je nu kunt doen
@@ -223,11 +223,3 @@ maar aanleveren en de lijst met redirects kloppend krijgen.
 Pas als de nieuwe site live is, mail werkt, formulieren aankomen en
 de belangrijkste oude URL's doorverwijzen. Zeg je eerder op, dan heb
 je geen valnet als er één adres ontbreekt.
-
-<!--
-## Placeholders om in te vullen
-
-- [PRIJS ABONNEMENT]: maandprijs Neqst-abonnement (zelf vs laten + CTA)
-- [PRIJS SETUP]: setupbedrag bij het abonnement
-- [PRIJS EENMALIG]: eenmalige koopprijs
--->
