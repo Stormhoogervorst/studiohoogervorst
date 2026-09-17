@@ -89,6 +89,10 @@ die goed gestructureerd is, kan prima ranken.
 Ontwerp doet er wel toe voor wat er gebeurt nádat iemand binnen is. Maar als je
 probleem is dat er niemand komt, is een nieuw jasje niet de oplossing.
 
+Of je site überhaupt aan vervanging toe is — omdat hij traag, kapot of
+onveilig is — is een andere vraag. Dat staat in
+[Wanneer is een nieuwe website nodig?](/kennisbank/wanneer-nieuwe-website-nodig/).
+
 ## In welke volgorde je dit aanpakt
 
 Begin bij drie: controleer of Google je pagina's überhaupt kent. Dat is gratis

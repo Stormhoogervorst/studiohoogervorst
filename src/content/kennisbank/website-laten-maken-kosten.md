@@ -64,7 +64,10 @@ verwachten als je de posten hierboven meeneemt.
 afhankelijk van het pakket. Squarespace grofweg €16 tot €23. Het
 startbedrag is laag. Wat je niet op de factuur ziet: twintig tot veertig
 uur zelf bouwen, plus onderhoud daarna, en bij Wix een site die je niet
-kunt exporteren naar een andere partij.
+kunt exporteren naar een andere partij. Wil je van Squarespace af, dan
+is het geen knop waarmee je de hele site meeneemt; hoe content, domein
+en redirects overzetten werkt, staat in
+[Squarespace-website verhuizen](/kennisbank/squarespace-website-verhuizen/).
 
 **Goedkoop bureau of ingevuld template.** Vaak de lage duizenden eenmalig.
 Dat kan passen als je vooral een visitekaartje online nodig hebt. Vraag
