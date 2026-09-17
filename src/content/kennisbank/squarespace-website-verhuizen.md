@@ -42,6 +42,9 @@ opendrukt en dat er hetzelfde uitziet.
 Dat onderscheid is het hele werk. Wie 'migreren' verwart met 'bestand
 downloaden', komt erachter dat de nieuwe partij opnieuw moet bouwen —
 met jouw inhoud als vertrekpunt, niet met een kopie van het template.
+Zit je op Wix, dan is die muur nog harder: de site laat zich niet
+exporteren. Dat staat in
+[Van Wix af naar een professionele website](/kennisbank/van-wix-af-naar-professionele-website/).
 
 Of vervangen voor jou überhaupt de juiste timing is, hangt niet alleen
 van het platform af. Soms is het systeem de drempel; soms is het

@@ -167,6 +167,9 @@ Zelf doen past als je tijd hebt, het leuk vindt, en een eenvoudige site
 volstaat. Een builder is dan honderden euro's per jaar, niet duizenden.
 Reken je uren mee — twintig tot veertig uur bouw plus onderhoud — dan is
 het verschil met laten maken kleiner dan het maandbedrag suggereert.
+Zelf, een builder of laten maken naast elkaar — tijd, controle,
+vindbaarheid, onderhoud — staat in
+[Zelf een website bouwen of laten maken?](/kennisbank/zelf-website-bouwen-of-laten-maken/).
 
 Laten maken past als je gevonden moet worden, je uren in rekening brengt,
 of je weet dat onderhoud blijft liggen. Een site die er staat maar niets
