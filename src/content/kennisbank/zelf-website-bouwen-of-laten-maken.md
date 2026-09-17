@@ -137,7 +137,10 @@ rechts is een patroon.
   de meeste controle. Het is ook de meeste verantwoordelijkheid.
 - **Builder** als de site eenvoudig mag zijn, je de avonden erin
   steekt, en je accepteert dat weggaan later nabouwen is. Voor een
-  zzp'er met weinig verkeer kan dat jaren goed gaan.
+  zzp'er met weinig verkeer kan dat jaren goed gaan. Wat een zzp'er
+  aan pagina's en budget nodig heeft — geen veertig pagina's — staat
+  in
+  [Website laten maken als zzp'er](/kennisbank/website-laten-maken-zzp/).
 - **Laten maken** als tijd duurder is dan het maandbedrag, als
   onderhoud een voornemen blijft, of als vindbaarheid de reden is
   dat de site er moet staan. Dan is de vraag niet of Wix €25 is en
