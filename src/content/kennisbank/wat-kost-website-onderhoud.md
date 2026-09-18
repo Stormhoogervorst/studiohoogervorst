@@ -105,7 +105,10 @@ wijzigingen inbegrepen zijn, en zo ja hoeveel.
 
 De tweede: de complexiteit van het systeem. Een site met vijftien plugins kost
 meer onderhoud dan een site zonder. Dat is een keuze die bij de bouw gemaakt is
-en die je jarenlang meebetaalt.
+en die je jarenlang meebetaalt. Bij WordPress is dat de standaardroute. Wat je
+koopt als je een WordPress-site laat maken, en wat die plugins daarna kosten,
+staat in
+[WordPress-website laten maken](/kennisbank/wordpress-website-laten-maken/).
 
 De derde: sommige partijen rekenen onderhoud als verkapte winstmarge op een
 laag gehouden bouwprijs.
