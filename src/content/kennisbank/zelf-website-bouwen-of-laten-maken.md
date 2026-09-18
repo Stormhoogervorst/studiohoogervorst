@@ -41,7 +41,9 @@ de introprijs staan vaak apart.
 **Zelf, zonder builder.** Eigen hosting, een thema of helemaal vanaf
 nul. De licentie is goedkoper. De leercurve is langer. Reken eerder
 richting de bovenkant van die veertig uur, plus updates die jij zelf
-draait.
+draait. In de praktijk is dat vaak WordPress. Wat een bureau daarvan
+maakt — en wat je zelf moet blijven doen — staat in
+[WordPress-website laten maken](/kennisbank/wordpress-website-laten-maken/).
 
 **Laten maken, bij ons.** €129 per maand plus €395 setup, twaalf maanden
 minimum. Over het eerste jaar is dat €395 plus twaalf keer €129, dus

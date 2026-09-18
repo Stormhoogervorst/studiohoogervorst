@@ -72,7 +72,9 @@ en redirects overzetten werkt, staat in
 **Goedkoop bureau of ingevuld template.** Vaak de lage duizenden eenmalig.
 Dat kan passen als je vooral een visitekaartje online nodig hebt. Vraag
 hardop wat er na oplevering gebeurt: wie host, wie updates doet, wat een
-wijziging kost.
+wijziging kost. Veel van die offertes zijn WordPress; wat je dan koopt
+en wat het daarna kost, staat in
+[WordPress-website laten maken](/kennisbank/wordpress-website-laten-maken/).
 
 **Professioneel mkb-bureau.** Vaak €3.000 tot €10.000 eenmalig, soms meer,
 en onderhoud bijna altijd apart. Dat is de bandbreedte waar veel
