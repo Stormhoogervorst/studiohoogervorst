@@ -1,6 +1,6 @@
 ---
 titel: "Website laten maken als zzp'er: wat heb je nodig?"
-beschrijving: "Website laten maken als zzp'er: vijf tot acht pagina's is vaak genoeg. Budget versus zelf bouwen, een startchecklist, en vaste prijzen: €129 per maand."
+beschrijving: "Website laten maken als zzp'er: vijf tot acht pagina's is vaak genoeg. Budget versus zelf bouwen, een startchecklist, en vaste prijzen: €189 per maand."
 hoofdvraag: "Wat heeft een zzp'er nodig als hij een website laat maken?"
 deelvragen:
   - "Heb ik als zzp'er een website nodig?"
@@ -96,9 +96,9 @@ Squarespace grofweg €16 tot €23. Daar komt bij: twintig tot veertig
 uur om de eerste versie live te krijgen, plus het bijhouden daarna.
 Bij Wix neem je de site niet mee als je stopt.
 
-**Laten maken, bij ons.** €129 per maand plus €395 setup, twaalf
+**Laten maken, bij ons.** €189 per maand plus €395 setup, twaalf
 maanden minimum. Over het eerste jaar is dat €395 plus twaalf keer
-€129, dus €1.943. Of je koopt de site eenmalig, vanaf €2.150 voor
+€189, dus €2.663. Of je koopt de site eenmalig, vanaf €3.150 voor
 vijf pagina's. In het abonnement zitten hosting, domein, structured
 data, laadtijd onder een seconde, dertig minuten wijzigingen per
 maand en een maandelijkse rapportage. Niet inbegrepen: content
@@ -110,11 +110,12 @@ de uren die je in teksten steekt. Alle bedragen staan op
 **Rekenvoorbeeld, zonder verzonnen rendement.** Stel je uurtarief is
 €80. Dertig uur bouwen is €2.400 aan niet-gefactureerde tijd, plus
 een builder van pakweg €25 per maand (€300 per jaar): grofweg €2.700
-in jaar één. Laten maken: €1.943 in het abonnement, of vanaf €2.150
-eenmalig, plus twee uur aanleveren. Het maandbedrag is hoger. De som
-over jaar één hoeft dat niet te zijn.
+in jaar één. Laten maken: €2.663 in het abonnement, of vanaf €3.150
+eenmalig, plus twee uur aanleveren. Het maandbedrag is hoger. Het
+abonnement over jaar één zit in dit voorbeeld vlak onder die €2.700;
+met de twee uur aanleveren erbij ligt het iets erboven.
 
-Over drie jaar: €395 plus 36 × €129 is €5.039. Zelf bouwen is in
+Over drie jaar: €395 plus 36 × €189 is €7.199. Zelf bouwen is in
 euro's lager tot je de uren meetelt. Onderhoud wijkt bij zzp'ers
 extra hard: betalend werk gaat voor, tot het formulier stilvalt.
 
@@ -165,8 +166,8 @@ Je hoeft geen bestek van veertig pagina's te schrijven. Zet op één
 blad: welke diensten, hoeveel pagina's, of je bij je domein kunt.
 Dat is een uur.
 
-Wil je dat naast onze prijzen leggen: €129 per maand plus €395
-setup, of eenmalig vanaf €2.150. Dat staat op
+Wil je dat naast onze prijzen leggen: €189 per maand plus €395
+setup, of eenmalig vanaf €3.150. Dat staat op
 [de prijzenpagina](/prijzen/). Past een gesprek beter, plan dan
 [een gesprek](/contact/). Past het niet — te klein, te groot, of
 je bouwt liever zelf — dan is dat ook een antwoord.
@@ -188,8 +189,8 @@ Niet veertig. Eén pagina per zoekvraag, geen dunne kopieën.
 
 ### Wat kost een website laten maken als zzp'er?
 
-Bij ons: €129 per maand plus €395 setup, of eenmalig vanaf €2.150
-voor vijf pagina's. Eerste jaar abonnement: €1.943. Zelf bouwen is
+Bij ons: €189 per maand plus €395 setup, of eenmalig vanaf €3.150
+voor vijf pagina's. Eerste jaar abonnement: €2.663. Zelf bouwen is
 op de factuur lager; reken je twintig tot veertig uur plus onderhoud
 tegen je uurtarief, dan is het verschil kleiner. Bureaus daarbuiten
 zitten vaak in de lage duizenden tot €10.000 eenmalig, onderhoud

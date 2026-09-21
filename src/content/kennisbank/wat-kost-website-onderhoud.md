@@ -61,7 +61,7 @@ Alles inclusief wijzigingen en optimalisatie: honderd tot vierhonderd euro per
 maand.
 
 Bij ons zit hosting, domein, technisch onderhoud, dertig minuten wijzigingen
-per maand en een maandelijkse rapportage in de €129. Dat staat op
+per maand en een maandelijkse rapportage in de €189. Dat staat op
 [de abonnementspagina](/prijzen/), inclusief wat er níet in zit.
 
 ## Kun je het zelf doen?

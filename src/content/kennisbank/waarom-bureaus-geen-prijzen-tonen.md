@@ -96,7 +96,7 @@ papier zetten.
 
 ## Waarom onze prijzen er wel staan
 
-Omdat wij één prijs hebben en die voor iedereen hetzelfde is. €129 per maand,
+Omdat wij één prijs hebben en die voor iedereen hetzelfde is. €189 per maand,
 €395 setup, twaalf maanden minimum, en de add-ons met hun tarieven ernaast.
 Geen ruimte om te onderhandelen, dus ook geen reden om het weg te laten.
 

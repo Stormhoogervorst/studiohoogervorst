@@ -1,6 +1,6 @@
 ---
 titel: "Wat kost het om een website te laten maken?"
-beschrijving: "Wat kost een website laten maken in NL? Bandbreedtes van zelfbouw tot bureau, wat offertes weglaten, en vaste prijzen: €129 per maand of vanaf €2.150."
+beschrijving: "Wat kost een website laten maken in NL? Bandbreedtes van zelfbouw tot bureau, wat offertes weglaten, en vaste prijzen: €189 per maand of vanaf €3.150."
 hoofdvraag: "Wat kost het om een website te laten maken?"
 deelvragen:
   - "Wat kost een website laten maken in Nederland?"
@@ -23,8 +23,8 @@ bij zelfbouw tot €3.000 tot €10.000 of meer bij een bureau. Die spreiding
 komt doordat offertes zelden hetzelfde bevatten: de ene prijs is alleen
 bouw, de andere laat hosting, onderhoud, content of SEO weg.
 
-Hieronder de posten, de bandbreedtes, en onze vaste prijzen: €129 per maand
-plus €395 setup, of eenmalig vanaf €2.150.
+Hieronder de posten, de bandbreedtes, en onze vaste prijzen: €189 per maand
+plus €395 setup, of eenmalig vanaf €3.150.
 
 ## Wat bepaalt de prijs van een website?
 
@@ -83,8 +83,8 @@ laten maken. Waarom het exacte bedrag zelden op de site van het bureau
 staat, staat in
 [Waarom bureaus hun prijzen niet op de site zetten](/kennisbank/waarom-bureaus-geen-prijzen-tonen/).
 
-**Abonnement, of eenmalig bij ons.** Wij rekenen €129 per maand plus €395
-setup, twaalf maanden minimum. Of je koopt de site eenmalig, vanaf €2.150
+**Abonnement, of eenmalig bij ons.** Wij rekenen €189 per maand plus €395
+setup, twaalf maanden minimum. Of je koopt de site eenmalig, vanaf €3.150
 voor vijf pagina's. In het abonnement zitten hosting, domein, structured
 data, laadtijd onder een seconde, dertig minuten wijzigingen per maand en
 een maandelijkse rapportage. Niet inbegrepen: content schrijven, webshops,
@@ -96,9 +96,9 @@ bedragen staan op [de prijzenpagina](/prijzen/).
 Wat een website laten bouwen kost, hangt af van het model: meer vooraf, of
 gespreid plus onderhoud. Het is geen verschil in de site zelf.
 
-**Wat je nu betaalt.** Eenmalig: vanaf €2.150 in één keer, en de site is
-direct van jou. Abonnement: €395 setup plus €129 per maand. Over het eerste
-jaar is dat €395 plus twaalf keer €129, dus €1.943.
+**Wat je nu betaalt.** Eenmalig: vanaf €3.150 in één keer, en de site is
+direct van jou. Abonnement: €395 setup plus €189 per maand. Over het eerste
+jaar is dat €395 plus twaalf keer €189, dus €2.663.
 
 **Onderhoud daarna.** Bij eenmalig regel je hosting, updates en wijzigingen
 zelf of op factuurbasis. Bij het abonnement zit dat erin, inclusief dertig
@@ -111,7 +111,7 @@ het onderhoud blijven van ons zolang je abonnee bent. Stop je na twaalf
 maanden, dan koop je de site af voor €795 en verhuizen we hem naar je
 eigen hosting.
 
-**Over drie jaar.** €395 plus 36 × €129 is €5.039. Eenmalig vanaf €2.150 is
+**Over drie jaar.** €395 plus 36 × €189 is €7.199. Eenmalig vanaf €3.150 is
 lager in absolute euro's, tot je hosting en onderhoud optelt. Welke kant
 goedkoper is, hangt af van of je die posten zelf oppakt.
 
@@ -188,6 +188,6 @@ je accepteert dat onderhoud en SEO daarna jouw probleem zijn.
 ## Wat je nu kunt doen
 
 Je hoeft geen drie offertes af te wachten om te weten of het past. Onze
-prijzen staan op [de prijzenpagina](/prijzen/): €129 per maand plus €395
-setup, of eenmalig vanaf €2.150. Wil je toetsen of dat voor jouw aantal
+prijzen staan op [de prijzenpagina](/prijzen/): €189 per maand plus €395
+setup, of eenmalig vanaf €3.150. Wil je toetsen of dat voor jouw aantal
 pagina's klopt, plan dan [een gesprek](/contact/).

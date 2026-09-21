@@ -7,7 +7,7 @@ Wijk hier niet van af zonder overleg.
 
 ## Het bedrijf
 
-Neqst bouwt websites op abonnementsbasis (vanaf €129/mnd) die
+Neqst bouwt websites op abonnementsbasis (vanaf €189/mnd) die
 technisch gebouwd zijn om gevonden te worden — door Google én door AI-modellen.
 Add-ons breiden dat fundament uit naar actieve groei.
 
@@ -110,7 +110,7 @@ Ligt vast. Wijzigen achteraf kost maanden.
 
 ```
 /                        homepage
-/prijzen/                eenmalig vanaf €2.150 of €129/mnd
+/prijzen/                eenmalig vanaf €3.150 of €189/mnd
 /diensten/[slug]/        add-ons, elk een eigen commerciële pagina
 /branches/[slug]/        website voor recruitment, fotografie, zorg, ...
 /cases/                  overzicht
@@ -254,8 +254,8 @@ input. Maximaal 8 nieuwe commerciële pagina's per week.
 
 | | |
 |---|---|
-| Website Abonnement | €129/mnd + €395 setup, 12 mnd minimum |
-| Eenmalig kopen | vanaf €2.150 |
+| Website Abonnement | €189/mnd + €395 setup, 12 mnd minimum |
+| Eenmalig kopen | vanaf €3.150 |
 | Afkoop bij opzeggen | €795 (na 12 maanden) |
 | Extra landingspagina's | €15,50/mnd |
 | AI-zichtbaarheid | €10,50/mnd |
