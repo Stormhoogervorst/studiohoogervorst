@@ -14,7 +14,7 @@ const faqs = [
   {
     vraag: "Eenmalig of per maand — wat is slimmer?",
     antwoord:
-      "Dat hangt af van wat er na de oplevering gebeurt. Bij eenmalig betaal je vanaf €2.150 en is de site meteen van jou, maar hosting, updates en wijzigingen regel je zelf of op factuurbasis. Bij het abonnement zit dat er allemaal in, inclusief dertig minuten wijzigingen per maand — voor de meeste bedrijven ruim voldoende. Een site die niet wordt bijgehouden loopt binnen twee jaar achter, en dat is precies het verschil waar je voor betaalt.",
+      "Dat hangt af van wat er na de oplevering gebeurt. Bij eenmalig betaal je vanaf €3.150 en is de site meteen van jou, maar hosting, updates en wijzigingen regel je zelf of op factuurbasis. Bij het abonnement zit dat er allemaal in, inclusief dertig minuten wijzigingen per maand — voor de meeste bedrijven ruim voldoende. Een site die niet wordt bijgehouden loopt binnen twee jaar achter, en dat is precies het verschil waar je voor betaalt.",
   },
   {
     vraag: "Zit ik ergens aan vast?",
@@ -85,7 +85,7 @@ const serviceSchema = {
   name: "Website laten maken",
   serviceType: "Website",
   description:
-    "Een website eenmalig laten bouwen vanaf €2.150, of €129 per maand inclusief hosting, onderhoud en updates. Vaste prijzen, geen offertetraject.",
+    "Een website eenmalig laten bouwen vanaf €3.150, of €189 per maand inclusief hosting, onderhoud en updates. Vaste prijzen, geen offertetraject.",
   url: pageUrl,
   provider: {
     "@type": "ProfessionalService",
@@ -97,18 +97,18 @@ const serviceSchema = {
     {
       "@type": "Offer",
       name: "Eenmalig",
-      price: 2150,
+      price: 3150,
       priceCurrency: "EUR",
-      description: "vanaf €2.150 eenmalig, de site is direct van jou",
+      description: "vanaf €3.150 eenmalig, de site is direct van jou",
       url: pageUrl,
     },
     {
       "@type": "Offer",
       name: "Per maand",
-      price: 129,
+      price: 189,
       priceCurrency: "EUR",
       billingIncrement: "maand",
-      description: "€129 per maand + €395 setup, 12 maanden minimum",
+      description: "€189 per maand + €395 setup, 12 maanden minimum",
       url: pageUrl,
     },
   ],
@@ -135,8 +135,8 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Wat kost een website? Vanaf €2.150 of €129 per maand | Neqst"
-  description="Een website eenmalig laten bouwen vanaf €2.150, of €129 per maand inclusief hosting, onderhoud en updates. Vaste prijzen, geen offertetraject."
+  title="Wat kost een website? Vanaf €3.150 of €189 per maand | Neqst"
+  description="Een website eenmalig laten bouwen vanaf €3.150, of €189 per maand inclusief hosting, onderhoud en updates. Vaste prijzen, geen offertetraject."
 >
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
@@ -146,7 +146,7 @@ const breadcrumbSchema = {
     <section class="hero">
       <div class="wrap hero-inner">
         <p class="eyebrow">Prijzen</p>
-        <h1>Een website vanaf €2.150. Of €129 per maand.</h1>
+        <h1>Een website vanaf €3.150. Of €189 per maand.</h1>
         <p class="sub">
           Twee manieren om dezelfde site te krijgen. Eenmalig, dan is hij
           direct van jou. Of per maand, dan zitten hosting, onderhoud en updates
@@ -217,7 +217,7 @@ const breadcrumbSchema = {
             <h3>Eenmalig</h3>
             <p class="amount">
               <span class="from">vanaf</span>
-              <span class="euro">€2.150</span>
+              <span class="euro">€3.150</span>
             </p>
             <p class="setup">eenmalig · de site is direct van jou</p>
             <ul class="list-check">
@@ -234,7 +234,7 @@ const breadcrumbSchema = {
           <article class="price-card">
             <h3>Per maand</h3>
             <p class="amount">
-              <span class="euro">€129</span>
+              <span class="euro">€189</span>
               <span class="per">/ maand</span>
             </p>
             <p class="setup">+ €395 setup · 12 maanden minimum</p>
@@ -259,7 +259,7 @@ const breadcrumbSchema = {
             die dertig minuten per maand genoeg.
           </p>
           <p class="price-note-fine">
-            €2.150 is voor een site van vijf pagina's. Meer pagina's betekent meer
+            €3.150 is voor een site van vijf pagina's. Meer pagina's betekent meer
             werk en een hogere prijs, maar je weet het exacte bedrag voordat we
             beginnen.
           </p>

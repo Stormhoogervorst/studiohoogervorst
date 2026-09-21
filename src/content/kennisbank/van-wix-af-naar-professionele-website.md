@@ -169,8 +169,8 @@ Wil je de overstap niet zelf doen, kijk dan eerst op het
 minuten naar je huidige Wix-site en zeggen of opknappen nog zin heeft.
 Past het niet, dan zeggen we dat ook.
 
-Onze bedragen: €129 per maand plus €395 setup, of eenmalig vanaf
-€2.150. Hosting, domein en de overstap van mail en redirects horen in
+Onze bedragen: €189 per maand plus €395 setup, of eenmalig vanaf
+€3.150. Hosting, domein en de overstap van mail en redirects horen in
 dat gesprek thuis. Alles op een rij staat op
 [de prijzenpagina](/prijzen/). Doorlooptijd na aanlevering van teksten
 en beeld: twee tot drie weken. De Wix-site blijft staan tot de nieuwe
@@ -212,7 +212,7 @@ jaar nog iets oplevert.
 
 ### Wat kost het om van Wix naar een professionele website te gaan?
 
-Bij ons: €129 per maand plus €395 setup, of eenmalig vanaf €2.150.
+Bij ons: €189 per maand plus €395 setup, of eenmalig vanaf €3.150.
 Wix zelf blijft lager per maand. Je betaalt bij overstappen voor bouw,
 hosting en iemand die de site bijhoudt — niet voor een exportknop die
 er niet is.

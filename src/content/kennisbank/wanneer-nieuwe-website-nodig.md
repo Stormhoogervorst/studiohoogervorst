@@ -185,8 +185,8 @@ kunt. Dat is een uur werk.
 
 Wil je dat tegen een bestaande site aanhouden, plan dan
 [een gesprek](/contact/). Wat het kost staat op
-[de prijzenpagina](/prijzen/): €129 per maand plus
-€395 setup, of eenmalig vanaf €2.150. Past het niet, dan
+[de prijzenpagina](/prijzen/): €189 per maand plus
+€395 setup, of eenmalig vanaf €3.150. Past het niet, dan
 is dat ook een antwoord.
 
 ## Veelgestelde vragen
@@ -223,6 +223,6 @@ Google opnieuw.
 ### Wat kost het om een oude website te vervangen?
 
 Dat hangt af van hoeveel je meeneemt en wie het doet. Bij ons:
-€129 per maand plus €395 setup, of eenmalig
-vanaf €2.150. Hosting, domein en de overstap van mail en redirects
+€189 per maand plus €395 setup, of eenmalig
+vanaf €3.150. Hosting, domein en de overstap van mail en redirects
 horen in het gesprek thuis, niet als verrassing achteraf.

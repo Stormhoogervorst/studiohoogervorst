@@ -1,6 +1,6 @@
 ---
 titel: "WordPress-website laten maken: wat het kost en wanneer het past"
-beschrijving: "WordPress website laten maken: wat je koopt, prijzen in NL, onderhoud en plugins, wanneer WP past, en vaste prijzen: €129/mnd of vanaf €2.150."
+beschrijving: "WordPress website laten maken: wat je koopt, prijzen in NL, onderhoud en plugins, wanneer WP past, en vaste prijzen: €189/mnd of vanaf €3.150."
 hoofdvraag: "Wat kost het / wat betekent het om een WordPress-website te laten maken?"
 deelvragen:
   - "Wat kost een WordPress-website laten maken in Nederland?"
@@ -85,16 +85,16 @@ formulier, een page-builder of een SEO-plugin telt op. Die post staat
 zelden in de bouwofferte.
 
 **Neqst, als transparant alternatief.** Wij bouwen geen WordPress.
-Onze prijzen: €129 per maand plus €395 setup, twaalf maanden
-minimum. Over het eerste jaar is dat €395 plus twaalf keer €129, dus
-€1.943. Of je koopt de site eenmalig, vanaf €2.150 voor vijf
+Onze prijzen: €189 per maand plus €395 setup, twaalf maanden
+minimum. Over het eerste jaar is dat €395 plus twaalf keer €189, dus
+€2.663. Of je koopt de site eenmalig, vanaf €3.150 voor vijf
 pagina's. In het abonnement zitten hosting, domein, structured data,
 laadtijd onder een seconde, dertig minuten wijzigingen per maand en
 een maandelijkse rapportage. Niet inbegrepen: content schrijven,
 webshops, klantportalen, ongelimiteerde wijzigingen en garantie op
 posities. Alle bedragen staan op [de prijzenpagina](/prijzen/).
 
-Over drie jaar: €395 plus 36 × €129 is €5.039. Stel een
+Over drie jaar: €395 plus 36 × €189 is €7.199. Stel een
 WordPress-bouw van €8.000 plus onderhoud van honderd euro per maand:
 €11.600 zonder pluginlicenties. Dat is geen bewijs dat WordPress
 altijd duurder is; het is de som vóór je een offerte met alleen een
@@ -189,9 +189,9 @@ in
 [Zelf een website bouwen of laten maken?](/kennisbank/zelf-website-bouwen-of-laten-maken/).
 
 Wij bouwen geen WordPress. We bouwen sites op abonnement of eenmalig,
-zonder dat jij core-updates en pluginlicenties bijhoudt. €129 per
+zonder dat jij core-updates en pluginlicenties bijhoudt. €189 per
 maand plus €395 setup (twaalf maanden minimum), of eenmalig vanaf
-€2.150. Hosting en domein zitten in het abonnement. Webshop en
+€3.150. Hosting en domein zitten in het abonnement. Webshop en
 klantportaal niet: heb je die nodig, dan is WordPress of een ander
 platform vaak de betere weg, en zeggen we dat.
 
@@ -238,8 +238,8 @@ bureaus de checklist hierboven in euro's per jaar, niet alleen de
 bouw. Zo nee: je zoekt geen WordPress-klus, je zoekt een site die
 blijft draaien.
 
-Onze prijzen staan op [de prijzenpagina](/prijzen/): €129 per maand
-plus €395 setup, of eenmalig vanaf €2.150. Wij bouwen dat niet in
+Onze prijzen staan op [de prijzenpagina](/prijzen/): €189 per maand
+plus €395 setup, of eenmalig vanaf €3.150. Wij bouwen dat niet in
 WordPress; als WP voor jouw plugins of redactie de juiste motor is,
 zeggen we dat in [een gesprek](/contact/). Past een brochure-site
 met vast maandbedrag beter, dan rekenen we dat ook voor je voor.
@@ -257,7 +257,7 @@ pluginlicenties bij. De bouwprijs alleen is niet de prijs.
 ### Wat is het verschil tussen WordPress laten bouwen en een abonnementssite?
 
 WordPress laten bouwen is meestal een eenmalige klus plus losse
-hosting en onderhoud. Een abonnementssite — bij ons €129 per maand
+hosting en onderhoud. Een abonnementssite — bij ons €189 per maand
 plus €395 setup — bundelt bouw, hosting, domein en dertig minuten
 wijzigingen per maand. Wij doen dat niet in WordPress. Het verschil
 is het model (vooraf versus per maand) én de motor.
@@ -267,5 +267,5 @@ is het model (vooraf versus per maand) én de motor.
 Nee. We bouwen geen WordPress. Als je een zware CMS-redactie of een
 specifieke WordPress-plugin nodig hebt, is een WP-bureau de logische
 partij. Als je een mkb-brochure wilt met vaste prijzen en onderhoud
-erin, zijn wij dat: €129 per maand plus €395 setup, of eenmalig
-vanaf €2.150. Dat staat op [de prijzenpagina](/prijzen/).
+erin, zijn wij dat: €189 per maand plus €395 setup, of eenmalig
+vanaf €3.150. Dat staat op [de prijzenpagina](/prijzen/).

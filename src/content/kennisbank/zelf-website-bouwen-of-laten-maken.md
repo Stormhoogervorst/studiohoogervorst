@@ -45,9 +45,9 @@ draait. In de praktijk is dat vaak WordPress. Wat een bureau daarvan
 maakt — en wat je zelf moet blijven doen — staat in
 [WordPress-website laten maken](/kennisbank/wordpress-website-laten-maken/).
 
-**Laten maken, bij ons.** €129 per maand plus €395 setup, twaalf maanden
-minimum. Over het eerste jaar is dat €395 plus twaalf keer €129, dus
-€1.943. Of je koopt de site eenmalig, vanaf €2.150 voor vijf pagina's.
+**Laten maken, bij ons.** €189 per maand plus €395 setup, twaalf maanden
+minimum. Over het eerste jaar is dat €395 plus twaalf keer €189, dus
+€2.663. Of je koopt de site eenmalig, vanaf €3.150 voor vijf pagina's.
 In het abonnement zitten hosting, domein, structured data, laadtijd
 onder een seconde, dertig minuten wijzigingen per maand en een
 maandelijkse rapportage. Niet inbegrepen: content schrijven, webshops,
@@ -62,11 +62,13 @@ Tel daar een Wix-pakket van pakweg €25 per maand bij: €300 per jaar.
 Eerste jaar grofweg €2.700 in tijd plus abonnement, en de site is nog
 steeds van Wix.
 
-Eerste jaar laten maken: €1.943 in het abonnement, of vanaf €2.150
+Eerste jaar laten maken: €2.663 in het abonnement, of vanaf €3.150
 eenmalig, plus die twee uur aanleveren (€160 in dit voorbeeld). Het
-maandbedrag is hoger. De som over jaar één hoeft dat niet te zijn.
+maandbedrag is hoger. Het abonnement over jaar één zit in dit
+voorbeeld vlak onder die €2.700; met de twee uur aanleveren erbij
+ligt het iets erboven.
 
-Over drie jaar: €395 plus 36 × €129 is €5.039. Zelf blijven bouwen
+Over drie jaar: €395 plus 36 × €189 is €7.199. Zelf blijven bouwen
 is in euro's lager tot je de uren blijft meetellen. Reken veertig
 uur bouw plus een paar uur per maand, en je zit over drie jaar rond
 de honderdvijftig uur. Die post laten de meeste zzp'ers weg.
@@ -97,8 +99,8 @@ criteria: tijd, controle, vindbaarheid, onderhoud.
 | **Tijd daarna** | Updates, back-ups, wijzigingen | Editor bijhouden, apps, verlenging | Dertig minuten wijzigingen per maand inbegrepen |
 | **Controle** | Hoog als je erbij kunt: code, host, domein | Laag tot middel: je huurt de editor; bij Wix geen export | Domein en inhoud van jou; code bij ons tot afkoop (€795 na 12 maanden) |
 | **Vindbaarheid** | Kan, als jij keywordonderzoek, pagina's en techniek doet | Kan, zelfde werk, plus het risico dat apps de site trager maken | Keywordonderzoek en structuur zitten in de bouw; geen garantie op posities |
-| **Onderhoud** | Jij, of een losse beheerder | Jij in de editor; hosting zit in het pakket | Hosting, domein, updates en rapportage in €129 |
-| **Geld, jaar 1** | Hosting vijf tot dertig euro per maand + je uren | €14–€149 (Wix) of €16–€23 (Squarespace) + je uren | €1.943 abonnement, of vanaf €2.150 eenmalig |
+| **Onderhoud** | Jij, of een losse beheerder | Jij in de editor; hosting zit in het pakket | Hosting, domein, updates en rapportage in €189 |
+| **Geld, jaar 1** | Hosting vijf tot dertig euro per maand + je uren | €14–€149 (Wix) of €16–€23 (Squarespace) + je uren | €2.663 abonnement, of vanaf €3.150 eenmalig |
 
 Lees de tabel als 'wie doet het werk', niet als 'wat is beter'. Een
 builder is zelf bouwen met een nette schil, geen bureau-light.
@@ -146,7 +148,7 @@ rechts is een patroon.
 - **Laten maken** als tijd duurder is dan het maandbedrag, als
   onderhoud een voornemen blijft, of als vindbaarheid de reden is
   dat de site er moet staan. Dan is de vraag niet of Wix €25 is en
-  wij €129, maar wie het werk doet.
+  wij €189, maar wie het werk doet.
 
 Twee uitzonderingen. Als je site er al staat en hij werkt, is dit
 geen reden om hem plat te gooien. Als het enige probleem een kleurtje
@@ -159,8 +161,8 @@ gemiddelde van internet. Zet daarnaast of de site een visitekaartje
 is of een bron van aanvragen. Die twee antwoorden beslissen meer dan
 een templatekeuze.
 
-Wil je de builder-kant naast onze prijzen leggen: €129 per maand plus
-€395 setup, of eenmalig vanaf €2.150. Dat staat op
+Wil je de builder-kant naast onze prijzen leggen: €189 per maand plus
+€395 setup, of eenmalig vanaf €3.150. Dat staat op
 [de prijzenpagina](/prijzen/). Past een gesprek beter dan nog een
 avond in Wix, plan dan [een gesprek](/contact/). Past het niet, dan
 is dat ook een antwoord.
@@ -197,7 +199,7 @@ aan inhoud. Het is wel verloren werk aan inrichting.
 
 ### Wat kost het om een website te laten maken?
 
-Bij ons: €129 per maand plus €395 setup, of eenmalig vanaf €2.150.
+Bij ons: €189 per maand plus €395 setup, of eenmalig vanaf €3.150.
 Bureaus daarbuiten zitten vaak in de lage duizenden tot €10.000
 eenmalig, met onderhoud apart. Vraag altijd wat hosting, wijzigingen
 en content doen ná oplevering — dat is waar offertes uit elkaar lopen.

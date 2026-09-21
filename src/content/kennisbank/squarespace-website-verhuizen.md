@@ -178,8 +178,8 @@ Past het niet, dan zeggen we dat ook.
 Het maandbedrag bij Squarespace is lager. Het verschil is wie het werk
 doet. Reken je je eigen uren mee — bouwen, redirects, mail, het
 bijhouden daarna — dan is het verschil kleiner dan het abonnement
-suggereert. Onze bedragen: €129 per maand plus
-€395 setup, of eenmalig vanaf €2.150. Alles op een rij
+suggereert. Onze bedragen: €189 per maand plus
+€395 setup, of eenmalig vanaf €3.150. Alles op een rij
 staat op [de prijzenpagina](/prijzen/).
 
 ## Wat je nu kunt doen

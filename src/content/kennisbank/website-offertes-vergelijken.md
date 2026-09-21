@@ -93,10 +93,10 @@ onderhoud + wijzigingen. Doe dat ook over 36 maanden. Alleen dan
 ligt een eenmalige prijs naast een abonnement.
 
 Een voorbeeld met onze cijfers, zodat je iets hebt om naast te
-leggen. €129 per maand plus €395 setup, twaalf maanden minimum.
-Over het eerste jaar: €395 plus twaalf keer €129, dus €1.943. Over
-drie jaar: €395 plus 36 × €129 is €5.039. Of je koopt de site
-eenmalig, vanaf €2.150 voor vijf pagina's — dan regel je hosting
+leggen. €189 per maand plus €395 setup, twaalf maanden minimum.
+Over het eerste jaar: €395 plus twaalf keer €189, dus €2.663. Over
+drie jaar: €395 plus 36 × €189 is €7.199. Of je koopt de site
+eenmalig, vanaf €3.150 voor vijf pagina's — dan regel je hosting
 en onderhoud zelf of op factuurbasis. In het abonnement zitten
 hosting, domein, structured data, laadtijd onder een seconde,
 dertig minuten wijzigingen per maand en een maandelijkse
@@ -171,8 +171,8 @@ een koop met een huur.
 ## Wat je nu kunt doen
 
 Je hoeft geen drie pdf's te verzamelen om te weten waar je aan toe
-bent. Onze prijzen staan op [de prijzenpagina](/prijzen/): €129 per
-maand plus €395 setup, of eenmalig vanaf €2.150. Zet die naast
+bent. Onze prijzen staan op [de prijzenpagina](/prijzen/): €189 per
+maand plus €395 setup, of eenmalig vanaf €3.150. Zet die naast
 wat je al binnen hebt, met de tabel hierboven.
 
 Wil je toetsen of dat voor jouw aantal pagina's klopt, plan dan
@@ -211,8 +211,8 @@ twaalf maanden af voor €795.
 
 ### Wat rekenen jullie, zodat ik kan vergelijken?
 
-€129 per maand plus €395 setup, twaalf maanden minimum, of
-eenmalig vanaf €2.150. Hosting, domein, structured data, laadtijd
+€189 per maand plus €395 setup, twaalf maanden minimum, of
+eenmalig vanaf €3.150. Hosting, domein, structured data, laadtijd
 onder een seconde, dertig minuten wijzigingen per maand en een
 maandelijkse rapportage zitten in het abonnement. Content
 schrijven, webshops, klantportalen, ongelimiteerde wijzigingen
