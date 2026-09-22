@@ -113,7 +113,9 @@ eigen hosting.
 
 **Over drie jaar.** €395 plus 36 × €189 is €7.199. Eenmalig vanaf €3.150 is
 lager in absolute euro's, tot je hosting en onderhoud optelt. Welke kant
-goedkoper is, hangt af van of je die posten zelf oppakt.
+goedkoper is, hangt af van of je die posten zelf oppakt. Wat er in een
+website abonnement zit, en hoe je die vergelijkt, staat in
+[Website abonnement: wat zit erin en wat kost het?](/kennisbank/website-abonnement/).
 
 Twaalf maanden minimum zit erin omdat het bouwwerk vooraf gebeurt. De
 setup van €395 dekt een deel van die bouwtijd; de rest zit in die twaalf
