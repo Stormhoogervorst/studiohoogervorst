@@ -6,7 +6,6 @@ import {
   dienstTitel,
   getDiensten,
   prijsBedrag,
-  prijsEuro,
   prijsLeesbaar,
 } from "../../lib/diensten";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -135,10 +134,6 @@ const breadcrumbSchema = {
         </nav>
         <p class="pill">Add-on</p>
         <h1>{h1}</h1>
-        <p class="price">
-          <span class="euro">{prijsEuro(prijs)}</span>
-          {terugkerend && <span class="per">per maand</span>}
-        </p>
         <p class="sub">
           {naam} is een add-on op het website abonnement. De prijs is {prijsTekst}. {terugkerend ? "Je start en stopt deze add-on per maand." : "Dit reken je eenmalig af."} {voor_wie}
         </p>
@@ -263,29 +258,6 @@ const breadcrumbSchema = {
     border-radius: 999px;
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.75rem;
-    font-weight: 500;
-  }
-
-  .price {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 10px;
-    margin-top: 22px;
-  }
-
-  .euro {
-    color: var(--lime);
-    font-size: clamp(2.4rem, 5vw, 3.4rem);
-    font-weight: 500;
-    letter-spacing: -0.05em;
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .per {
-    color: var(--dim);
-    font-size: 1.05rem;
     font-weight: 500;
   }
 
