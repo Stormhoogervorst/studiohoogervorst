@@ -4,6 +4,7 @@ const basis = { naam: "Website Abonnement", prijs: 189, setup: 395 };
 const addons = [
   {
     id: "paginas",
+    slug: "extra-landingspaginas",
     naam: "Extra landingspagina's",
     prijs: 15.5,
     kort: "2 extra landingspagina's per maand, met keyword onderzoek",
@@ -17,6 +18,7 @@ const addons = [
   },
   {
     id: "ai",
+    slug: "ai-zichtbaarheid",
     naam: "AI-zichtbaarheid",
     prijs: 10.5,
     kort: "Word genoemd als iemand ChatGPT om een aanbeveling vraagt",
@@ -30,6 +32,7 @@ const addons = [
   },
   {
     id: "content",
+    slug: "content",
     naam: "Content",
     prijs: 100,
     kort: "2 artikelen per maand, geschreven en geplaatst",
@@ -118,6 +121,7 @@ const eersteJaar = basis.setup + 12 * basis.prijs;
                 ))}
               </ul>
             </details>
+            <a class="meer" href={`/diensten/${addon.slug}/`}>Meer over {addon.naam}</a>
           </div>
         ))
       }
@@ -360,6 +364,20 @@ const eersteJaar = basis.setup + 12 * basis.prijs;
     margin: 10px 0 0 32px;
   }
 
+  .meer {
+    display: inline-flex;
+    margin: 10px 0 0 32px;
+    color: var(--navy);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .meer:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   summary {
     position: relative;
     display: inline-flex;
@@ -525,7 +543,8 @@ const eersteJaar = basis.setup + 12 * basis.prijs;
       padding: 24px;
     }
 
-    .more {
+    .more,
+    .meer {
       margin-left: 0;
     }
   }

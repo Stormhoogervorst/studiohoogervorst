@@ -10,7 +10,7 @@ deelvragen:
   - "Hoe verhoudt SEO in een website-abonnement zich tot SEO uitbesteden?"
 categorie: "seo"
 gepubliceerd: 2026-09-25
-bijgewerkt: 2026-09-25
+bijgewerkt: 2026-09-29
 gerelateerd:
   - "hoe-lang-duurt-seo"
   - "zoekwoordonderzoek-voor-beginners"
@@ -83,15 +83,15 @@ en een garantie op posities.
 zit in de bouw: vindbaarheid ingericht bij oplevering. Hosting, updates
 en wijzigingen regel je daarna zelf of op factuur.
 
-**Add-ons, als je actief wilt groeien.** Content is €100 per maand: twee
+**Add-ons, als je actief wilt groeien.** [Content](/diensten/content/) is €100 per maand: twee
 artikelen, geschreven, geplaatst en intern gelinkt, met onderwerpen uit
-zoekonderzoek. Extra landingspagina's zijn €15,50 per maand: twee
+zoekonderzoek. [Extra landingspagina's](/diensten/extra-landingspaginas/) zijn €15,50 per maand: twee
 pagina's per maand, geschreven en gebouwd, met zoekonderzoek en interne
-links. AI-zichtbaarheid is €10,50 per maand: meten of je in AI-antwoorden
+links. [AI-zichtbaarheid](/diensten/ai-zichtbaarheid/) is €10,50 per maand: meten of je in AI-antwoorden
 genoemd wordt, en content bijsturen waar dat niet zo is. Geen van die
 drie zit in de €189. Ze zijn maandelijks te starten en te stoppen, ook
-als je de site eenmalig koopt. De bedragen staan op
-[de prijzenpagina](/prijzen/#addons).
+als je de site eenmalig koopt. Wat je per add-on krijgt, staat op die
+pagina's. De websiteprijs staat op [de prijzenpagina](/prijzen/).
 
 Over het eerste jaar is het abonnement €395 plus twaalf keer €189, dus
 €2.663, zonder add-ons.
@@ -173,10 +173,10 @@ data, een laadtijd onder een seconde en toegelaten AI-crawlers. Dat zit
 in €189 per maand plus €395 setup, twaalf maanden minimum, en in de
 eenmalige bouw vanaf €3.150.
 
-**Wat je apart aanzet.** Content €100 per maand, extra landingspagina's
-€15,50 per maand, AI-zichtbaarheid €10,50 per maand. De technische basis
+**Wat je apart aanzet.** [Content](/diensten/content/) is €100 per maand, [extra landingspagina's](/diensten/extra-landingspaginas/)
+€15,50 per maand, [AI-zichtbaarheid](/diensten/ai-zichtbaarheid/) €10,50 per maand. De technische basis
 blijft in de site, ook als je geen add-on neemt. De drie staan bij elkaar
-op [de prijzenpagina](/prijzen/#addons).
+op [de add-onspagina](/diensten/).
 
 **Wanneer een apart bureau logischer is.** De site is technisch al op
 orde, en je wilt alleen een redactie of een programma rond links. Dan

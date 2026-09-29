@@ -9,7 +9,7 @@ deelvragen:
   - "Hoe lang moet ik wachten voordat ik dit kan beoordelen?"
 categorie: "kosten"
 gepubliceerd: 2026-09-14
-bijgewerkt: 2026-09-14
+bijgewerkt: 2026-09-29
 gerelateerd:
   - "wat-kost-website-onderhoud"
   - "hoe-lang-duurt-seo"
@@ -51,16 +51,16 @@ die de juiste mensen aantrekt ligt het vaak hoger.
 
 Nu wordt het concreet.
 
-Stel je betaalt €120 per maand voor je website, plus €395 setup. Over het eerste
-jaar is dat €1.835.
+Stel je betaalt €189 per maand voor je website, plus €395 setup. Over het eerste
+jaar is dat €2.663.
 
-Bij een aanvraagwaarde van €720 heb je in dat hele jaar **drie aanvragen** nodig
-om quitte te spelen. Drie.
+Bij een aanvraagwaarde van €720 heb je in dat hele jaar **vier aanvragen** nodig
+om quitte te spelen. Vier.
 
 Bij een aanvraagwaarde van €200 — een lagere marge, kleinere opdrachten — heb je
-er negen nodig. Nog steeds minder dan één per maand.
+er veertien nodig. Dat is iets meer dan één per maand.
 
-Dat is de rekensom die de meeste ondernemers nooit maken. Ze kijken naar €120
+Dat is de rekensom die de meeste ondernemers nooit maken. Ze kijken naar €189
 per maand als kostenpost, niet naar hoeveel aanvragen daar tegenover moeten
 staan.
 
@@ -111,8 +111,8 @@ een concurrent gaan.
 
 ## De vraag die je jezelf moet stellen
 
-Niet "is €120 per maand veel". Maar: "hoeveel aanvragen moet dit opleveren
+Niet "is €189 per maand veel". Maar: "hoeveel aanvragen moet dit opleveren
 voordat het uit kan, en is dat een realistisch aantal in mijn branche?"
 
-Als het antwoord drie aanvragen per jaar is, is de vraag beantwoord. Alle
+Als het antwoord vier aanvragen per jaar is, is de vraag beantwoord. Alle
 bedragen staan op [de abonnementspagina](/prijzen/).

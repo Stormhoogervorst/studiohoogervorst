@@ -48,19 +48,19 @@ const { flushTop = false } = Astro.props;
           <h3>Breid uit wanneer je wilt</h3>
           <ul class="addons">
             <li>
-              <span>Extra landingspagina's</span>
+              <a href="/diensten/extra-landingspaginas/">Extra landingspagina's</a>
               <span>€15,50 p/m</span>
             </li>
             <li>
-              <span>AI-zichtbaarheid</span>
+              <a href="/diensten/ai-zichtbaarheid/">AI-zichtbaarheid</a>
               <span>€10,50 p/m</span>
             </li>
             <li>
-              <span>Content</span>
+              <a href="/diensten/content/">Content</a>
               <span>€100 p/m</span>
             </li>
           </ul>
-          <a class="lime-link" href="/prijzen/">Alle add-ons →</a>
+          <a class="lime-link" href="/diensten/">Alle add-ons →</a>
         </article>
       </div>
     </div>
@@ -190,6 +190,16 @@ const { flushTop = false } = Astro.props;
     padding: 12px 0;
     border-bottom: 1px solid var(--line);
     font-size: 0.95rem;
+  }
+
+  .addons a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .addons a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 
   .addons span:last-child {
