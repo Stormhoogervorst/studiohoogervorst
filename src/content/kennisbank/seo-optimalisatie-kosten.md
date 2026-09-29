@@ -26,8 +26,7 @@ maandbedrag zegt daar op zichzelf nog niets over.
 Wie zoekt op SEO-optimalisatie kosten, verwacht vaak een apart
 maandbedrag bij een SEO-bureau. Bij ons zit de technische basis in de
 websiteprijs: structured data, een snelle site, crawlers die de
-pagina's mogen lezen, en Search Console als basis. Content, extra
-landingspagina's en AI-zichtbaarheid zijn add-ons met een vaste prijs.
+pagina's mogen lezen, en Search Console als basis. [Content](/diensten/content/), [extra landingspagina's](/diensten/extra-landingspaginas/) en [AI-zichtbaarheid](/diensten/ai-zichtbaarheid/) zijn add-ons met een vaste prijs.
 Het abonnement is die basis. Schrijven en bijsturen blijven apart werk.
 
 ## Waaruit bestaan de kosten van SEO?
@@ -81,12 +80,13 @@ jou, met dezelfde technische basis bij oplevering. Hosting, dertig
 minuten wijzigingen per maand en de maandelijkse rapportage horen bij
 het abonnement.
 
-Content is €100 per maand: twee artikelen, geschreven, geplaatst en
-intern gelinkt. Extra landingspagina's zijn €15,50 per maand: twee
+[Content](/diensten/content/) is €100 per maand: twee artikelen, geschreven, geplaatst en
+intern gelinkt. [Extra landingspagina's](/diensten/extra-landingspaginas/) zijn €15,50 per maand: twee
 pagina's, met zoekonderzoek, tekst, bouw en interne links.
-AI-zichtbaarheid is €10,50 per maand: meten of je in AI-antwoorden
+[AI-zichtbaarheid](/diensten/ai-zichtbaarheid/) is €10,50 per maand: meten of je in AI-antwoorden
 genoemd wordt, en content bijsturen waar dat niet zo is. Die drie
-zitten los van de €189. De bedragen staan op
+zitten los van de €189. Wat je per add-on krijgt, staat op die
+pagina's. De websiteprijs staat op
 [de prijzenpagina](/prijzen/).
 
 Wat de site zelf kost, los van dit doorlopende werk, staat in
@@ -112,9 +112,8 @@ maandelijkse rapportage. Daarin zit de technische basis: crawlers die
 de pagina's mogen lezen, en Search Console als basis.
 
 **Buiten de €189.** Content schrijven, webshops, klantportalen,
-ongelimiteerde wijzigingen, en een garantie op posities. Extra
-landingspagina's (€15,50 per maand), AI-zichtbaarheid (€10,50 per
-maand) en content (€100 per maand) zijn losse add-ons. Elke add-on is
+ongelimiteerde wijzigingen, en een garantie op posities. [Extra landingspagina's](/diensten/extra-landingspaginas/) (€15,50 per maand), [AI-zichtbaarheid](/diensten/ai-zichtbaarheid/) (€10,50 per
+maand) en [content](/diensten/content/) (€100 per maand) zijn losse add-ons. Elke add-on is
 maandelijks te starten en te stoppen.
 
 Zes vragen vóór je tekent, bij ons of bij een ander:
@@ -145,8 +144,7 @@ Crawlers mogen de pagina's lezen. Bij eenmalig kopen regel je hosting en
 wijzigingen zelf. De volledige lijst staat in
 [Website abonnement: wat zit erin en wat kost het?](/kennisbank/website-abonnement/).
 
-**Add-ons met een vaste prijs.** Content €100 per maand, extra
-landingspagina's €15,50 per maand, AI-zichtbaarheid €10,50 per maand.
+**Add-ons met een vaste prijs.** [Content](/diensten/content/) €100 per maand, [extra landingspagina's](/diensten/extra-landingspaginas/) €15,50 per maand, [AI-zichtbaarheid](/diensten/ai-zichtbaarheid/) €10,50 per maand.
 Dat is de redactie: schrijven, pagina's bouwen, meten of je genoemd
 wordt. Zonder dat werk, door jou of via een add-on, blijft het bij de
 technische basis.
@@ -188,9 +186,9 @@ je niet hebt.
 De prijzen staan vast, ook zonder gesprek. Op
 [de prijzenpagina](/prijzen/) staat €189 per maand plus €395 setup,
 twaalf maanden minimum, of eenmalig vanaf €3.150. Over het eerste jaar
-is het abonnement €2.663. Afkoop na twaalf maanden is €795. Content
-(€100 per maand), extra landingspagina's (€15,50 per maand) en
-AI-zichtbaarheid (€10,50 per maand) staan daar los bij.
+is het abonnement €2.663. Afkoop na twaalf maanden is €795. [Content](/diensten/content/)
+(€100 per maand), [extra landingspagina's](/diensten/extra-landingspaginas/) (€15,50 per maand) en
+[AI-zichtbaarheid](/diensten/ai-zichtbaarheid/) (€10,50 per maand) staan daar los bij.
 
 Wil je toetsen wat de technische basis voor jouw site dekt, en welke
 add-on je nodig hebt, mail

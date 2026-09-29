@@ -1,0 +1,410 @@
+---
+import type { Dienst } from "../../lib/diensten";
+import {
+  dienstBeschrijving,
+  dienstPad,
+  dienstTitel,
+  getDiensten,
+  prijsBedrag,
+  prijsEuro,
+  prijsLeesbaar,
+} from "../../lib/diensten";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import FaqList from "../../components/FaqList.astro";
+import DienstKaart from "../../components/DienstKaart.astro";
+
+interface Props {
+  entry: Dienst;
+}
+
+export async function getStaticPaths() {
+  const diensten = await getDiensten();
+  const gezien = new Set<string>();
+
+  return diensten.map((entry) => {
+    const slug = entry.data.slug.trim();
+    if (!slug || slug.includes("/") || gezien.has(slug)) {
+      throw new Error(`Ongeldige of dubbele diensten-slug bij ${entry.id}: "${entry.data.slug}"`);
+    }
+    gezien.add(slug);
+
+    return {
+      params: { slug },
+      props: { entry } satisfies Props,
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { naam, slug, prijs, terugkerend, wat_je_krijgt, voor_wie, faqs } = entry.data;
+const anderen = (await getDiensten()).filter((item) => item.data.slug !== slug);
+const prijsTekst = prijsLeesbaar(prijs, terugkerend);
+const titel = dienstTitel(naam, prijsTekst);
+const beschrijving = dienstBeschrijving(naam, prijsTekst, voor_wie, terugkerend);
+const h1 = `${naam} voor ${prijsTekst}`;
+const bedrag = prijsBedrag(prijs);
+
+const site = Astro.site ?? new URL("https://neqst.nl");
+const pageUrl = new URL(dienstPad(slug), site).href;
+const hubUrl = new URL("/diensten/", site).href;
+
+const offer = {
+  "@type": "Offer",
+  priceCurrency: "EUR",
+  description: prijsTekst,
+  url: pageUrl,
+  ...(bedrag !== undefined ? { price: bedrag } : {}),
+  ...(terugkerend && bedrag !== undefined
+    ? {
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: bedrag,
+          priceCurrency: "EUR",
+          unitText: "MONTH",
+        },
+      }
+    : {}),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: naam,
+  serviceType: naam,
+  description: beschrijving,
+  url: pageUrl,
+  provider: {
+    "@type": "ProfessionalService",
+    name: "Neqst",
+    url: site.origin,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Hugo de Grootstraat 30",
+      postalCode: "6522 DE",
+      addressLocality: "Nijmegen",
+      addressRegion: "Gelderland",
+      addressCountry: "NL",
+    },
+  },
+  areaServed: "NL",
+  offers: offer,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: new URL("/", site).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Diensten",
+      item: hubUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: naam,
+      item: pageUrl,
+    },
+  ],
+};
+---
+
+<BaseLayout title={titel} description={beschrijving}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <SiteHeader />
+
+  <main id="inhoud">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <nav class="crumbs" aria-label="Broodkruimel">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/diensten/">Diensten</a>
+          <span aria-hidden="true">/</span>
+          <span>{naam}</span>
+        </nav>
+        <p class="pill">Add-on</p>
+        <h1>{h1}</h1>
+        <p class="price">
+          <span class="euro">{prijsEuro(prijs)}</span>
+          {terugkerend && <span class="per">per maand</span>}
+        </p>
+        <p class="sub">
+          {naam} is een add-on op het website abonnement. De prijs is {prijsTekst}. {terugkerend ? "Je start en stopt deze add-on per maand." : "Dit reken je eenmalig af."} {voor_wie}
+        </p>
+        <div class="actions">
+          <a class="btn" href="/contact/">Plan een gesprek</a>
+          <a class="btn btn-outline" href="/prijzen/">Bekijk de prijzen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="krijgt">
+      <div class="wrap split">
+        <div>
+          <h2>Wat je krijgt</h2>
+          <p class="lede">Dit zit in de prijs van {prijsTekst}.</p>
+        </div>
+        <ul class="list-check">
+          {wat_je_krijgt.map((punt) => (
+            <li>{punt}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="voor">
+      <div class="wrap prose">
+        <h2>Voor wie dit is</h2>
+        <p>{voor_wie}</p>
+        <p>
+          Dit komt bovenop de site. Het <a href="/prijzen/">website abonnement</a> is €189 per maand plus €395 setup, twaalf maanden minimum. Eenmalig kopen kan vanaf €3.150.{terugkerend ? " Koop je de site eenmalig, dan kun je deze add-on nog steeds los per maand afnemen." : ""} Hoe dat abonnement werkt, staat op <a href="/website-as-a-service/">Website as a Service</a>. Alle add-ons staan op <a href="/diensten/">het overzicht</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="wrap">
+        <h2>Veelgestelde vragen</h2>
+        <FaqList faqs={faqs} />
+      </div>
+    </section>
+
+    {
+      anderen.length > 0 && (
+        <section class="anderen">
+          <div class="wrap">
+            <h2>Andere add-ons</h2>
+            <div class="grid">
+              {anderen.map((dienst) => (
+                <DienstKaart dienst={dienst} heading="h3" />
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="close">
+      <div class="wrap close-inner">
+        <h2>Zet {naam} aan wanneer je het nodig hebt.</h2>
+        <p>
+          {
+            terugkerend
+              ? `Deze add-on start en stopt per maand. Het website abonnement blijft €189 per maand plus €395 setup.`
+              : `De prijs is ${prijsTekst}. Het website abonnement blijft €189 per maand plus €395 setup.`
+          }
+        </p>
+        <div class="actions actions-center">
+          <a class="btn" href="/contact/">Plan een gesprek</a>
+          <a class="btn btn-outline" href="/diensten/">Alle add-ons</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 72px 0 64px;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .hero-inner {
+    max-width: 780px;
+  }
+
+  .hero-inner h1 {
+    overflow-wrap: break-word;
+  }
+
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 8px;
+    margin-bottom: 22px;
+    color: #fff;
+    font-size: 0.8rem;
+    opacity: 0.6;
+  }
+
+  .crumbs a {
+    text-decoration: none;
+  }
+
+  .crumbs a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .crumbs span:last-child {
+    overflow-wrap: anywhere;
+  }
+
+  .pill {
+    display: inline-flex;
+    margin-bottom: 18px;
+    padding: 5px 12px;
+    border: 1px solid var(--navy-line);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .euro {
+    color: var(--lime);
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .per {
+    color: var(--dim);
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  .sub {
+    max-width: 40em;
+    margin-top: 22px;
+    color: var(--dim);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .actions-center {
+    justify-content: center;
+  }
+
+  .krijgt {
+    padding: var(--section) 0;
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 32px 64px;
+    align-items: start;
+  }
+
+  .lede {
+    max-width: 28em;
+    margin-top: 16px;
+    color: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .voor {
+    padding: var(--section) 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .prose {
+    max-width: 760px;
+  }
+
+  .prose p {
+    margin-top: 16px;
+    color: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .prose a {
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .faq {
+    padding: var(--section) 0;
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .faq h2,
+  .anderen h2 {
+    margin-bottom: 28px;
+    overflow-wrap: break-word;
+  }
+
+  .anderen {
+    padding: var(--section) 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .close {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+  }
+
+  .close-inner {
+    max-width: 640px;
+  }
+
+  .close h2 {
+    overflow-wrap: break-word;
+  }
+
+  .close p {
+    margin: 18px auto 0;
+    color: var(--dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 939px) {
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .split,
+    .grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

@@ -1,0 +1,102 @@
+---
+import type { Dienst } from "../lib/diensten";
+import { dienstPad, prijsEuro } from "../lib/diensten";
+
+interface Props {
+  dienst: Dienst;
+  heading?: "h2" | "h3";
+}
+
+const { dienst, heading = "h2" } = Astro.props;
+const Tag = heading;
+const { naam, slug, prijs, terugkerend, voor_wie } = dienst.data;
+---
+
+<article class="kaart">
+  <p class="prijs">
+    <span class="euro">{prijsEuro(prijs)}</span>
+    {terugkerend && <span class="per">per maand</span>}
+  </p>
+  <Tag class="titel">
+    <a class="stretched" href={dienstPad(slug)}>{naam}</a>
+  </Tag>
+  <p class="voor">{voor_wie}</p>
+</article>
+
+<style>
+  .kaart {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: #fff;
+    color: var(--ink);
+    transition: border-color 0.15s ease;
+  }
+
+  .kaart:hover {
+    border-color: var(--navy);
+  }
+
+  .kaart:has(.stretched:focus-visible) {
+    outline: 2px solid var(--lime);
+    outline-offset: 3px;
+  }
+
+  .prijs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .euro {
+    color: var(--navy);
+    font-size: 1.85rem;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .per {
+    color: var(--body);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .titel {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+  }
+
+  .stretched {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .stretched::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .stretched:focus {
+    outline: none;
+  }
+
+  .voor {
+    margin-top: 10px;
+    color: var(--body);
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+</style>

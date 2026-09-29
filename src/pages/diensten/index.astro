@@ -1,0 +1,253 @@
+---
+import { getDiensten, prijsLeesbaar } from "../../lib/diensten";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import DienstKaart from "../../components/DienstKaart.astro";
+
+const diensten = await getDiensten();
+const allemaalMaandelijks = diensten.length > 0 && diensten.every((item) => item.data.terugkerend);
+const opsomming = diensten
+  .map((item) => `${item.data.naam} ${prijsLeesbaar(item.data.prijs, item.data.terugkerend)}`)
+  .join(", ");
+const ritme = allemaalMaandelijks ? ", maandelijks te starten en te stoppen" : "";
+const description = diensten.length
+  ? `Add-ons op het website abonnement${ritme}. ${opsomming}.`.length <= 160
+    ? `Add-ons op het website abonnement${ritme}. ${opsomming}.`
+    : `Add-ons${ritme}. ${opsomming}.`
+  : "Add-ons op het website abonnement van Neqst.";
+
+const title = "Add-ons bij je website abonnement | Neqst";
+const site = Astro.site ?? new URL("https://neqst.nl");
+const pageUrl = new URL("/diensten/", site).href;
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Add-ons",
+  description,
+  url: pageUrl,
+  inLanguage: "nl-NL",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Neqst",
+    url: site.href,
+  },
+  ...(diensten.length > 0 && {
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: diensten.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.data.naam,
+        url: new URL(`/diensten/${item.data.slug}/`, site).href,
+      })),
+    },
+  }),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: new URL("/", site).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Diensten",
+      item: pageUrl,
+    },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <SiteHeader />
+
+  <main id="inhoud">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <nav class="crumbs" aria-label="Broodkruimel">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Diensten</span>
+        </nav>
+        <p class="pill">Add-ons</p>
+        <h1>Add-ons bij je website.</h1>
+        <p class="sub">
+          {
+            allemaalMaandelijks
+              ? "Het website abonnement is het fundament. Elke add-on is een losse stap erbovenop, maandelijks te starten en te stoppen."
+              : "Het website abonnement is het fundament. Elke add-on is een losse stap erbovenop."
+          }
+        </p>
+        <div class="actions">
+          <a class="btn" href="/contact/">Plan een gesprek</a>
+          <a class="btn btn-outline" href="/prijzen/">Bekijk de prijzen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="overzicht">
+      <div class="wrap">
+        {
+          diensten.length === 0 ? (
+            <p class="leeg">Er staan nog geen add-ons op deze pagina.</p>
+          ) : (
+            <div class="grid">
+              {diensten.map((dienst) => (
+                <DienstKaart dienst={dienst} />
+              ))}
+            </div>
+          )
+        }
+        <p class="noot">
+          De site zelf is €189 per maand plus €395 setup, twaalf maanden minimum, of eenmalig vanaf €3.150. Dat staat op <a href="/prijzen/">de prijzenpagina</a>. Hoe het abonnement werkt, staat op <a href="/website-as-a-service/">Website as a Service</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="close">
+      <div class="wrap close-inner">
+        <h2>Eerst de site, dan de add-on.</h2>
+        <p>
+          De meeste klanten beginnen met alleen de basis en zetten een add-on
+          aan als ze het werk niet zelf doen.
+        </p>
+        <a class="btn" href="/contact/">Plan een gesprek</a>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 72px 0 64px;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .hero-inner {
+    max-width: 760px;
+  }
+
+  .hero-inner h1 {
+    overflow-wrap: break-word;
+  }
+
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 8px;
+    margin-bottom: 22px;
+    color: #fff;
+    font-size: 0.8rem;
+    opacity: 0.6;
+  }
+
+  .crumbs a {
+    text-decoration: none;
+  }
+
+  .crumbs a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .pill {
+    display: inline-flex;
+    margin-bottom: 18px;
+    padding: 5px 12px;
+    border: 1px solid var(--navy-line);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .sub {
+    max-width: 38em;
+    margin-top: 22px;
+    color: var(--dim);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .overzicht {
+    padding: var(--section) 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .leeg,
+  .noot {
+    max-width: 42em;
+    color: var(--body);
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+
+  .noot {
+    margin-top: 36px;
+  }
+
+  .noot a {
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .close {
+    padding: var(--section) 0;
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+  }
+
+  .close-inner {
+    max-width: 640px;
+  }
+
+  .close h2 {
+    overflow-wrap: break-word;
+  }
+
+  .close p {
+    margin: 18px auto 28px;
+    color: var(--dim);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 939px) {
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

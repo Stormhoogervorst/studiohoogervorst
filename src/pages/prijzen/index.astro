@@ -279,6 +279,9 @@ const breadcrumbSchema = {
           Het abonnement is het fundament. Elke add-on is een losse stap
           erbovenop — maandelijks te starten en te stoppen.
         </p>
+        <p class="lede">
+          Wat je per add-on krijgt, staat op <a href="/diensten/">de add-onspagina</a>.
+        </p>
         <PrijsCalculator />
       </div>
     </section>
@@ -569,7 +572,16 @@ const breadcrumbSchema = {
 
   .addons .lede + .lede {
     margin-top: 12px;
+  }
+
+  .addons .lede:last-of-type {
     margin-bottom: 48px;
+  }
+
+  .addons .lede a {
+    color: inherit;
+    font-weight: 500;
+    text-underline-offset: 3px;
   }
 
   .faq h2 {
@@ -618,7 +630,7 @@ const breadcrumbSchema = {
       padding: 28px 24px;
     }
 
-    .addons .lede + .lede {
+    .addons .lede:last-of-type {
       margin-bottom: 32px;
     }
   }
