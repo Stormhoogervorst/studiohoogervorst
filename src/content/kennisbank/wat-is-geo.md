@@ -67,7 +67,8 @@ hebben, haalt een model geen bureau-homepages op. Het haalt lijstjes op,
 vergelijkingsartikelen, forumdiscussies en reviewpagina's.
 
 De praktische volgorde is dus: zorg dat je eigen site technisch klopt (dat is
-het makkelijke deel), en werk daarna aan waar je elders genoemd wordt.
+het makkelijke deel), en werk daarna aan waar je elders genoemd wordt. De
+stappen staan in [GEO-optimalisatie](/kennisbank/geo-optimalisatie/).
 
 ## Het meetprobleem
 
