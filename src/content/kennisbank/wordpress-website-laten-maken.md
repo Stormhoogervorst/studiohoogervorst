@@ -10,7 +10,7 @@ deelvragen:
   - "Wat moet je een WordPress-bureau vragen vóór je tekent?"
 categorie: "website"
 gepubliceerd: 2026-09-18
-bijgewerkt: 2026-09-18
+bijgewerkt: 2026-10-06
 gerelateerd:
   - "website-laten-maken-kosten"
   - "zelf-website-bouwen-of-laten-maken"
@@ -194,6 +194,10 @@ maand plus €395 setup (twaalf maanden minimum), of eenmalig vanaf
 €3.150. Hosting en domein zitten in het abonnement. Webshop en
 klantportaal niet: heb je die nodig, dan is WordPress of een ander
 platform vaak de betere weg, en zeggen we dat.
+
+Wanneer een bestaande site toe is aan die overstap — updates, een
+trage site, een bouwer die niet reageert — staat in
+[WordPress-alternatief](/kennisbank/wordpress-alternatief/).
 
 Als je het dashboard wekelijks opent, blijf bij WordPress en kies
 een bureau dat onderhoud in euro's durft te zetten. Als je die inlog

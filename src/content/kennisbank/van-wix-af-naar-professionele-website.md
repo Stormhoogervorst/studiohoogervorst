@@ -9,7 +9,7 @@ deelvragen:
   - "Is Wix of laten maken de betere keuze?"
 categorie: "website"
 gepubliceerd: 2026-09-17
-bijgewerkt: 2026-09-17
+bijgewerkt: 2026-10-06
 gerelateerd:
   - "squarespace-website-verhuizen"
   - "zelf-website-bouwen-of-laten-maken"
@@ -80,6 +80,11 @@ Zit je op Squarespace in plaats van Wix, dan is de situatie milder —
 content is iets makkelijker mee te nemen — maar het is nog steeds
 nabouwen, geen knop. Dat staat in
 [Squarespace-website verhuizen](/kennisbank/squarespace-website-verhuizen/).
+
+Zit je op WordPress, dan kun je de inhoud wel exporteren. Thema,
+plugins en het dashboard gaan niet mee als werkende site. Wanneer dat
+een reden is om te vertrekken, staat in
+[WordPress-alternatief](/kennisbank/wordpress-alternatief/).
 
 ## Wat wel en niet meegaat bij een Wix-website verhuizen
 
