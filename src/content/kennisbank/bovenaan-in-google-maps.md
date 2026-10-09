@@ -96,6 +96,8 @@ bijpassende pagina op je site laat kansen liggen.
 Merk je dat er lokaal weinig gebeurt terwijl je profiel op orde is, dan zit het
 probleem waarschijnlijk aan de kant van je site. Vijf oorzaken daarvoor staan
 in [Waarom je website geen bezoekers krijgt](/kennisbank/website-geen-bezoekers/).
+Hoe dat op je hele site samenhangt — gegevens, werkgebied, structured data —
+staat in [Lokale SEO: zo word je gevonden in je eigen regio](/kennisbank/lokale-seo/).
 
 ## Hulp nodig?
 

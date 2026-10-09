@@ -107,7 +107,9 @@ apart wilt bijsturen.
 
 **Zelf.** Eén dienst, één plaats, een handvol pagina's. Je zet Search
 Console aan, haalt de zoekwoorden uit je eigen gesprekken, en schrijft
-zelf als je die tijd hebt. De beperking is tijd.
+zelf als je die tijd hebt. De beperking is tijd. Werk je in een stad of
+regio, dan staan die stappen in
+[Lokale SEO: zo word je gevonden in je eigen regio](/kennisbank/lokale-seo/).
 
 **Uitbesteden.** Geen uren naast het werk. Meerdere diensten of
 werkgebieden, dus meerdere pagina's die elk één zoekterm dragen. Of je
